@@ -1,0 +1,119 @@
+<!-- Featured Tags -->
+{% if site.featured-tags %}
+<section>
+    <h5><a href="{{ site.baseurl }}/tags">FEATURED TAGS</a></h5>
+    <div class="tags">
+        {% for tag in site.tags %}
+        {% if tag[1].size > {{site.featured-condition-size}} %}
+        <a href="{{ site.baseurl }}/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
+            {{ tag[0] }}
+        </a>
+        {% endif %}
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+<hr>
+<!-- Short About -->
+<section class="visible-md visible-lg">
+    <h5><a href="{{ site.baseurl}}/about">ABOUT ME</a></h5>
+    <div class="short-about">
+         <a href="{{ site.baseurl}}/about"><img src="{{site.sidebar-avatar}}"  alt="Cheers" style="cursor:pointer"></img></a>
+         <p>{{site.sidebar-about-description}}</p>
+
+        
+        <!-- SNS Link -->
+        <ul class="list-inline">
+            {% if site.RSS %}
+            <li>
+                <a href="{{ "/feed.xml" | prepend: site.baseurl }}">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+            </li>
+            {% endif %}
+            {% if site.twitter_username %}
+            <li>
+                <a href="https://twitter.com/{{ site.twitter_username }}">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+            </li>
+            {% endif %}
+            {% if site.zhihu_username %}
+            <li>
+                <a target="_blank" href="https://www.zhihu.com/people/{{ site.zhihu_username }}">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa  fa-stack-1x fa-inverse">知</i>
+                    </span>
+                </a>
+            </li>
+            {% endif %}
+            {% if site.weibo_username %}
+            <li>
+                <a target="_blank" href="http://weibo.com/{{ site.weibo_username }}">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+            </li>
+            {% endif %}
+            {% if site.facebook_username %}
+            <li>
+                <a target="_blank" href="https://www.facebook.com/{{ site.facebook_username }}">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+            </li>
+            {% endif %}
+            {% if site.github_username %}
+            <li>
+                <a target="_blank" href="https://github.com/{{ site.github_username }}">
+                    <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+            </li>
+            {% endif %}
+
+
+        </ul>
+    </div>
+    </section>
+
+<hr>
+<!-- Google Ads -->
+<section class="hidden-sm hidden-xs hidden-print">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- sidebar-medium-rect -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-5459451539821489"
+     data-ad-slot="3011263657"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</section>
+
+
+
+    <!-- Friends Blog -->
+    {% if site.friends %}
+    <hr>
+    <h5>FRIENDS</h5>
+    <ul class="list-inline">
+        {% for friend in site.friends %}
+        <li><a href="{{friend.href}}">{{friend.title}}</a></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
