@@ -7,7 +7,7 @@ header-img: "post_img/2015/Datacenter-bg.jpg"
 labels: [Quant]
 ---
 
-很多网站在国内可能上不去，需要通过“科学上网”才能浏览，具体方法可以看[这里]({% post_url 2015-11-26-Shadowsocks_with_DigitalOcean.md %} "{% post_url 2015-11-26-Shadowsocks_with_DigitalOcean.md %}")。
+很多网站在国内可能上不去，需要通过“科学上网”才能浏览，具体方法可以看[这里]({% post_url 2015-11-26-Shadowsocks_with_DigitalOcean.md %} "{% post_url 2015-11-26-Shadowsocks_with_DigitalOcean %}")。
 
 [Quantocracy](http://quantocracy.com/ "http://quantocracy.com/")集合了许多国外的quant blog，比自己收藏blog网址效率高很多。
 
