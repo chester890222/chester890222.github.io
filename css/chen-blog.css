@@ -202,10 +202,12 @@
 }
 .sidebar-container .tags a {
   border-color: #999999;
+  border-width: 2px;
 }
 .sidebar-container .tags a:hover,
 .sidebar-container .tags a:active {
   border-color: #0085a1;
+  border-width: 2px;
 }
 .sidebar-container .short-about img {
   width: 80%;

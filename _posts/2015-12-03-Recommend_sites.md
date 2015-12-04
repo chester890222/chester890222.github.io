@@ -74,3 +74,5 @@ labels: [Quant]
 [Abnormal Returns](http://abnormalreturns.com/ "http://abnormalreturns.com/")
 
 [Quants Portal](http://www.quantsportal.com/ "http://www.quantsportal.com/")
+
+国内的网站推荐[人大经济论坛](http://bbs.pinggu.org "http://bbs.pinggu.org")
