@@ -14,7 +14,7 @@ labels: [shadowsocks, "DigitalOcean", VPS]
 
 ## DigitalOcean
 
-首先注册账号（通过[邀请链接](www.digitalocean.com/?refcode=2771cda1acf0 "www.digitalocean.com/?refcode=2771cda1acf0")可以收到\\$10的奖励)，激活邮箱自不必说。激活后就会收到奖励，但是仅仅这样还是无法在Digital Ocean上创建虚拟主机。你需要绑定信用卡或者直接向你的账户里冲入\\$5才能正式开始使用。我是在paypal账号上直接用信用卡支付的，支持人民币。
+首先注册账号（通过[我的邀请链接](http://www.digitalocean.com/?refcode=2771cda1acf0 "www.digitalocean.com/?refcode=2771cda1acf0")可以收到\\$10的奖励)，激活邮箱自不必说。激活后就会收到奖励，但是仅仅这样还是无法在Digital Ocean上创建虚拟主机。你需要绑定信用卡或者直接向你的账户里冲入\\$5才能正式开始使用。我是在paypal账号上直接用信用卡支付的，支持人民币。
 
 然后就可以创建你的云主机了，选择\\$5/mon的那一档来支撑shadowsocks的服务足矣。经过测试San Francisco的机房延迟最低，平均在230ms左右。而Singapore的机房延迟在280ms，还有5%左右的丢包率。所以经过几次创建后又销毁重新创建地倒腾，我最后还是选择了使用San Francisco的节点。另外操作系统的话，我选择的是`ubuntu 14.04 x64`的。
 
