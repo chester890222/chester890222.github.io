@@ -68,7 +68,7 @@ $ git push -u origin master
 
 以后写文章，只需要在 _post/ 文件加中，加入带有 YAML 头信息（YAML front matter）的 markdown 文件，然后 push 到 Github，就会被自动渲染成 HTML。比如，增加一篇名为 My First Post 的博客，在本地创建一个文件名带有日期的 markdown 文件 2015-04-20-my-first-post.md（里面要写好头信息）：
 
-{% highlight markdown %}
+{% highlight markup %}
 ---
 layout: post
 title: My First Post 
