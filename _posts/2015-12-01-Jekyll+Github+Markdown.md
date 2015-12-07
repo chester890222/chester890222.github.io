@@ -21,7 +21,7 @@ labels: [Jekyll, Github, Markdown]
 
 ## 基础搭建
 
-### 1. 在 Github 创建名为 hyaojia.github.io 的库
+### 1. 在 Github 创建名为 username.github.io 的库
 
 首先要创建一个新的库，把它命名为 username.github.io。所以如果你的用户名是 quant222（实际并不存在），库的名字就要 quant222.github.io。
 博客搭建成功后，就可以直接通过quant222.github.io来访问你的博客了。
@@ -105,7 +105,7 @@ title: My First Post
 
 用markdown写东西的一个特色就是可以语法高亮。主要的两个插件有google code prittify和pygments。
 Hux的博客里默认使用的pygments，可以在_config.yml文件里设置：`highlighter: pygments`
-也可以自定义一些语法高亮的主题（Hux默认主题设置在_include文件夹的head.html），个人比较喜欢Monokai theme，在项目css目录下创建monokai-syntax.css文件，保存下面的代码
+也可以自定义一些语法高亮的主题（Hux默认主题设置在_include文件夹的`head.html`），个人比较喜欢Monokai theme，在项目css目录下创建`monokai-syntax.css`文件，保存下面的代码
 
 {% highlight css %}
 .highlight pre { color: #fff; padding: 7px; background-color:#333}
@@ -175,7 +175,7 @@ Hux的博客里默认使用的pygments，可以在_config.yml文件里设置：`
 .highlight .gi { color: #a6e22e; } /* Generic.Inserted & Diff Inserted */
 {% endhighlight %}
 
-之后在_include文件夹下的footer里添加
+之后在_include文件夹下的`footer.html`里添加
 
 {% highlight html %}
     <link rel="stylesheet" href="{{ "/css/monokai-syntax.css" | prepend: site.baseurl }}">
@@ -189,7 +189,7 @@ Hux的博客里默认使用的pygments，可以在_config.yml文件里设置：`
 在页面右下角添加一个返回页首的按钮，看上去挺实用的，所以就模仿了一个。
 
 首先,网上找一张back-to-top的图片放在img文件夹下。
-在css文件夹下创建backtop.css（也可以放在其他的css文件里）
+在css文件夹下创建`backtop.css`（也可以放在其他的css文件里）
 
 {% highlight css %}
 
@@ -222,7 +222,7 @@ Hux的博客里默认使用的pygments，可以在_config.yml文件里设置：`
 }
 {% endhighlight %}
 
-在js文件夹下创建backtop.js
+在js文件夹下创建`backtop.js`
 
 {% highlight js %}
 $("#back-top").hide();
@@ -243,13 +243,13 @@ $(document).ready(function () {
 });
 {% endhighlight %}
 
-然后，在footer.html里加上
+然后，在`footer.html`里加上
 
 {% highlight html %}
 <script src="{{ "/js/backtop.js " | prepend: site.baseurl }}"></script>
 {% endhighlight %}
 
-最后，在想让它出现的位置，比如post.html里加入
+最后，在想让它出现的位置，比如`post.html`里加入
 
 {% highlight html %}
   <div id="back-top" class="hidden-print hidden-sm hidden-xs">
@@ -262,7 +262,7 @@ $(document).ready(function () {
 目标是在页面足够的情况下，文章的右侧出现该文章的目录，并悬浮窗口。
 参考自 [Thomas Zhao Studio](http://www.thomaszhao.cn/2015/01/08/how-do-i-build-this-jekyll-blog/#section-4 "http://www.thomaszhao.cn/2015/01/08/how-do-i-build-this-jekyll-blog/#section-4")
 
-在css文件夹下创建toc.css（也可以放在其他的css文件里）
+在css文件夹下创建`toc.css`（也可以放在其他的css文件里）
 
 {% highlight css %}
 /* By default it's not affixed in mobile views, so undo that */
@@ -360,7 +360,7 @@ $(document).ready(function () {
 }
 {% endhighlight %}
 
-在js文件夹下创建toc.js
+在js文件夹下创建`toc.js`
 
 {% highlight js %}
 
@@ -509,14 +509,14 @@ jQuery(function($) {
 
 {% endhighlight %}
 
-然后，在footer.html里加上
+然后，在`footer.html`里加上
 
 {% highlight html %}
 <!-- TOC sidebar-->
 <script src="{{ "/js/toc.js " | prepend: site.baseurl }}"></script>
 {% endhighlight %}
 
-最后，在post.html里加入
+最后，在`post.html`里加入
 
 {% highlight html %}
 {% unless page.fullwidth == true %}
