@@ -243,13 +243,19 @@ $(document).ready(function () {
 });
 {% endhighlight %}
 
-然后再footer.html里加上
+然后，在footer.html里加上
 
 {% highlight html %}
 <script src="{{ "/js/backtop.js " | prepend: site.baseurl }}"></script>
 {% endhighlight %}
 
+最后，在想让它出现的位置，比如post.html里加入
 
+{% highlight html %}
+  <div id="back-top" class="hidden-print hidden-sm hidden-xs">
+       <a href="#top" title="Back to top"></a>
+  </div>
+{% endhighlight %}
 
 ### 添加table of content文章目录的sidebar
 
@@ -503,10 +509,25 @@ jQuery(function($) {
 
 {% endhighlight %}
 
-最后，在footer.html里加上
+然后，在footer.html里加上
 
 {% highlight html %}
 <!-- TOC sidebar-->
 <script src="{{ "/js/toc.js " | prepend: site.baseurl }}"></script>
 {% endhighlight %}
 
+最后，在post.html里加入
+
+{% highlight html %}
+{% unless page.fullwidth == true %}
+<nav class="bs-docs-sidebar ">
+<ul id="sideNav" class="nav bs-docs-sidenav">
+
+<!-- code will be generated in application.js -->
+
+</ul>
+</nav>
+{% endunless %}
+{% endhighlight %}
+
+（可能需要对原来的post位置做一些调整）
