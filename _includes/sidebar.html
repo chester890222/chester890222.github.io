@@ -1,7 +1,7 @@
 <!-- Featured Tags -->
 {% if site.featured-tags %}
 <section>
-    <h5><a href="{{ site.baseurl }}/tags">FEATURED TAGS</a></h5>
+    <h5><a href="{{ site.baseurl }}/tags.html">FEATURED TAGS</a></h5>
     <div class="tags">
         {% for tag in site.tags %}
         {% if tag[1].size > {{site.featured-condition-size}} %}
