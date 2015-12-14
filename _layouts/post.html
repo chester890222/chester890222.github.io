@@ -45,17 +45,17 @@ layout: default
             post-container">
                 {{ content }}
                 
+            <div class="hidden-print">
                 <hr>
                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 页首横幅728*90 -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:728px;height:90px"
-     data-ad-client="ca-pub-5459451539821489"
-     data-ad-slot="1298381258"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
+                  <!-- 页首横幅728*90 -->
+                <ins class="adsbygoogle"
+                style="display:inline-block;width:728px;height:90px"
+                data-ad-client="ca-pub-5459451539821489"
+                data-ad-slot="1298381258"></ins>
+                <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
 
                 <hr>
                 <ul class="pager">
@@ -70,11 +70,11 @@ layout: default
                          </li>
                      {% endif %}
                  </ul>
-                 <div class="hidden-print">
+
                  {% if site.comment == true %}
                      {% include comment.html %}
                  {% endif %}
-                 </div>
+            </div>
             </div>
 
             <!-- Sidebar -->
