@@ -3,7 +3,7 @@ layout: post
 title: 国债期货交易策略
 author: Chen Chen
 description: 国债期货与一般期货不同，因为其标的为虚拟债券，存在一篮子的可交割债券，所以国债期货的交易策略更为复杂。也因为其复杂性，只有做专业的投资者才能在国债期货市场分到一杯羹。
-header-img: "post_img/2015/post-bg-2015.jpg"
+header-img: "img/post-bg-2015.jpg"
 tags: ["债券", "国债期货", "套利", "策略"]
 ---
 

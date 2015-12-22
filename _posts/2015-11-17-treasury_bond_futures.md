@@ -3,7 +3,7 @@ layout: post
 title: "国债期货"
 author: "Chen Chen"
 description: 国债期货作为国内市场为数不多的利率衍生品，在国内的发展一波三折。主要介绍国债期货的发展历程、以及其基本原理。
-header-img: "post_img/2015/post-bg-2015.jpg"
+header-img: "img/post-bg-2015.jpg"
 tags: ["债券", "国债期货", "套利"]
 ---
 

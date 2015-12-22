@@ -3,7 +3,7 @@ layout: post
 title: "国债ETF套利交易"
 author: "Chen Chen"
 description: "国债ETF通过一篮子债券组合跟踪相应国债指数，可以通过国债期货进行对冲交易。"
-header-img: "post_img/2015/post-bg-2015.jpg"
+header-img: "img/post-bg-2015.jpg"
 tags: ["债券","国债ETF", "国债期货", "套利","策略"]
 ---
 

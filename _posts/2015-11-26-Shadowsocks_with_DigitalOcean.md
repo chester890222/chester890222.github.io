@@ -3,7 +3,7 @@ layout: post
 title: 使用DigitalOcean和shadowsocks来科学上网
 author: Chen Chen
 description: 通过海外vps构建科学上网，大大提升工作学习生活质量。
-header-img: "post_img/2015/post-bg-2015.jpg"
+header-img: "img/post-bg-2015.jpg"
 tags: [shadowsocks, DigitalOcean, VPS]
 ---
 

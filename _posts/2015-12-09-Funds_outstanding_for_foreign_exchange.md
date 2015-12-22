@@ -3,7 +3,7 @@ layout: post
 title: 如何理解外汇占款
 author: Chen Chen
 description: "编辑中"
-header-img: "post_img/2015/Datacenter-bg.jpg"
+header-img: "img/Datacenter-bg.jpg"
 tags: [货币, 利率]
 ---
 
