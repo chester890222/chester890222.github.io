@@ -4,7 +4,7 @@ title: 量化投资相关的网站
 author: Chen Chen
 description: 收藏的一些量化博客和网站
 header-img: "post_img/2015/Datacenter-bg.jpg"
-labels: [Quant]
+tags: [Quant]
 ---
 
 很多网站在国内可能上不去，需要通过“科学上网”才能浏览，具体方法可以看[这里]({% post_url 2015-11-26-Shadowsocks_with_DigitalOcean %} "{% post_url 2015-11-26-Shadowsocks_with_DigitalOcean %}")。

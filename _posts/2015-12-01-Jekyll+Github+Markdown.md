@@ -5,7 +5,6 @@ author: Chen Chen
 description: 利用Github Pages的免费静态网页功能，搭建个人博客，markdown编辑让你更专注于内容。
 header-img: "post_img/2015/post-bg-2015.jpg"
 tags: [Jekyll, Github, Markdown]
-categories: [Others, 博客开发]
 ---
 
 ## 准备工作

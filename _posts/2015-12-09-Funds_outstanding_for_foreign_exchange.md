@@ -4,7 +4,7 @@ title: 如何理解外汇占款
 author: Chen Chen
 description: "编辑中"
 header-img: "post_img/2015/Datacenter-bg.jpg"
-labels: [货币, 利率]
+tags: [货币, 利率]
 ---
 
 ## 基本概念
