@@ -35,7 +35,7 @@ mysql -h 10.108.108.253 -u chenchensh -p
 -h 表示要连接的数据库位置，本地可不加或者用localhost
 
 #### 3. 批量执行SQL语句
-假设SQL语句保存在mysql.sql文件中。
+假设SQL语句保存在mysql.sql文件中，
  
 {% highlight console %}
 source mysql.sql
@@ -43,7 +43,7 @@ source mysql.sql
 
 ## DDL
 
-DDL用来控制表的定义、结构、索引
+Data Definition Language(DDL)语句是用来控制数据库/表的定义、结构、索引的。
 
 ### 创建/删除数据库   
 
@@ -134,16 +134,7 @@ alter table tbname rename [to] new_tbname;
 
 ## DCL
 
-DCL是用来管理系统中对象权限的，比如创建用户、用户授权等
-
-> 例子   
-grant select, insert on test1.* to ‘zl’@’localhost’ identified by ‘123’;   
-创建一个数据库用户zl，对test1数据库中所有表的select/insert权限，密码123   
-之后可以用mysql -uzl -p123登录，并操作zl数据库   
-revoke insert on test1.* from ‘zl’@’localhost’;   
-取消了zl的insert权限。
-
-可以用? contents查看帮助
+Data Control Language(DCL)是用来管理系统中对象权限的，比如创建用户、用户授权等。
 
 ### 创建用户
  
@@ -168,14 +159,15 @@ GRANT privileges ON databasename.tablename TO 'username'@'host'
 {% endhighlight %}
 *privileges* - 用户的操作权限，如SELECT , INSERT, UPDATE 等（详细列表见文章最后）。如果要授予所有的权限则使用ALL。
 *databasename* - 数据库名
-*tablename* - 表名，如果要授予该用户对所有数据库和表的相应操作权限则可用\*.*表示.
+*tablename* - 表名，如果要授予该用户对所有数据库或表的相应操作权限则可用*表示。
  
 {% highlight console %}
-GRANT SELECT, INSERT ON test.user TO ‘pig’@’%’; 
-GRANT ALL ON . TO ‘pig’@’%’; 
+GRANT SELECT, INSERT ON test.user TO 'pig'@'%'; 
+GRANT ALL ON . TO 'pig'@'%'; 
+GRANT ALL ON test.* TO 'pig' @'%';
 {% endhighlight %}
 
-`注意：`用以上命令授权的用户不能给其它用户授权,如果想让该用户可以授权,用以下命令: 
+`注意：`用以上命令授权的用户登录时不能给其它用户授权。如果想让该用户可以授权，需要用： 
  
 {% highlight console %}
 GRANT prvileges ON databasename.tablename TO 'username'@'host' WITH GRANT OPTION；
@@ -203,9 +195,9 @@ REVOKE SELECT ON *.* FROM 'pig'@'%';
 `注意：`假如你在给用户’pig’@’%’授权的时候类似于这样，那在使用后面一条命令并不能撤销该用户对test数据库中user表的SELECT操作。
  
 {% highlight console %}
-GRANT SELECT ON test.user TO ‘pig’@’%’;
+GRANT SELECT ON test.user TO 'pig'@'%';
 
-REVOKE SELECT ON . FROM ‘pig’@’%’;
+REVOKE SELECT ON . FROM 'pig'@'%';
 {% endhighlight %}
 
 相反，如果授权使用的是下面的命令，则之后那条命令也不能撤销该用户对test数据库中user表的 Select权限。
