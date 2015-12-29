@@ -12,40 +12,40 @@ SQL语句可以分为3类:
 - Data Manipulation Language (DML)
 - Data Control Language (DCL)
 
-### 启动MySQL
+## 启动MySQL
 
-1. 启动/结束MySQL服务
+#### 1. 启动/结束MySQL服务
 (在cmd中启动，需要电脑管理员权限，否则报错5) 
- 
+
 {% highlight console %}
 net start/stop MySQL_name
 {% endhighlight %}
 
-2. 连接到MySQL服务器   
+#### 2. 连接到MySQL服务器   
 在cmd中运行以下代码：
 
 {% highlight console %}
 mysql -uroot -p   
 
-# -u后面指定数据库用户   
-# -p表示需要密码
-
 #访问远程数据库
 mysql -h 10.108.108.253 -u chenchensh -p
 {% endhighlight %}
+-u 指定数据库用户   
+-p 表示需要密码
+-h 表示要连接的数据库位置，本地可不加或者用localhost
 
-3. 批量执行SQL语句
+#### 3. 批量执行SQL语句
 假设SQL语句保存在mysql.sql文件中。
  
 {% highlight console %}
 source mysql.sql
 {% endhighlight %}
 
-### DDL
+## DDL
 
 DDL用来控制表的定义、结构、索引
 
-#### 创建/删除数据库   
+### 创建/删除数据库   
 
 通过create命令创建数据库。
 
@@ -85,9 +85,7 @@ Query OK, 0 rows affected (0.00 sec)
 // if exists 判断数据库是否存在，不存在也不产生错误
 {% endhighlight %}
 
-
-
-#### 创建表（删除drop)  
+### 创建表（删除drop)  
  
  {% highlight console %}
 create table tbname(
@@ -97,44 +95,44 @@ create table tbname(
 ) 
  {% endhighlight %}
  
-#### 修改表
+### 修改表
 
-1. 修改表类型
+#### 1. 修改表类型
  
 {% highlight console %}
 alter table tbname modify [column] column_definition [first|after col_name]
 {% endhighlight %}
 
-2. 增加表字段   
+#### 2. 增加表字段   
  
 {% highlight console %}
 alter table tbname add [column] column_definition [first|after col_name]
 {% endhighlight %}
 
-3. 删除表字段   
+#### 3. 删除表字段   
  
 {% highlight console %}
 alter table tbname drop [column] col_name
 {% endhighlight %}
 
-4. 修改字段名   
+#### 4. 修改字段名   
  
 {% highlight console %}
 alter table tbname change [column] old_name col_definition [first|after col_name]
 {% endhighlight %}
 
-5. 修改字段位置   
+#### 5. 修改字段位置   
 first和after用来定义位置，add默认在表最后，change/modify不改变位置。
 `注意：change first after column属于MySQL，其他数据库可能不通用`
 
-6. 更改表名字   
+#### 6. 更改表名字   
  
 {% highlight console %}
 alter table tbname rename [to] new_tbname;
 {% endhighlight %}
 
 
-### DCL
+## DCL
 
 DCL是用来管理系统中对象权限的，比如创建用户、用户授权等
 
@@ -147,7 +145,7 @@ revoke insert on test1.* from ‘zl’@’localhost’;
 
 可以用? contents查看帮助
 
-#### 创建用户
+### 创建用户
  
 {% highlight console %}
 CREATE USER 'username'@'host' IDENTIFIED BY 'password'; 
@@ -163,8 +161,7 @@ CREATE USER 'pig'@'%' IDENTIFIED BY '';
 CREATE USER 'pig'@'%';
 {% endhighlight %}
 
-
-#### 授权
+### 授权
  
 {% highlight console %}
 GRANT privileges ON databasename.tablename TO 'username'@'host' 
@@ -184,7 +181,7 @@ GRANT ALL ON . TO ‘pig’@’%’;
 GRANT prvileges ON databasename.tablename TO 'username'@'host' WITH GRANT OPTION；
 {% endhighlight %}
 
-#### 设置与更改用户密码
+### 设置与更改用户密码
  
 {% highlight console %}
 SET PASSWORD FOR 'username'@'host' = PASSWORD('newpassword'); 
@@ -196,7 +193,7 @@ SET PASSWORD FOR 'username'@'host' = PASSWORD('newpassword');
 SET PASSWORD = PASSWORD("newpassword");
 {% endhighlight %}
 
-#### 撤销用户权限
+### 撤销用户权限
  
 {% highlight console %}
 REVOKE privilege ON databasename.tablename FROM 'username'@'host'; 
@@ -225,7 +222,7 @@ SHOW GRANTS FOR ‘pig’@’%’;
 {% endhighlight %}
 
 
-#### 删除用户
+### 删除用户
  
 {% highlight console %}
 DROP USER ‘username’@'host’; 
@@ -260,7 +257,7 @@ mysql> flush privileges;
 
 {% endhighlight %}
 
-### 附表:在MySQL中的操作权限
+## 附表：在MySQL中的操作权限
 ALTER 
 Allows use of ALTER TABLE.
 
