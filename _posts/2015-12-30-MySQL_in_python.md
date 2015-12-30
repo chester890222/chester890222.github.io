@@ -22,13 +22,13 @@ pip install mysql-connector-python
  
 {% highlight python %}
 import mysql.connector
-conn=mysql.connector.connect(host=”127.0.0.1″,user=”test”,password=”1234″)
+conn=mysql.connector.connect(host="127.0.0.1",user="test",password="1234")
 {% endhighlight %}
 该命令会返回一个mysql连接。
 如果要使用连接池功能可以多指定一个参数：pool_size或者pool_name：
  
 {% highlight python %}
-conn=mysql.connector.connect(host=”127.0.0.1″,user=”test”,password=”1234″,pool_size=10)
+conn=mysql.connector.connect(host="127.0.0.1",user="test",password="1234",pool_size=10)
 {% endhighlight %}
 该命令会从连接池中分配一个连接使用。
 
@@ -36,7 +36,7 @@ conn=mysql.connector.connect(host=”127.0.0.1″,user=”test”,password=”12
  
 {% highlight python %}
 cur=conn.cursor()
-cur.execute(“show databases”)
+cur.execute("show databases")
 cur.fetchall()
 {% endhighlight %}
 
