@@ -18,7 +18,7 @@ zhihu_username:     chester890222
 github_username:    
 
 # Build settings
-highlighter: pygments
+highlighter: rouge
 permalink: pretty
 paginate: 10
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
