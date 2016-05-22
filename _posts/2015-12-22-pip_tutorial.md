@@ -38,7 +38,7 @@ pip install --upgrade package_name
 pip升级自己： 
  
 {% highlight console %}
-pip install --upgrade pip
+python -m pip install --upgrade pip
 {% endhighlight %}
 
 
