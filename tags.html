@@ -1,12 +1,13 @@
 ---
 title: tags
-layout: default
+layout: page
 description: All models are wrong, but some are useful.
 header-img: "img/tag-bg.jpg"
 permalink: /tags.html
 ---
 
 <!-- Page Header -->
+<!--
 <header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
     <div class="container">
         <div class="row">
@@ -19,6 +20,7 @@ permalink: /tags.html
         </div>
     </div>
 </header>
+-->
 
 <!-- Main Content -->
 <div class="container">
@@ -31,8 +33,6 @@ permalink: /tags.html
 				<a href="#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">{{ tag[0] }}</a>
 				{% endfor %}
 			</div>
-
-
 
             <!-- 标签列表 -->
 			{% for tag in site.tags %}
