@@ -55,8 +55,6 @@ cur.fetchall()
 
 ### 3. 创建表格
 
-下面我们根据上面新建的一个数据库连接创建一张名为student的表：
- 
 {% highlight python %}
 sql_create_table='CREATE TABLE `student` \
 	(`id` int(10) NOT NULL AUTO_INCREMENT,\
@@ -73,7 +71,8 @@ except mysql.connector.Error as e:
 {% endhighlight %}
 
 
-###4. 插入数据
+### 4. 插入数据
+
 插入数据的语法上和MySQLdb上基本上是一样的：
  
 {% highlight python %}
@@ -112,7 +111,7 @@ cursor.executemany(stmt,data)
 {% endhighlight %}
 
 
-###5. 查询操作
+### 5. 查询操作
  
 {% highlight python %}
 cursor=cnn.cursor()
@@ -120,7 +119,7 @@ try:
   sql_query='select id,name from student where  age > %s'
   cursor.execute(sql_query,(21,))
   for id,name in cursor:
-    print('%s＼'s age is older than 21,and her/his id is %d'%(name,id))
+    print('%s\'s age is older than 21,and her/his id is %d'%(name,id))
 except mysql.connector.Error as e:
   print('query error!{}'.format(e))
 finally:
@@ -129,7 +128,7 @@ finally:
 {% endhighlight %}
 
 
-###6. 删除操作
+### 6. 删除操作
  
 {% highlight python %}
 cursor=cnn.cursor()
