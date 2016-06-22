@@ -6,7 +6,7 @@ header-img: img/home-bg-o.jpg
 email: chester890222@gmail.com
 description: 记录成为宽客的过程
 keyword: Quant Coder Geek
-url: "http://chenchen.co.uk"    # your host, for absolute URL
+url:    # your host, for absolute URL
 baseurl: ""
 
 
