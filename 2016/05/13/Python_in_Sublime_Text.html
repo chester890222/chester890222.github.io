@@ -1,0 +1,894 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="O46hFL8z727ZiTwaDvXapjZwdWcO1eQGX05XFEpZH7k" />
+
+
+
+
+  <meta name="baidu-site-verification" content="lYyc7oZNSZ" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Python,Sublime Text," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="用Sublime Text来编写Python时用到的一些插件和用法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sublime Text 3 Python">
+<meta property="og:url" content="http://www.chenchen.co.uk/2016/05/13/Python_in_Sublime_Text.html">
+<meta property="og:site_name" content="CHEN's Quant Life">
+<meta property="og:description" content="用Sublime Text来编写Python时用到的一些插件和用法。">
+<meta property="og:updated_time" content="2016-06-21T06:28:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sublime Text 3 Python">
+<meta name="twitter:description" content="用Sublime Text来编写Python时用到的一些插件和用法。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6218001015313008000,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://www.chenchen.co.uk/2016/05/13/Python_in_Sublime_Text.html"/>
+
+  <title> Sublime Text 3 Python | CHEN's Quant Life </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-70604530-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?93e110d5533ac11f504999197e914603";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">CHEN's Quant Life</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Sublime Text 3 Python
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-13T00:00:00+08:00" content="2016-05-13">
+              2016-05-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/计算机相关/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机相关</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/13/Python_in_Sublime_Text.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/13/Python_in_Sublime_Text.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/05/13/Python_in_Sublime_Text.html" class="leancloud_visitors" data-flag-title="Sublime Text 3 Python">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>用Sublime Text来编写Python时用到的一些插件和用法。</p>
+<a id="more"></a>
+<h3 id="SublimeREPL"><a href="#SublimeREPL" class="headerlink" title="SublimeREPL"></a>SublimeREPL</h3><p>通过这个插件就可以在Sublime中直接运行python代码了。要运行的时候选Tools-&gt;SublimeREPL-&gt;Python就可以看到了。<br>每次都要点不方便，可以在Sublime中通过Preferences-&gt;Key Bindings - User设置快捷键</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    //SublimeREPL</span><br><span class="line">    &#123;<span class="attr">"keys"</span>:[<span class="string">"f5"</span>],  </span><br><span class="line">    <span class="attr">"caption"</span>: <span class="string">"SublimeREPL: Python - RUN current file"</span>,  </span><br><span class="line">    <span class="attr">"command"</span>: <span class="string">"run_existing_window_command"</span>,  </span><br><span class="line">    <span class="attr">"args"</span>:  </span><br><span class="line">    &#123;  </span><br><span class="line">        <span class="attr">"id"</span>: <span class="string">"repl_python_run"</span>,  </span><br><span class="line">        <span class="attr">"file"</span>: <span class="string">"config/Python/Main.sublime-menu"</span>  </span><br><span class="line">    &#125;&#125;,  </span><br><span class="line">    &#123;<span class="attr">"keys"</span>:[<span class="string">"f4"</span>],  </span><br><span class="line">     <span class="attr">"caption"</span>: <span class="string">"SublimeREPL: Python - IPython"</span>,  </span><br><span class="line">     <span class="attr">"command"</span>: <span class="string">"run_existing_window_command"</span>, <span class="attr">"args"</span>:  </span><br><span class="line">     &#123;  </span><br><span class="line">         <span class="attr">"id"</span>: <span class="string">"repl_python_ipython"</span>,  </span><br><span class="line">         <span class="attr">"file"</span>: <span class="string">"config/Python/Main.sublime-menu"</span>  </span><br><span class="line">     &#125;&#125;  ,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>我喜欢用Ipython，可以选择运行单行或者一段代码，在开发的时候会方便很多。快捷键是ctrl加逗号，再按s、l、f、b。</p>
+<ul>
+<li>ctrl + , , s 运行选中部分</li>
+<li>ctrl + , , l 运行单行</li>
+<li>ctrl + , , f 运行文件</li>
+<li>ctrl + , , b 运行block</li>
+</ul>
+<h3 id="SublimeCodeIntel-插件"><a href="#SublimeCodeIntel-插件" class="headerlink" title="SublimeCodeIntel 插件"></a>SublimeCodeIntel 插件</h3><p>智能提示插件，据说这个插件的智能提示功能非常强大，可以自定义提示的内容库。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&quot;Python&quot;: &#123;</span><br><span class="line">        &quot;python&quot;:&quot;D:/Python34python.exe&quot;,</span><br><span class="line">        &quot;pythonExtraPaths&quot;:</span><br><span class="line">            [</span><br><span class="line">                &quot;D:/Python34&quot;,</span><br><span class="line">                 &quot;D:/Python34/DLLs&quot;,</span><br><span class="line">                 &quot;D:/Python34/Lib&quot;,</span><br><span class="line">                 &quot;D:/Python34/Lib/lib-tk&quot;,</span><br><span class="line">                 &quot;D:/Python34/Lib/site-packages&quot;</span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<p>可能需要另外设置才能流畅使用，我暂时没有使用。</p>
+<h3 id="Python-PEP8-Autoformat-插件"><a href="#Python-PEP8-Autoformat-插件" class="headerlink" title="Python PEP8 Autoformat 插件"></a>Python PEP8 Autoformat 插件</h3><p>这是用来按PEP8自动格式化代码的。快捷键 CTRL+SHIFT+R 自动格式化python代码</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    "auto_complete": false,</span><br><span class="line">    "caret_style": "solid",</span><br><span class="line">    "ensure_newline_at_eof_on_save": true,</span><br><span class="line">    "find_selected_text": true,</span><br><span class="line">    "font_size": 11.0,</span><br><span class="line">    "highlight_modified_tabs": true,</span><br><span class="line">    "line_padding_bottom": 0,</span><br><span class="line">    "line_padding_top": 0,</span><br><span class="line">    "scroll_past_end": false,</span><br><span class="line">    "show_minimap": false,</span><br><span class="line">    "tab_size": 4,</span><br><span class="line">    "translate_tabs_to_spaces": true,</span><br><span class="line">    "trim_trailing_white_space_on_save": true,</span><br><span class="line">    "wide_caret": true,</span><br><span class="line">    "word_wrap": true,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>之前一直使用这个插件，Anaconda中也带了类似的功能。</p>
+<h3 id="Anaconda"><a href="#Anaconda" class="headerlink" title="Anaconda"></a>Anaconda</h3><p>这个Anaconda不是那个python的集成科学计算库，而是sublime的一个插件。是一款非常强大的python自动补全和语法提示插件，实现了不少IDE的功能。很多功能都可以直接通过右键的Anaconda选项下打开。</p>
+<h4 id="让Anaconda以dot为命令补全触发器"><a href="#让Anaconda以dot为命令补全触发器" class="headerlink" title="让Anaconda以dot为命令补全触发器"></a>让Anaconda以dot为命令补全触发器</h4><p>需要在用户自定义设置中添加一句话：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    "auto_complete_triggers": [&#123;"selector": "source.python - string - comment</span><br><span class="line">    - constant.numeric", "characters": "."&#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个用户自定义设置有两个选择，你可以直接在Preferences - Settings - User里面添加这么一句，也可以在Preferences - Browse Packages…打开的文件夹里面新建一个叫做Python.sublime-settings的文件，并把上面的语句添加在里面。</p>
+<h4 id="让回车不再输错代码"><a href="#让回车不再输错代码" class="headerlink" title="让回车不再输错代码"></a>让回车不再输错代码</h4><p>sublime在代码补全的时候默认会用tab和enter作为确认的按键，所以经常误输入一些东西（特别是添加了以dot作为命令补全的触发器之后），那么就得让enter不再作为代码补全的确认按键。</p>
+<p>方法也很简单，首先在用户自定义设置（Preferences - Settings-User）里面添加一个配置：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"auto_complete_commit_on_tab": true,</span><br></pre></td></tr></table></figure>
+<p>然后在Preferences - KeyBindings-User中添加如下配置：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123; "keys": ["enter"], "context":</span><br><span class="line">    [</span><br><span class="line">        &#123; "key": "setting.auto_complete_commit_on_tab", "operand": true &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>其实大家可以看到Preferences - KeyBindings-Default里面有这么一段，但是这个Default文件是无法更改的，所以就要放到User里面去。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123; "keys": ["enter"], "command": "commit_completion", "context":</span><br><span class="line">        [</span><br><span class="line">            &#123; "key": "auto_complete_visible" &#125;,</span><br><span class="line">            &#123; "key": "setting.auto_complete_commit_on_tab", "operand": false &#125;</span><br><span class="line">        ]</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h4 id="PEP8自动格式化宏"><a href="#PEP8自动格式化宏" class="headerlink" title="PEP8自动格式化宏"></a>PEP8自动格式化宏</h4><p>打开录制宏（Tools - Record Macro）之后，做两部操作，第一步全选（快捷键Ctrl + A），第二步PEP8格式化（默认快捷键Ctrl + Alt + R），然后结束录制宏（Tools - Stop Record Macro），并且把宏存储为一个文件PEE8Format.sublime-macro，然后绑定一个快捷键到这个宏文件上。在KeyBindings-User里面添加：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"keys"</span>: [<span class="string">"f1"</span>],</span><br><span class="line">    <span class="attr">"command"</span>: <span class="string">"run_macro_file"</span>, </span><br><span class="line">    <span class="attr">"args"</span>:&#123;<span class="attr">"file"</span>: <span class="string">"Packages/User/PEE8Format.sublime-macro"</span>&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>另外，由于PEP8规定缩进是以4个空格为单位的，虽然tab运行起来没错，但是Anaconda会提醒你不符合PEP8标准，所以还是把tab直接替换为4个空格吧。我们需要在Setting-User里面添加两句话，含义显而易见的两句话。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">"tab_size": 4,</span><br><span class="line">"translate_tabs_to_spaces": true</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag">#Python</a>
+          
+            <a href="/tags/Sublime-Text/" rel="tag">#Sublime Text</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/09/Concert_exit.html" rel="next" title="音乐会着火逃命的故事">
+                <i class="fa fa-chevron-left"></i> 音乐会着火逃命的故事
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/22/Python_notes_data_trypes..html" rel="prev" title="Python笔记：Data Types">
+                Python笔记：Data Types <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/05/13/Python_in_Sublime_Text.html"
+     data-title="Sublime Text 3 Python"
+     data-content=""
+     data-url="http://www.chenchen.co.uk/2016/05/13/Python_in_Sublime_Text.html">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/05/13/Python_in_Sublime_Text.html"
+           data-title="Sublime Text 3 Python" data-url="http://www.chenchen.co.uk/2016/05/13/Python_in_Sublime_Text.html">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/assets/images/avatar.jpg"
+               alt="CHEN CHEN" />
+          <p class="site-author-name" itemprop="name">CHEN CHEN</p>
+          <p class="site-description motion-element" itemprop="description">Geeky Quant Trader</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">39</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/chester890222" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/chester890222" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/chester890222" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#SublimeREPL"><span class="nav-text">SublimeREPL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SublimeCodeIntel-插件"><span class="nav-text">SublimeCodeIntel 插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python-PEP8-Autoformat-插件"><span class="nav-text">Python PEP8 Autoformat 插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Anaconda"><span class="nav-text">Anaconda</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#让Anaconda以dot为命令补全触发器"><span class="nav-text">让Anaconda以dot为命令补全触发器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#让回车不再输错代码"><span class="nav-text">让回车不再输错代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#PEP8自动格式化宏"><span class="nav-text">PEP8自动格式化宏</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CHEN CHEN</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a> 
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+    NexT.Mist
+  </a>
+</div>
+
+        
+  <div class="busuanzi-count">
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    
+      <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+    
+
+    
+      <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+    
+  </div>
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"chester890222"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+
+  
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("xxK4eciDKJiCkCWyNGfb5Mtc-gzGzoHsz", "gyeRtApNcGtRbNa3OKh9XueX");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

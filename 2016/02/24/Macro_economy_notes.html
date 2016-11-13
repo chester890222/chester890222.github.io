@@ -1,0 +1,1019 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="O46hFL8z727ZiTwaDvXapjZwdWcO1eQGX05XFEpZH7k" />
+
+
+
+
+  <meta name="baidu-site-verification" content="lYyc7oZNSZ" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="宏观," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="不论做的是量化交易还是基本面分析，宏观经济对金融市场的意义是至关重要的。尤其是在固收类、利率类资产的交易中，抛开宏观做交易是不可能的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习笔记：宏观经济">
+<meta property="og:url" content="http://www.chenchen.co.uk/2016/02/24/Macro_economy_notes.html">
+<meta property="og:site_name" content="CHEN's Quant Life">
+<meta property="og:description" content="不论做的是量化交易还是基本面分析，宏观经济对金融市场的意义是至关重要的。尤其是在固收类、利率类资产的交易中，抛开宏观做交易是不可能的。">
+<meta property="og:updated_time" content="2016-06-21T06:32:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学习笔记：宏观经济">
+<meta name="twitter:description" content="不论做的是量化交易还是基本面分析，宏观经济对金融市场的意义是至关重要的。尤其是在固收类、利率类资产的交易中，抛开宏观做交易是不可能的。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6218001015313008000,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://www.chenchen.co.uk/2016/02/24/Macro_economy_notes.html"/>
+
+  <title> 学习笔记：宏观经济 | CHEN's Quant Life </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-70604530-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?93e110d5533ac11f504999197e914603";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">CHEN's Quant Life</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                学习笔记：宏观经济
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-24T00:00:00+08:00" content="2016-02-24">
+              2016-02-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/金融笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">金融笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/24/Macro_economy_notes.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/24/Macro_economy_notes.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/02/24/Macro_economy_notes.html" class="leancloud_visitors" data-flag-title="学习笔记：宏观经济">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>不论做的是量化交易还是基本面分析，宏观经济对金融市场的意义是至关重要的。尤其是在固收类、利率类资产的交易中，抛开宏观做交易是不可能的。</p>
+<a id="more"></a>
+<p><a href="http://mp.weixin.qq.com/s?__biz=MjM5MjExOTMyNQ==&amp;mid=206687018&amp;idx=1&amp;sn=a9ca56e21ed7aa74b32cc23be36df613&amp;scene=1&amp;key=0acd51d81cb052bcf076f0eb793df8ebb9aef454e6b31aee10edf9462c26a29f1383ebab6b1eb7d0c3d0bb935a9d65e8&amp;ascene=1&amp;uin=MTE0MzQwOTY2MA==&amp;devicetype=Windows+7&amp;version=61020019&amp;pass_ticket=9oOQway/uumPSzzR8+hrASOQrLmnlkGJK9XkL1tliQq3ppfHNeZlYcRSVs5nPAMU" title="http://mp.weixin.qq.com/s?__biz=MjM5MjExOTMyNQ==&amp;mid=206687018&amp;idx=1&amp;sn=a9ca56e21ed7aa74b32cc23be36df613&amp;scene=1&amp;key=0acd51d81cb052bcf076f0eb793df8ebb9aef454e6b31aee10edf9462c26a29f1383ebab6b1eb7d0c3d0bb935a9d65e8&amp;ascene=1&amp;uin=MTE0MzQwOTY2MA==&amp;devicetype=Windows+7&amp;version=61020019&amp;pass_ticket=9oOQway/uumPSzzR8+hrASOQrLmnlkGJK9XkL1tliQq3ppfHNeZlYcRSVs5nPAMU" target="_blank" rel="external">原文</a>是光大证券徐高对宏观经济数据分析的介绍。</p>
+<h2 id="中国实体经济指标"><a href="#中国实体经济指标" class="headerlink" title="中国实体经济指标"></a>中国实体经济指标</h2><h3 id="国内生产总值-GDP"><a href="#国内生产总值-GDP" class="headerlink" title="国内生产总值 GDP"></a>国内生产总值 GDP</h3><p>统计局定义：<strong>按市场价格计算的一个国家（或地区）所有常住单位在一定时期内生产的最终成果。</strong>国内生产总值有三种表现形态，对应三种GDP计算方法。</p>
+<table>
+<thead>
+<tr>
+<th>GDP统计方法</th>
+<th>衡量方面</th>
+<th>表现形态</th>
+<th>定义</th>
+<th>计算方法</th>
+<th>大类子项</th>
+<th>频率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>生产法</td>
+<td>产出</td>
+<td>价值形态</td>
+<td>所有常住单位在一定时期内生产的全部货物和服务价值与同期投入的全部非固定资产货物和服务价值的差额，即所有常住单位的增加值之和</td>
+<td>总产品-中间投入</td>
+<td>三大产业以及各细分行业</td>
+<td>季度</td>
+</tr>
+<tr>
+<td>支出法</td>
+<td>需求</td>
+<td>产品形态</td>
+<td>所有常住单位再一定时期内创造并分配给常住单位和非常住单位的初次收入之和</td>
+<td>最终消费+资本形成总额+出口-进口</td>
+<td>消费、投资、净出口</td>
+<td>对GDP增长拉动为季度，其余年度</td>
+</tr>
+<tr>
+<td>收入法</td>
+<td>收入</td>
+<td>收入形态</td>
+<td>所有常住单位在一定时期内最终使用的货物和服务价值与货物和服务净出口价格之和</td>
+<td>劳动者报酬+生产税净额+固定资产折旧+企业盈余</td>
+<td>劳动者报酬、生产税净额、企业盈余、固定资产折旧</td>
+<td>年度</td>
+</tr>
+</tbody>
+</table>
+<h3 id="生产面"><a href="#生产面" class="headerlink" title="生产面"></a>生产面</h3><h4 id="生产法GDP"><a href="#生产法GDP" class="headerlink" title="生产法GDP"></a>生产法GDP</h4><p>从产出的角度衡量经济总量。按季度公布生产法GDP数据，公布指标包括GDP名义总量，实际增速以及分行业累计名义总量和实际增速。季度GDP公布行业包括三大产业，以及工业、建筑业、批发零售、交运、住宿餐饮、金融、房地产等部分子行业的累计名义总量和实际增速数据。</p>
+<p>从生产角度看工业行业是我国经济主要行业，而房地产行业虽然在GDP中占比不高，但由于其为最终需求行业，决定上游产业链，包括建筑业以及部分工业行业的需求，所以房地产市场变化对我国经济依然至关重要。</p>
+<h4 id="工业增加值"><a href="#工业增加值" class="headerlink" title="工业增加值"></a>工业增加值</h4><p>目前我国第二产业在经济中权重较高，同时第二产业自身增速波动较大，所以对短期经济增速的影响最显著。可以通过跟踪工业增加值等更高频的月度工业数据，来判断经济走势。</p>
+<p><strong>工业增加值是工业企业全部生产活动总成果扣除生产过程中消耗或转移的物质产品和劳务价值后的余额，对应工业行业的生产法GDP。</strong>需要注意，统计局公布的月度工业增加值覆盖范围为规模以上企业，并非全部企业。2007至2010年，规模以上工业企业为年主营业务收入500万以上企业，2011年开始，这一标准上调为2000万元。统计局结合经济普查数据和规模以上工业企业增加值估计全部工业行业增加值，即工业行业GDP，一般来看，规模以上工业行业增加值同比增速高于全部工业GDP增速，但趋势一致。由于工业在经济中的重要地位，工业增加值对短期经济波动具有显著的先导意义，这也是长期以来通过观察月度工业增加值数据判断经济走势的主要原因。</p>
+<p>统计局现行公布的数据包括工业增加值同比、环比增长，分行业包括采矿业、制造业、电力、燃气及水的生产和供应业。另外还有按工业产品用途划分的数据，即出口交货值（工业企业由外贸部门收购的或交给出口代理商出口的用人民币结算的产品价值）。<em>出口交货值与实际出口有很高的相关性。</em></p>
+<h4 id="采购经理人指数-PMI"><a href="#采购经理人指数-PMI" class="headerlink" title="采购经理人指数 PMI"></a>采购经理人指数 PMI</h4><p><strong>采购经理人指数是根据被调查者（采购经理人）对不同方面经济前景的看法，综合计算的扩散指数。</strong>采购经理人指数统计方法为通过询问样本企业采购经理人对生产、订单、库存、雇员、配送时间等看法，以上升、持平、下降分别赋予三类数值，再按各项目权重进行加总得到总体PMI。</p>
+<p>反应预期的PMI是生产面重要的先导指标，本身是基于对未来看法综合的扩散指数，大于50显示经济处于扩张状态，小于50显示经济处于收缩状态。</p>
+<p>中国物流与采购联合会与统计局从2005年开始共同发布<strong>中国制造业PMI数据（中采PMI）</strong>，每月1日公布上月数据。中国PMI的另一来源是<strong>财新中国PMI</strong>（原名“汇丰中国PMI”），在下月初前一周公布当月PMI预览值，然后在下月1日左右公布当月PMI终值。<em>与中采PMI相比，财新PMI调查样本更为偏向中小企业。</em></p>
+<p>PMI分项指数各实体经济指标具有重要的先导意义。其中新订单指数反映需求面情况，是PMI子项中的领先指标，新出口订单是外需的先导指标，通过新订单与新出口订单指数之差可以估算国内订单指数变化情况。在库存指数方面，原材料库存指数反应企业主动调整库存意愿，上升显示对经济看法改善，指示意义比产成品库存指数更为重要，因为产成品库存指数反应被动调整库存意愿，上升反应对需求前景预期恶化导致库存上升。使用原材料库存与产成品库存指数差是更为有效的主动补库存先导指标。此指标往往与进口呈现较高的相关关系。另外需要关注的是原材料购进价格指数，该指数对PPI有显著的领先关系（图19），经济疲弱情况下购进价格指数也较低。总体来看，新订单与出口订单指数反映需求面，原材料库存与产成品库存指数反映厂商对生产的信心，而购进价格反映物价。另外，周期关系不明显的雇员指数，反映厂商用工意愿，是劳动力市场指标（图20）。</p>
+<h4 id="其他生产面指标"><a href="#其他生产面指标" class="headerlink" title="其他生产面指标"></a>其他生产面指标</h4><p>月度行业指标包括发电量、钢产量、水泥产量、汽车产量等。发电量由于与工业增加值具有高度相关关系，同时具有如日度六大发电集团耗煤量，以及日度发电量等更为高频的数据，所以被用来在更高频率上观察经济运行。水泥由于保存期限短，可以剔除库存变化影响，一度用水泥产量来判断需求面发生的变化。而钢产量、汽车产量等则从不同行业观察经济运行。部分行业高频产能利用率数据也可以观察短期经济运行状况，如钢铁、平板玻璃、PTA等。</p>
+<h3 id="需求面"><a href="#需求面" class="headerlink" title="需求面"></a>需求面</h3><h4 id="支出法GDP"><a href="#支出法GDP" class="headerlink" title="支出法GDP"></a>支出法GDP</h4><p>从需求面观察经济运行的总量指标。支出法GDP及子项名义值数据<strong>按年公布</strong>，通过次年的《中国统计年鉴》发布，但并不公布支出法GDP实际同比增速数据。而支出法三大子项消费、投资和贸易顺差对GDP增长的贡献率按季度公布，同时公布各项贡献率乘以<strong>生产法GDP同比增速</strong>得到的对GDP增速的拉动数。</p>
+<p>从支出法GDP的结构可以看出，国内经济对投资有很高的依赖性，消费增速相对稳定，对经济增速波动影响有限。</p>
+<h4 id="固定资产投资"><a href="#固定资产投资" class="headerlink" title="固定资产投资"></a>固定资产投资</h4><p>固定资产投资是统计局<em>按月</em>公布的投资面数据，相对按年度公布的GDP投资子项更为高频，其中1月和2月合并公布。固定资产投资内容包括城镇建设项目投资、农村非农户建设项目投资和国防、人防建设项目投资。覆盖范围包括计划总投资某一限额以上的建设项目投资和房地产开发投资，该限额2011年之前为50万元，2011年之后提高至500万元。受统计资料与统计能力限制，统计局公布固定资产投资月度累计名义值和月度累计同比数据，并未公布当月同比增速数据。统计局同时公布固定资产投资资金来源数据，这是分析固定资产投资获得资金情况的依据，对判断未来投资走势非常重要。</p>
+<p>从行业分布看，固定资产投资主要包括制造业、基础设施建设和房地产三大行业。</p>
+<ul>
+<li>制造业投资属于<em>生产性</em>投资，投资需求取决于下游行业需求变化。制造业投资波动相对较小，出口对制造业投资具有较为明显的拉动作用。</li>
+<li>基础设施和房地产投资属于<em>消费性</em>投资，是最终需求行业，投资需求由自身需求决定。基础设施投资多由政府主导，投资增速也呈现出明显的逆周期性，政府对基建投资拥有很强的控制力，基础设施投资经常作为政府稳增长的工具。</li>
+<li>房地产的资本属性使得以往货币扩张形成房地产市场泡沫，导致政府不断对房地产行业进行调控，包括对房地产投资的管控，房地产投资除受自身需求周期变动影响之外，很大程度上还受制于政策调控节奏。</li>
+</ul>
+<blockquote>
+<p>注意：固定投资和GDP中的资本形成高度相关，但并不相同。</p>
+</blockquote>
+<p><strong>固定资产投资资金来源</strong>指标是固定资产投资的先行指标。<br>主要分为以下几类：</p>
+<ul>
+<li>国家预算内资金</li>
+<li>国内贷款</li>
+<li>债券</li>
+<li>利用外资</li>
+<li>外商直接投资</li>
+<li>自筹资金</li>
+<li>企事业单位自有资金</li>
+<li>发行股票</li>
+<li>其他资金</li>
+</ul>
+<h4 id="货物进出口"><a href="#货物进出口" class="headerlink" title="货物进出口"></a>货物进出口</h4><p>海关发布的<em>月度</em>货物贸易系列数据是判断外贸走势的主要指标。其中出口增速主要体现外需的走势，进口则主要由国内需求决定。汇率变动同时影响进口与出口。我国对发达国家出口以最终消费品为主，而对新兴市场国家出口以中间加工品为主，新兴市场国家产生的最终需求有限。从贸易方式看，一般贸易主要由我国内需决定，而加工贸易由于需求在外，所以贸易量主要由外需决定。</p>
+<blockquote>
+<p>注意：海关的进出口数据与GDP中的净出口也存在差异。</p>
+</blockquote>
+<h4 id="社会零售总额"><a href="#社会零售总额" class="headerlink" title="社会零售总额"></a>社会零售总额</h4><p>月度观察消费变化指标包括<strong>社会零售总额</strong>和<strong>消费者信心指数</strong>等。社会零售总额统计范围为企业（单位）通过交易售给个人、社会集团非生产、非经营用的食物商品金额，以及提供餐饮服务所取得的收入金额。</p>
+<blockquote>
+<p>社会零售总额与GDP中居民消费并不相同，是居民消费的相近指标。2010年以来，社会零售额同比增速从上年末到下年初屡次出现较大的跌落，怀疑可能与统计误差调整有关。社会零售总额仅可以作为判断消费走势的参考。</p>
+</blockquote>
+<p>消费者信心指数是消费的先导指标，在2011年之前与消费有较为一致的相关关系，但2011年之后波动大幅加剧，已不再具有先导意义。</p>
+<h3 id="收入面"><a href="#收入面" class="headerlink" title="收入面"></a>收入面</h3><h4 id="收入法GDP"><a href="#收入法GDP" class="headerlink" title="收入法GDP"></a>收入法GDP</h4><p>从收入面观察经济的总量指标，但实际是各类GDP指标中公布时间最为滞后，质量最差的。来源包括次年统计年鉴公布的分省收入法GDP（加总得到全国收入法GDP）。另一个来源是投入产出表，逢年末数字为0、2、5、7年份编制的投入产出表提供全国收入法GDP数据，但公布时间较为滞后，一般在两年以上。两个来源得到的全国收入法GDP相差很大。其中劳动者报酬和企业盈余是收入法GDP的主要组成部分。由于统计滞后、数据准确性等问题，对短期宏观意义不大。</p>
+<h4 id="工业企业利润"><a href="#工业企业利润" class="headerlink" title="工业企业利润"></a>工业企业利润</h4><p>规模以上工业企业是我国比较成熟的统计样本，在企业盈余层面工业企业利润数据提供了月度的跟踪指标。工业企业利润数据由统计局通过工业企业统计报表制度搜集，涵盖主营业务2000万以上的工业企业，<em>按月</em>公布国民经济分类两位数行业的经济效益指标，具体包括主营业务收入、利润总额、资产总额、负债总额、利润率等。由于工业企业利润数据对上市工业企业利润具有先导作用，所以工业企业利润与证券投资关系密切。</p>
+<h4 id="劳动力指标"><a href="#劳动力指标" class="headerlink" title="劳动力指标"></a>劳动力指标</h4><p>我国劳动市场数据质量较差，现有数据包括统计局<em>按季</em>发布的城镇单位就业人员数量及工资数据，以及人社保部按季发布的城市劳动力市场供求比例数据。城镇单位就业人员工资与就业数据较为滞后，一般在当季后三个月左右公布。人社保部发布的求人倍率数据是指职位空缺数与求职人数之比，反映劳动力市场整体供需状况，公布时间同样滞后一个季度左右。近年来该指标持续攀升，显示劳动力城镇劳动力市场供求关系持续趋紧。求人倍率指标并不全面，判断整体劳动力市场状况需要综合其他指标情况。</p>
+<h4 id="政府财政指标"><a href="#政府财政指标" class="headerlink" title="政府财政指标"></a>政府财政指标</h4><p>除劳动与资本之外，另一大收入获得方为政府，而财政收支数据是观测政府收支的主要依据。财政收支数据由财政部<em>按月</em>发布，数据质量好，其中财政盈余（赤字）的变化表现出财政政策立场，如果赤字扩大，则反映政府采取积极的财政政策，反之则是紧缩的政策。广义的财政应该包括政府基金收支，主要为土地出让金收支。土地出让收入对地方政府财力具有至关重要作用。</p>
+<p>财政存款数据相比财政收支数据更精确的反映了财政状况。《财政总预算会计制度》规定“总预算会计核算以收付实现制为基础”，也就是说，财政部每月公布的收支数据即当期实际发生的财政收入和支出现金数额，这与“权责发生制”有所不同。而预算内财政收入以及政府基金收入等需要上交国库，形成财政存款，并采取收支两条线制度，所以财政盈余的变化应该与财政存款变动一致。然而由于个别事项可以按照权责发生制计入财政收支项目，包括中央向预算稳定调节基金调入资金，以及地方政府年终结转资金等。这些项目并未产生实际支出，但却以权责发生制计入当期财政支出，导致财政赤字和财政存款出现差异。因此，财政存款数据比财政收支数据更精确的反映了财政状况。另外，国债与地方债发行收入计入财政存款，但不影响当期财政赤字，这也会导致财政存款与财政赤字出现差异。</p>
+<h2 id="物价指标"><a href="#物价指标" class="headerlink" title="物价指标"></a>物价指标</h2><p>价格变动反应供求相对情况并形成调节达到平衡，不同资产间的相对价格调节促进各行业间的供需以及资源的配置。宏观经济关注总量指标，价格方面为反应总供给和总需求间相对变化的一般物价。</p>
+<h3 id="消费价格指数-CPI"><a href="#消费价格指数-CPI" class="headerlink" title="消费价格指数 CPI"></a>消费价格指数 CPI</h3><p>CPI是反映一定时期内城乡居民所购买的生活消费品价格和服务项目价格变动趋势和程度，是衡量一般物价最为重要、最受市场关注的指标。CPI由统计局<em>按月</em>公布，同时公布一系列分项数据。CPI的篮子构成由统计局根据消费结构变化而调整分项权重，目前分为8大类，主要包括：</p>
+<ul>
+<li>食品烟酒</li>
+<li>衣着</li>
+<li>居住</li>
+<li>生活用品及服务</li>
+<li>医疗保健</li>
+<li>交通通讯</li>
+<li>娱乐教育</li>
+<li>其他用品</li>
+</ul>
+<p>CPI作为衡量通胀和物价的指标对债券市场利率影响重大。我国CPI同比与利率走势高度正相关。新兴国家如中国的相关性更高，发达国家相对较低。</p>
+<p>按照生产链传递理论，通胀可以分为：</p>
+<ul>
+<li>成本推动型：中上游产品价格PPI率先上涨，通过生产链将成本压力向下游的流通环节转移，推动CPI上行。</li>
+<li>需求拉动型：终端消费价格CPI率先上涨，拉动PPI上涨。</li>
+</ul>
+<p>影响通胀的主要因素包括：</p>
+<ul>
+<li>猪肉价格：历史来看春节前后达到高点</li>
+<li>蔬菜价格：冬季寒潮、天气因素可能导致蔬菜价格上涨、或者供应充足</li>
+<li>结构性商品，如地产房价：房价上涨本身在通胀因素中占比较高，同时房价快速上涨促进房地产开发等一系列经济加速。</li>
+<li>大宗商品：对于中国这样的能源进口国家，大宗商品价格持续下跌，会造成输入性通缩压力。反之会形成通胀压力。</li>
+</ul>
+<h3 id="工业生产者出厂价格指数-PPI"><a href="#工业生产者出厂价格指数-PPI" class="headerlink" title="工业生产者出厂价格指数 PPI"></a>工业生产者出厂价格指数 PPI</h3><p>PPI是反映一定时期内全部工业产品出厂价格总水平的变动趋势和程度的相对数，包括工业企业售给本企业以外所有单位的各种产品和直接售给居民用于生活消费的产品。</p>
+<p>按大类来分，可以分为：</p>
+<ul>
+<li>生产资料价格（75%）<ul>
+<li>采掘工业</li>
+<li>原材料工业</li>
+<li>加工工业</li>
+</ul>
+</li>
+<li>生活资料价格（25%）<ul>
+<li>食品</li>
+<li>衣着</li>
+<li>一般日用品</li>
+<li>耐用消费品</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>按历史规律，原油价格的企稳通常领先原油开采等PPI1个月。</p>
+</blockquote>
+<p>CPI与PPI差不断扩大，对不同的企业利润变化不同：</p>
+<ul>
+<li>中上游企业：PPI是收入的概念，PPI下降使企业利润下降</li>
+<li>下游消费企业：PPI下降使生产成本下降，同时销售端价格整体保持不变（假设CPI稳定），企业利润可能有所改善。</li>
+</ul>
+<h3 id="M2"><a href="#M2" class="headerlink" title="M2"></a>M2</h3><p>中投证券：</p>
+<ul>
+<li>M2领先CPI 12-15个月</li>
+<li>M2领先工业增加值增速3-6个月</li>
+</ul>
+<h3 id="经济增长的先行指标"><a href="#经济增长的先行指标" class="headerlink" title="经济增长的先行指标"></a>经济增长的先行指标</h3><ol>
+<li>PMI指数回升</li>
+<li>发电量同比回升</li>
+<li>货币供应量M1、M2回升</li>
+<li>信贷增速回升</li>
+<li>国内钢材市场量价回升</li>
+<li>水泥价格</li>
+<li>工业增加值同比增速回升</li>
+<li>汽车销售回升</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/宏观/" rel="tag">#宏观</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/02/22/Macro_Economy_Data_Basics_1.html" rel="next" title="宏观经济数据分析基本概念">
+                <i class="fa fa-chevron-left"></i> 宏观经济数据分析基本概念
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/17/Gold_market_China.html" rel="prev" title="黄金交易市场比较">
+                黄金交易市场比较 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/02/24/Macro_economy_notes.html"
+     data-title="学习笔记：宏观经济"
+     data-content=""
+     data-url="http://www.chenchen.co.uk/2016/02/24/Macro_economy_notes.html">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/02/24/Macro_economy_notes.html"
+           data-title="学习笔记：宏观经济" data-url="http://www.chenchen.co.uk/2016/02/24/Macro_economy_notes.html">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/assets/images/avatar.jpg"
+               alt="CHEN CHEN" />
+          <p class="site-author-name" itemprop="name">CHEN CHEN</p>
+          <p class="site-description motion-element" itemprop="description">Geeky Quant Trader</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">39</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/chester890222" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/chester890222" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/chester890222" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#中国实体经济指标"><span class="nav-text">中国实体经济指标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#国内生产总值-GDP"><span class="nav-text">国内生产总值 GDP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生产面"><span class="nav-text">生产面</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#生产法GDP"><span class="nav-text">生产法GDP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#工业增加值"><span class="nav-text">工业增加值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#采购经理人指数-PMI"><span class="nav-text">采购经理人指数 PMI</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他生产面指标"><span class="nav-text">其他生产面指标</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#需求面"><span class="nav-text">需求面</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#支出法GDP"><span class="nav-text">支出法GDP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#固定资产投资"><span class="nav-text">固定资产投资</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#货物进出口"><span class="nav-text">货物进出口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#社会零售总额"><span class="nav-text">社会零售总额</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收入面"><span class="nav-text">收入面</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#收入法GDP"><span class="nav-text">收入法GDP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#工业企业利润"><span class="nav-text">工业企业利润</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#劳动力指标"><span class="nav-text">劳动力指标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#政府财政指标"><span class="nav-text">政府财政指标</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#物价指标"><span class="nav-text">物价指标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#消费价格指数-CPI"><span class="nav-text">消费价格指数 CPI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工业生产者出厂价格指数-PPI"><span class="nav-text">工业生产者出厂价格指数 PPI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#M2"><span class="nav-text">M2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#经济增长的先行指标"><span class="nav-text">经济增长的先行指标</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CHEN CHEN</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a> 
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+    NexT.Mist
+  </a>
+</div>
+
+        
+  <div class="busuanzi-count">
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    
+      <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+    
+
+    
+      <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+    
+  </div>
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"chester890222"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+
+  
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("xxK4eciDKJiCkCWyNGfb5Mtc-gzGzoHsz", "gyeRtApNcGtRbNa3OKh9XueX");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

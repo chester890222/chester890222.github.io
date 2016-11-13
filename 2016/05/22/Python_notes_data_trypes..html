@@ -1,0 +1,987 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="O46hFL8z727ZiTwaDvXapjZwdWcO1eQGX05XFEpZH7k" />
+
+
+
+
+  <meta name="baidu-site-verification" content="lYyc7oZNSZ" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Python," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Python中常用的数据类型">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python笔记：Data Types">
+<meta property="og:url" content="http://www.chenchen.co.uk/2016/05/22/Python_notes_data_trypes..html">
+<meta property="og:site_name" content="CHEN's Quant Life">
+<meta property="og:description" content="Python中常用的数据类型">
+<meta property="og:updated_time" content="2016-06-21T06:29:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python笔记：Data Types">
+<meta name="twitter:description" content="Python中常用的数据类型">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6218001015313008000,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://www.chenchen.co.uk/2016/05/22/Python_notes_data_trypes..html"/>
+
+  <title> Python笔记：Data Types | CHEN's Quant Life </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-70604530-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?93e110d5533ac11f504999197e914603";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">CHEN's Quant Life</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Python笔记：Data Types
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-22T00:00:00+08:00" content="2016-05-22">
+              2016-05-22
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/22/Python_notes_data_trypes..html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/22/Python_notes_data_trypes..html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/05/22/Python_notes_data_trypes..html" class="leancloud_visitors" data-flag-title="Python笔记：Data Types">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Python中常用的数据类型<br><a id="more"></a></p>
+<h2 id="常用数据类型"><a href="#常用数据类型" class="headerlink" title="常用数据类型"></a>常用数据类型</h2><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int</td>
+<td><code>-100</code></td>
+</tr>
+<tr>
+<td>float</td>
+<td><code>3.1416</code></td>
+</tr>
+<tr>
+<td>long</td>
+<td><code>1000000000000L</code></td>
+</tr>
+<tr>
+<td>bool</td>
+<td><code>True, False</code></td>
+</tr>
+<tr>
+<td>string</td>
+<td><code>&#39;hello&#39;</code></td>
+</tr>
+<tr>
+<td>list</td>
+<td><code>[1, 1.2, &#39;hello&#39;]</code></td>
+</tr>
+<tr>
+<td>tuple</td>
+<td><code>(&#39;ring&#39;, 1000)</code></td>
+</tr>
+<tr>
+<td>set</td>
+<td><code>{1, 2, 3}</code></td>
+</tr>
+<tr>
+<td>dict</td>
+<td><code>{&#39;dogs&#39;: 5, &#39;pigs&#39;: 3}</code></td>
+</tr>
+<tr>
+<td>Numpy array</td>
+<td><code>array([1, 2, 3])</code></td>
+</tr>
+<tr>
+<td>Pandas types</td>
+<td><code>DataFrame, Series</code></td>
+</tr>
+</tbody>
+</table>
+<p>可以用type()来检测任何变量的类型。</p>
+<h3 id="1-Booleans"><a href="#1-Booleans" class="headerlink" title="1. Booleans"></a>1. Booleans</h3><p>True(=1)、False(=0)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="keyword">True</span> + <span class="keyword">True</span> </span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-Numbers"><a href="#2-Numbers" class="headerlink" title="2. Numbers"></a>2. Numbers</h3><p>系统自动检测int、float，也可以通过int()，float()强制转换。<br><code>int()是取整，不是四舍五入！</code></p>
+<p>当整数int超出范围时，Python会自动转换为long int。不过计算速度比int慢，在数字后以字母L结尾。</p>
+<p>float精确到小数点后15位，print时会自动校准。</p>
+<p>Python还支持复数，用j表示imaginary part</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;a = <span class="number">1</span>+<span class="number">2j</span></span><br><span class="line">&gt;&gt;&gt;type(a)</span><br><span class="line">complex</span><br></pre></td></tr></table></figure>
+<h3 id="3-Strings"><a href="#3-Strings" class="headerlink" title="3. Strings"></a>3. Strings</h3><p>‘ ‘和” “都可以定义string，可以做简单的运算。用3个引号’’’   ‘’’定义多行字符串。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;(<span class="string">'ch'</span> + <span class="string">'en'</span>) * <span class="number">2</span></span><br><span class="line"><span class="string">'chenchen'</span></span><br></pre></td></tr></table></figure>
+<p>不能通过索引修改，可以用str.replace(‘from’, ‘to’)修改</p>
+<h3 id="4-Lists"><a href="#4-Lists" class="headerlink" title="4. Lists"></a>4. Lists</h3><p>用[ ]定义列表，也通过list[i]取值，<code>第一个i=0，倒数i=-1</code>。</p>
+<ul>
+<li><p>用[ ]定义列表，也通过list[i]取值，<code>第一个i=0，倒数i=-1</code>。</p>
+</li>
+<li><p>插入新增项</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a_list = [<span class="string">'a'</span>] </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a_list = a_list + [<span class="number">2.0</span>, <span class="number">3</span>]    </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a_list                        </span><br><span class="line">[<span class="string">'a'</span>, <span class="number">2.0</span>, <span class="number">3</span>] </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a_list.append(<span class="keyword">True</span>)           </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a_list </span><br><span class="line">[<span class="string">'a'</span>, <span class="number">2.0</span>, <span class="number">3</span>, <span class="keyword">True</span>] </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a_list.extend([<span class="string">'four'</span>, <span class="string">'Ω'</span>])  </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a_list </span><br><span class="line">[<span class="string">'a'</span>, <span class="number">2.0</span>, <span class="number">3</span>, <span class="keyword">True</span>, <span class="string">'four'</span>, <span class="string">'Ω'</span>] </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a_list.insert(<span class="number">0</span>, <span class="string">'Ω'</span>)         </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a_list </span><br><span class="line">[<span class="string">'Ω'</span>, <span class="string">'a'</span>, <span class="number">2.0</span>, <span class="number">3</span>, <span class="keyword">True</span>, <span class="string">'four'</span>, <span class="string">'Ω'</span>] </span><br><span class="line"><span class="comment">#append和extend有区别,append里的list被当做一个element</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a_list.append([<span class="string">'x'</span>,<span class="string">'y'</span>,<span class="string">'z'</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a_list</span><br><span class="line">[<span class="string">'Ω'</span>, <span class="string">'a'</span>, <span class="number">2.0</span>, <span class="number">3</span>, <span class="keyword">True</span>, <span class="string">'four'</span>, <span class="string">'Ω'</span>, [<span class="string">'x'</span>,<span class="string">'y'</span>,<span class="string">'z'</span>]]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>列表中检索</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a_list = ['a', 'b', 'new', 'mpilgrim', 'new'] </span><br><span class="line">&gt;&gt;&gt; a_list.count('new')       </span><br><span class="line">2 </span><br><span class="line">&gt;&gt;&gt; 'new' in a_list         </span><br><span class="line">True </span><br><span class="line">&gt;&gt;&gt; 'c' in a_list </span><br><span class="line">False </span><br><span class="line">&gt;&gt;&gt; a_list.index('mpilgrim')  </span><br><span class="line">3 </span><br><span class="line">&gt;&gt;&gt; a_list.index('new')       </span><br><span class="line">2</span><br><span class="line">Traceback (innermost last): </span><br><span class="line">  File "&lt;interactive input&gt;", line 1, in ?ValueError: </span><br><span class="line">list.index(x): x not in list</span><br></pre></td></tr></table></figure>
+<h3 id="5-Tuple"><a href="#5-Tuple" class="headerlink" title="5. Tuple"></a>5. Tuple</h3><p>用()定义元组，不可变。</p>
+<h4 id="元组与列表的区别："><a href="#元组与列表的区别：" class="headerlink" title="元组与列表的区别："></a>元组与列表的区别：</h4><ul>
+<li>元组的生成速度快一个数量级</li>
+<li>迭代速度更快</li>
+<li>不可变，更“安全”</li>
+<li>可以通过tuple(alist)或者list(atuple)相互转换。</li>
+</ul>
+<h3 id="6-Dictionaries"><a href="#6-Dictionaries" class="headerlink" title="6. Dictionaries"></a>6. Dictionaries</h3><p>用{}定义字典，通过[‘key’]来查询和插入value。</p>
+<p>通过get(‘key’)来获取value，如果key不存在，返回None， 不报错。</p>
+<p>key-value存储，查找速度极快。</p>
+<ul>
+<li>一个key只能对应一个value</li>
+<li>不存在的key会报错，可用<code>in</code>判断或者get(key)。</li>
+<li>dict内部存放顺序与写入顺序无关！</li>
+</ul>
+<h3 id="7-Sets"><a href="#7-Sets" class="headerlink" title="7. Sets"></a>7. Sets</h3><p>集合是装有独特值的无序“袋子”。可以执行像联合、交集以及集合求差等标准集合运算。</p>
+<ul>
+<li>可以通过set(alist)创建，也可以{1,2,3}定义。但空集合只能用set()，{}表示dict。</li>
+<li>add() 添加单个成员，但如果x已经在set里，则set不变。</li>
+<li>update()只能使用list/set参数，可多个参数同时添加。</li>
+<li>discard()和remove()删除值，如果参数不在set里， discard不操作，remove报错</li>
+<li>a.union(b)返回a、b的并集（a|b)</li>
+<li>a.intersection(b)返回a、b的交集（a&amp;b）</li>
+<li>a.difference(b)返回a中出现、b中没用的（a-b）</li>
+<li>a.symmetric_difference(b)返回只在a或b出现的（a^b)</li>
+<li>a.issubset(b)返回a是不是b的子集(a&lt;=b)</li>
+<li>a.issuperset(b)返回a是不是b的超集</li>
+</ul>
+<h4 id="Frozen-set"><a href="#Frozen-set" class="headerlink" title="Frozen set"></a>Frozen set</h4><p>用frozenset(list)创建，一旦创建就不可以改变。主要用作字典的key。</p>
+<h3 id="8-Enum"><a href="#8-Enum" class="headerlink" title="8. Enum"></a>8. Enum</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> enum <span class="keyword">import</span> Enum</span><br><span class="line"></span><br><span class="line">Month = Enum(<span class="string">'Month'</span>, (<span class="string">'Jan'</span>, <span class="string">'Feb'</span>, <span class="string">'Mar'</span>))</span><br></pre></td></tr></table></figure>
+<h2 id="索引与分片"><a href="#索引与分片" class="headerlink" title="索引与分片"></a>索引与分片</h2><p>通过[]来对有序序列索引，可正向（从0开始）、反向(-1开始)。</p>
+<p>字典是没有顺序的（不按输入顺序排列）。</p>
+<p>分片用法： <code>var[lower:upper:step]</code></p>
+<p>分片的范围包括lower，不包括upper！</p>
+<h2 id="Mutable"><a href="#Mutable" class="headerlink" title="Mutable"></a>Mutable</h2><p>数据类型分类：</p>
+<table>
+<thead>
+<tr>
+<th>可变数据类型</th>
+<th>不可变数据类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>list</code>, <code>dictionary</code>, <code>set</code>, <code>numpy array</code>, <code>user defined objects</code></td>
+<td><code>integer</code>, <code>float</code>, <code>long</code>, <code>complex</code>, <code>string</code>, <code>tuple</code>, <code>frozenset</code></td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag">#Python</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/13/Python_in_Sublime_Text.html" rel="next" title="Sublime Text 3 Python">
+                <i class="fa fa-chevron-left"></i> Sublime Text 3 Python
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/24/Python_notes_basics.html" rel="prev" title="Python笔记：基础">
+                Python笔记：基础 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/05/22/Python_notes_data_trypes..html"
+     data-title="Python笔记：Data Types"
+     data-content=""
+     data-url="http://www.chenchen.co.uk/2016/05/22/Python_notes_data_trypes..html">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/05/22/Python_notes_data_trypes..html"
+           data-title="Python笔记：Data Types" data-url="http://www.chenchen.co.uk/2016/05/22/Python_notes_data_trypes..html">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/assets/images/avatar.jpg"
+               alt="CHEN CHEN" />
+          <p class="site-author-name" itemprop="name">CHEN CHEN</p>
+          <p class="site-description motion-element" itemprop="description">Geeky Quant Trader</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">39</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/chester890222" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/chester890222" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/chester890222" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用数据类型"><span class="nav-text">常用数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Booleans"><span class="nav-text">1. Booleans</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Numbers"><span class="nav-text">2. Numbers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Strings"><span class="nav-text">3. Strings</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Lists"><span class="nav-text">4. Lists</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Tuple"><span class="nav-text">5. Tuple</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#元组与列表的区别："><span class="nav-text">元组与列表的区别：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Dictionaries"><span class="nav-text">6. Dictionaries</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-Sets"><span class="nav-text">7. Sets</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Frozen-set"><span class="nav-text">Frozen set</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-Enum"><span class="nav-text">8. Enum</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#索引与分片"><span class="nav-text">索引与分片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mutable"><span class="nav-text">Mutable</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CHEN CHEN</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a> 
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+    NexT.Mist
+  </a>
+</div>
+
+        
+  <div class="busuanzi-count">
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    
+      <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+    
+
+    
+      <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+    
+  </div>
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"chester890222"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+
+  
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("xxK4eciDKJiCkCWyNGfb5Mtc-gzGzoHsz", "gyeRtApNcGtRbNa3OKh9XueX");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

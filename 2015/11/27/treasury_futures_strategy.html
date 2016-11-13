@@ -1,0 +1,912 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="O46hFL8z727ZiTwaDvXapjZwdWcO1eQGX05XFEpZH7k" />
+
+
+
+
+  <meta name="baidu-site-verification" content="lYyc7oZNSZ" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="债券,国债期货,套利,策略," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="国债期货与一般期货不同，因为其标的为虚拟债券，存在一篮子的可交割债券，所以国债期货的交易策略更为复杂。也因为其复杂性，只有做专业的投资者才能在国债期货市场分到一杯羹。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="国债期货交易策略">
+<meta property="og:url" content="http://www.chenchen.co.uk/2015/11/27/treasury_futures_strategy.html">
+<meta property="og:site_name" content="CHEN's Quant Life">
+<meta property="og:description" content="国债期货与一般期货不同，因为其标的为虚拟债券，存在一篮子的可交割债券，所以国债期货的交易策略更为复杂。也因为其复杂性，只有做专业的投资者才能在国债期货市场分到一杯羹。">
+<meta property="og:updated_time" content="2016-06-21T06:30:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="国债期货交易策略">
+<meta name="twitter:description" content="国债期货与一般期货不同，因为其标的为虚拟债券，存在一篮子的可交割债券，所以国债期货的交易策略更为复杂。也因为其复杂性，只有做专业的投资者才能在国债期货市场分到一杯羹。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6218001015313008000,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://www.chenchen.co.uk/2015/11/27/treasury_futures_strategy.html"/>
+
+  <title> 国债期货交易策略 | CHEN's Quant Life </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-70604530-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?93e110d5533ac11f504999197e914603";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">CHEN's Quant Life</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                国债期货交易策略
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-11-27T00:00:00+08:00" content="2015-11-27">
+              2015-11-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/金融市场/" itemprop="url" rel="index">
+                    <span itemprop="name">金融市场</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/11/27/treasury_futures_strategy.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/27/treasury_futures_strategy.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/11/27/treasury_futures_strategy.html" class="leancloud_visitors" data-flag-title="国债期货交易策略">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>国债期货与一般期货不同，因为其标的为虚拟债券，存在一篮子的可交割债券，所以国债期货的交易策略更为复杂。也因为其复杂性，只有做专业的投资者才能在国债期货市场分到一杯羹。</p>
+<a id="more"></a>
+<h1 id="国债期货交易策略"><a href="#国债期货交易策略" class="headerlink" title="国债期货交易策略"></a>国债期货交易策略</h1><h2 id="基本策略"><a href="#基本策略" class="headerlink" title="基本策略"></a>基本策略</h2><p>国债期货作为一种最基本的利率衍生品，最基本的可以分为投机、套期保值、套利交易。</p>
+<h3 id="1-投机"><a href="#1-投机" class="headerlink" title="1. 投机"></a>1. 投机</h3><p>投机交易通过判断国债期货市场价格涨跌变化赚取利润。国债期货合约采用保证金交易（最低1%，每份合约仅1万元保证金），具有较大交易风险。<br>方向性的投机策略基于对利率走势的判断，判断现券收益率的范围，可以计算出国债期货的理论价格范围。</p>
+<h3 id="2-套期保值"><a href="#2-套期保值" class="headerlink" title="2. 套期保值"></a>2. 套期保值</h3><p>套期保值是一种基本的风险管理方法，在现货和期货市场同时进行方向相反的交易，从而降低利率波动的影响。套期保值又可以分为多头套保和空头套保。<br>实际操作中需要考虑交易成本、对冲比例和时间价值等因素。<br>$$<br>理论套期保值比率(Hedge \ ratio) = \frac{\Delta 债券组合市值}{\Delta 期货合约市值}<br>$$<br>从不同因素出发，套保策略又可以分为久期中性、DV01套保、$\beta$比例套保等。</p>
+<h4 id="2-1-久期中性"><a href="#2-1-久期中性" class="headerlink" title="2.1 久期中性"></a>2.1 久期中性</h4><p>久期中性套保是通过卖空一定比例的国债期货，使投资组合的久期为0。<br>$$<br>套保比例HR = \frac{现券价格 <em> 现券久期}{期货价格</em>期货久期}<br>$$</p>
+<blockquote>
+<p><code>例子</code><br>假设有1亿元的现券需要套期保值，套保期限暂定为到下个季月的交割日。现券为上月发行的 10 年期国债13附息国债18，按照2013年9月13日的数据，其全价（中债估值）为99.7791元，修正久期为7.9288。我们该选择怎样的套保比率对它进行套期保值呢？<br>目前TF1312合约的CTD券为130015.IB，修正久期为5.9032，期货合约价格为93.764。实际套期保值比率=99.7791×7.9288/(93.764×5.9032)=1.4293。实际需要卖空TF1312合约143 份。</p>
+</blockquote>
+<p><em>注意：期债久期=CTD久期</em></p>
+<h5 id="风险"><a href="#风险" class="headerlink" title="风险"></a>风险</h5><ol>
+<li>对冲比例：实际操作中对冲比例必须为整数，使组合存在敞口。</li>
+<li>收益率变化：当收益率变化时，久期也会发生变化，尤其在大幅波动时。</li>
+<li>CTD券与国债期货走势不一致：计算国债期货久期时，需要考虑转换因子吗？？？</li>
+<li>久期不能完全反应价格变动：债券收益率曲线有下凸特性。</li>
+<li>期限结构：债券市场收益率并非平行移动，比如持有10年期国债，用5年期国债对冲，期限利差存在变化。</li>
+</ol>
+<h4 id="2-2-基点价值套保"><a href="#2-2-基点价值套保" class="headerlink" title="2.2 基点价值套保"></a>2.2 基点价值套保</h4><p>基点价值（Basis Point Value, BPV）又称为DV01（Dollar value of 01），即收益率变动1BP，债券价格变化量。<br>相比久期中性策略，基点价值套保有更高的准确性。</p>
+<p>$$<br>DV01<em>{现货} \approx \frac{PV(y-1bp)- PV(y+1bp)}{2}<br>$$<br>$$<br>DV01</em>{期货} \approx \frac{DV01<em>{CTD}}{CF</em>{CTD}}<br>$$<br>$$<br>HR = \frac{DV01<em>{现货}}{DV01</em>{期货}} = \frac{DV01<em>{现货} * CF</em>{CTD}}{DV01_{CTD}}<br>$$</p>
+<blockquote>
+<p><code>例子</code><br>之前的例子中，现货13国债18的DV01为0.080588，而TF1312合约的CTD券130015.IB的DV01为0.057013，则套期比例为$HR=0.080588*1.0270/0.57013=1.451667$，即卖空145份国债期货。</p>
+</blockquote>
+<h5 id="风险-1"><a href="#风险-1" class="headerlink" title="风险"></a>风险</h5><p>与久期的风险点类似。</p>
+<h4 id="2-3-beta-比例套保"><a href="#2-3-beta-比例套保" class="headerlink" title="2.3 $\beta$比例套保"></a>2.3 $\beta$比例套保</h4><p>旨在解决久期中性和DV01策略中无法避免期限结构非平行移动的特点。通过使用被套保债券的收益率和国债期货CTD券收益率的历史数据构建回归方程：<br>$$<br>y_C = \alpha + \beta <em> y<em>CTD + \epsilon<br>$$<br>将回归估计的$\beta$作为修正项加入套保比例中，<br>$$<br>HR</em>\beta = \beta </em> \frac{DV01<em>{现货}}{DV01</em>{期货}}<br>$$</p>
+<h5 id="风险-2"><a href="#风险-2" class="headerlink" title="风险"></a>风险</h5><ol>
+<li>历史数据与未来预测的不一致</li>
+<li>市场活跃度不高，可能需要用到中债估值等数据，影响回归估计。</li>
+</ol>
+<h4 id="2-4-套保策略另类应用"><a href="#2-4-套保策略另类应用" class="headerlink" title="2.4 套保策略另类应用"></a>2.4 套保策略另类应用</h4><ol>
+<li>传统久期中性及DV01策略可以对冲利率的平行移动，所以可以利用该策略把握期限利差变动的机会（平坦化或者陡峭化）。</li>
+<li>金融债、信用债与国债间的信用、税收利差。通过买入信用债、卖空国债期货的策略，可以博取信用利差缩小的收益。</li>
+</ol>
+<h3 id="3-套利"><a href="#3-套利" class="headerlink" title="3. 套利"></a>3. 套利</h3><p>对国债期货而言，最主要的策略包括期现套利、跨期套利和跨品种套利。</p>
+<h2 id="基差交易"><a href="#基差交易" class="headerlink" title="基差交易"></a>基差交易</h2><p>基差在国债期货交易中有重要的作用。期货套保空头在获得现券持有收益的同时，还可以选择哪种现券、何时交割的权利，所以$基差 = 持有收益 + 空头期权价值$</p>
+<p>其中，$持有收益 = 利息收入 + 利息再投资（期间付息） - 融资成本$。<br>空头交割期权价值又分为转换期权，月末期权，时机期权。</p>
+<p>持有收益是可以计算的，所以可以关注净基差（Basis net of carry），即空头交割期权价值。当净基差为正时，可以理解为空头在开仓时为其期权价值所支付的价格。</p>
+<h3 id="套利策略"><a href="#套利策略" class="headerlink" title="套利策略"></a>套利策略</h3><p>理论上基差存在收敛的特性。在交割月时，CTD券和期货的基差应该收敛为0。因此当二者出现较大偏离时，可以进行套利。</p>
+<ul>
+<li>基差多头：买入国债现货、卖出国债期货（博弈期权价值将上升，持有收益增加（融资成本降低））</li>
+<li>基差空头：卖出国债现货、买入国债期货（期权价值高估（净基差&gt;&gt;0），持有收益减小）</li>
+</ul>
+<h3 id="Payoff-amp-Loss"><a href="#Payoff-amp-Loss" class="headerlink" title="Payoff &amp; Loss"></a>Payoff &amp; Loss</h3><p>如果持有的现货为CTD券，</p>
+<ul>
+<li>基差多头：持有收益不变（融资成本不发生巨大变化）的假设下，以净基差价格买入空头期权。最大损失仅限于期权费。（IRR&gt;0，开仓最小收益=IRR）</li>
+<li>基差空头：以净基差卖出一个空头期权，最大收益为期权费。</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/债券/" rel="tag">#债券</a>
+          
+            <a href="/tags/国债期货/" rel="tag">#国债期货</a>
+          
+            <a href="/tags/套利/" rel="tag">#套利</a>
+          
+            <a href="/tags/策略/" rel="tag">#策略</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/11/26/Shadowsocks_with_DigitalOcean.html" rel="next" title="使用DigitalOcean和shadowsocks来科学上网">
+                <i class="fa fa-chevron-left"></i> 使用DigitalOcean和shadowsocks来科学上网
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/12/01/Jekyll+Github+Markdown.html" rel="prev" title="Jekyll+Github+Markdown的个人博客">
+                Jekyll+Github+Markdown的个人博客 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/11/27/treasury_futures_strategy.html"
+     data-title="国债期货交易策略"
+     data-content=""
+     data-url="http://www.chenchen.co.uk/2015/11/27/treasury_futures_strategy.html">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/11/27/treasury_futures_strategy.html"
+           data-title="国债期货交易策略" data-url="http://www.chenchen.co.uk/2015/11/27/treasury_futures_strategy.html">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/assets/images/avatar.jpg"
+               alt="CHEN CHEN" />
+          <p class="site-author-name" itemprop="name">CHEN CHEN</p>
+          <p class="site-description motion-element" itemprop="description">Geeky Quant Trader</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">39</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/chester890222" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/chester890222" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/chester890222" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#国债期货交易策略"><span class="nav-text">国债期货交易策略</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本策略"><span class="nav-text">基本策略</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-投机"><span class="nav-text">1. 投机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-套期保值"><span class="nav-text">2. 套期保值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-久期中性"><span class="nav-text">2.1 久期中性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#风险"><span class="nav-text">风险</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-基点价值套保"><span class="nav-text">2.2 基点价值套保</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#风险-1"><span class="nav-text">风险</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-beta-比例套保"><span class="nav-text">2.3 $\beta$比例套保</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#风险-2"><span class="nav-text">风险</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-套保策略另类应用"><span class="nav-text">2.4 套保策略另类应用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-套利"><span class="nav-text">3. 套利</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基差交易"><span class="nav-text">基差交易</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#套利策略"><span class="nav-text">套利策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Payoff-amp-Loss"><span class="nav-text">Payoff & Loss</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CHEN CHEN</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a> 
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+    NexT.Mist
+  </a>
+</div>
+
+        
+  <div class="busuanzi-count">
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    
+      <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+    
+
+    
+      <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+    
+  </div>
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"chester890222"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+
+  
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("xxK4eciDKJiCkCWyNGfb5Mtc-gzGzoHsz", "gyeRtApNcGtRbNa3OKh9XueX");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

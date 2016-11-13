@@ -1,0 +1,921 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="O46hFL8z727ZiTwaDvXapjZwdWcO1eQGX05XFEpZH7k" />
+
+
+
+
+  <meta name="baidu-site-verification" content="lYyc7oZNSZ" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="宏观,货币," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="在经济学上，货币主要有五大功能，分别是价值尺度、流通手段、支付手段、储藏手段和世界货币。货币可以衡量商品的价值、可以充当商品流通的媒介、可以用于商品交易的支付、可以当做财富的储藏手段、部分强势货币可以用于国际商品的交换等。
+其中最主要的功能就是衡量商品的价值。人类经济本质是商品经济，伴随着商品的交换也就产生了货币，最初大家都选择黄金或者白银当做货币。但进入20世纪以后，由于科技的大幅进步，商品生产">
+<meta property="og:type" content="article">
+<meta property="og:title" content="中央银行：货币供应量">
+<meta property="og:url" content="http://www.chenchen.co.uk/2016/02/16/Money_supply.html">
+<meta property="og:site_name" content="CHEN's Quant Life">
+<meta property="og:description" content="在经济学上，货币主要有五大功能，分别是价值尺度、流通手段、支付手段、储藏手段和世界货币。货币可以衡量商品的价值、可以充当商品流通的媒介、可以用于商品交易的支付、可以当做财富的储藏手段、部分强势货币可以用于国际商品的交换等。
+其中最主要的功能就是衡量商品的价值。人类经济本质是商品经济，伴随着商品的交换也就产生了货币，最初大家都选择黄金或者白银当做货币。但进入20世纪以后，由于科技的大幅进步，商品生产">
+<meta property="og:updated_time" content="2016-06-23T08:01:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="中央银行：货币供应量">
+<meta name="twitter:description" content="在经济学上，货币主要有五大功能，分别是价值尺度、流通手段、支付手段、储藏手段和世界货币。货币可以衡量商品的价值、可以充当商品流通的媒介、可以用于商品交易的支付、可以当做财富的储藏手段、部分强势货币可以用于国际商品的交换等。
+其中最主要的功能就是衡量商品的价值。人类经济本质是商品经济，伴随着商品的交换也就产生了货币，最初大家都选择黄金或者白银当做货币。但进入20世纪以后，由于科技的大幅进步，商品生产">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6218001015313008000,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://www.chenchen.co.uk/2016/02/16/Money_supply.html"/>
+
+  <title> 中央银行：货币供应量 | CHEN's Quant Life </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-70604530-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?93e110d5533ac11f504999197e914603";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">CHEN's Quant Life</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                中央银行：货币供应量
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-16T00:00:00+08:00" content="2016-02-16">
+              2016-02-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/金融笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">金融笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/16/Money_supply.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/16/Money_supply.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/02/16/Money_supply.html" class="leancloud_visitors" data-flag-title="中央银行：货币供应量">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在经济学上，货币主要有五大功能，分别是<em>价值尺度</em>、<em>流通手段</em>、<em>支付手段</em>、<em>储藏手段</em>和<em>世界货币</em>。货币可以衡量商品的价值、可以充当商品流通的媒介、可以用于商品交易的支付、可以当做财富的储藏手段、部分强势货币可以用于国际商品的交换等。</p>
+<p>其中最主要的功能就是衡量商品的价值。人类经济本质是商品经济，伴随着商品的交换也就产生了货币，最初大家都选择黄金或者白银当做货币。但进入20世纪以后，由于科技的大幅进步，商品生产越来越多，而黄金数量有限不够用了，所以开始进入纸币时代。</p>
+<a id="more"></a>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><em>货币供应量</em>，是指一国在某一时期内为社会经济运转服务的货币存量，它由包括中央银行在内的金融机构供应的存款货币和现金货币两部分构成。 </p>
+<p>世界各国中央银行货币估计口径不完全一致，但划分的基础依据是一致的，即流动性大小。所谓流动性，是指一种资产随时可以变为现金或商品，而对持款人又不带来任何损失，货币的流动性程度不同，在流通中的周转次数就不同，形成的货币购买力及其对整个社会经济活动的影响也不一样。 </p>
+<p>一般说来，中央银行发行的钞票具有极强的流动性或货币性，随时都可以直接作为流通手段和支付手段进入流通过程，从而影响市场供求关系的变化。商业银行的活期存款，由于可以随时支取、随时签发支票而进入流通，因此其流动性也很强，也是影响市场供求变化的重要因素。有些资产，如定期存款、储蓄存款等，虽然也是购买力的组成部分，但必须转换为现金，或活期存款，或提前支取才能进入市场购买商品，因此其流动性相对较差，它们对市场的影响不如现金和活期存款来得迅速。</p>
+<h2 id="中国货币流通机制"><a href="#中国货币流通机制" class="headerlink" title="中国货币流通机制"></a>中国货币流通机制</h2><p>货币供应可以简单的划分为三个部门两个层次。三个部门分别是人民银行、商业银行以及实体经济。人民银行是货币的最终发行者和调控者，而发放和调控对象为商业银行，人民银行与商业银行之间构成货币供应的第一层次。过去由于经常项目持续大额顺差，人民银行通过外汇占款向商业银行提供货币。随着外部顺差收窄，人民银行更多的借助公开市场操作以及SLF、SLO、PSL等货币工具投放流动性，未来降准也可能成为流动性投放方式之一。</p>
+<p>商业银行基于人民银行提供的基础货币，向实体经济供应货币，而实体经济利用货币进行交易，将结余回流金融体系，完成货币循环。商业银行通过银行贷款、结汇、购买债券等方式向实体经济提供流动性，实体经济再以存款的形势将货币回流金融体系，通过不断的循环形成货币创造，实现货币乘数扩张，这是货币供应的第二层次。</p>
+<p>由于货币创造的多层次性，对货币总量的度量也存在多个层面。在央行与商业银行层面，货币总量的度量主要通过超额准备金和储备货币。如果超额准备金下降，则意味着银行间市场资金面可能趋紧，反之，则银行间市场资金面宽裕。这个层面的流动性主要来自央行的外汇占款发放、公开市场货币投放以及存款准备金率调整等。银行间市场利率状况反映央行与商业银行层面的资金价格状况，其中以回购利率最为重要，此外商业银行超储率等也具有参考作用。商业银行层面的货币量反映商业银行可以运用的资金总量。</p>
+<p>而在商业银行与实体经济层面，货币总量的度量从实体部门资产和金融机构负债层面进行。其中常用指标包括M0、M1以及M2。实体经济层面的流动性主要来自商业银行贷款、商业银行结汇以及购买非商业银行发行债券等。在实体经济层面，资金价格较难观测。一方面，实体经济利率依据不同期限、不同风险主体形成利率光谱，难以用单一利率衡量，另一方面，资源配置有所扭曲，国有企业以及地方融资平台等利率不敏感部门过度占有资源，推高资金价格。即便如此，我们依然可以通过央行按季度公布的贷款平均利率、以及其他来源的票据利率、民间融资利率、信托收益率等不准确的间接观测实体经济层面资金价格状况。</p>
+<p>理想的市场环境下，商业银行层面流动性与实体经济层面流动性具有通畅的传导作用。这也是危机前发达国家通过调节银行间市场利率影响实体经济融资成本的依据。然而危机后普遍出现金融系统传导不畅问题，即金融系统信贷创造能力受阻。在这种情况下，宽松的银行间流动性未必能传导至实体经济，降低实体经济融资利率。基于调节银行间市场资金供求的价格型工具往往成效不足，直接调节对实体经济的信贷供给成为更为有效的办法。</p>
+<h2 id="货币层次的划分"><a href="#货币层次的划分" class="headerlink" title="货币层次的划分"></a>货币层次的划分</h2><p>按流动性标准划分货币供应量的层次，对中央银行而言，有两个方面的意义： </p>
+<ul>
+<li>有利于为中央银行的宏观金融决策提供一个清晰的货币供应结构图，有助于掌握不同的货币运行态势，并据此采取不同的措施进行调控； </li>
+<li>有助于中央银行分析整个经济的动态变化。每一层次的货币供应量，都有特定的经济活动和商品运动与之对应。通过对各层次货币供应量变动的观察，中央银行可以掌握经济活动的状况，并分析预测其变化的趋势。 </li>
+</ul>
+<h3 id="基础货币"><a href="#基础货币" class="headerlink" title="基础货币"></a>基础货币</h3><p>银行间市场流动性总量由“储备货币”衡量，又称基础货币。</p>
+<p>$$储备货币=现金+法定存款准备金+超额存款准备金$$</p>
+<p>但其中可供商业银行自由动用的流动性仅为超额存款准备金。新世纪初至2012年，储备货币供应主要由外汇占款推动，在贸易顺差与新增外汇占款较高时期，央行需要通过发行央票与提高存款准备金进行对冲。而对央行来说，存款准备金成本远低于央票，逐渐的存款准备金成为了央行负债端储备货币主体。2012年以后，随着外部失衡收窄和外汇占款下降，储备货币增速显著放缓。而之前为了回收流动性而提高的存款准备金率将来需要逐步调降，以实现基础货币投放。</p>
+<h3 id="货币总量"><a href="#货币总量" class="headerlink" title="货币总量"></a>货币总量</h3><p>实体经济层面货币总量度量主要通过对实体经济部门不同层次资产和商业银行不同层次负债进行。目前我国主要使用的货币量指标包括M0、M1（狭义货币）与M2（广义货币）。</p>
+<p>我国从1994 年三季度起由中国人民银行<em>按季</em>向社会公布货币供应量统计监测指标。从2003年下半年起，在人民银行官网公布的<em>月度</em>金融统计数据报告中公布。</p>
+<p>根据1994年10月《中国人民银行货币供应量统计和公布暂行办法》，对货币供应量指标的层次划分有：</p>
+<p>$$<br>\begin{aligned}<br>M0 &amp;= 流通中的现金\<br>M1 &amp;= M0+企业活期存款+机关团体部队存款+农村存款+信用卡类存款（个人持有）\<br>M2 &amp;= M1+城乡居居储蓄存款+企业存款中具有定期性质的存款+外币存款+信托类存款\<br>M3 &amp;= M2+金融债券+商业票据+大额可转让存单等<br>\end{aligned}<br>$$</p>
+<p>其中，狭义货币M1未包含居民活期，这与国外普遍情况不同。广义货币M2是使用最为广泛的货币供应指标。M3出于金融创新不断出现的现状考虑而设，目前暂不编制这一层次货币供应量，官方也不公布此数据。</p>
+<p>此后中国人民银行对M2进行了三次调整：</p>
+<ul>
+<li>2001年7月起，将证券公司客户保证金计入广义货币供应量，含在其他存款项内。</li>
+<li>2002年3月起，将中国的外资银行、合资银行、外国银行分行、外资财务公司及外资企业集团财务公司有关的人民币存款业务，分别计入不同层次的货币供应量。</li>
+<li>2011年10月起，将住房公积金中心存款和非存款类金融机构在存款金融机构的存款纳入广义货币供应量的统计范畴。</li>
+</ul>
+<p><em>实际统计数据发布中，将M1、M2定义为：</em></p>
+<p>$$<br>M1（货币） = M0（流通中现金） + 单位活期存款<br>M2（货币与准货币） = M1 + 单位定期存款 + 个人存款 + 其他存款<br>$$</p>
+<p>其中，其他存款包括证券公司客户保证金（90%），信托存款、应解汇款及临时存款、保证金、财政预算外存款、租赁保证金、非存款类金融机构在存款类金融机构的存款及住房公积金存款等。</p>
+<h3 id="层次的解读"><a href="#层次的解读" class="headerlink" title="层次的解读"></a>层次的解读</h3><p>M2与M1的差额即准货币，M1与M2的增速差曾被用来判断实体经济强弱，依据是如果实体经济活动变强，企业活期存款上升会推动M1增速超出M2增速。然而近年M1增速与M2增速差与实体经济指标相关性显著下降。</p>
+<p>M2作为<em>商业银行的负债端指标</em>，在资产端主要来对应人民币贷款和银行结汇。近年随着同业存款的快速发展，M2新增量持续高于新增贷款与外汇占款，主要体现在其他存款性金融机构中计入广义货币的对非银行金融企业负债项。同时由于近年影子银行的发展，M2对实体流动性衡量的准确性有所下降，与实体经济指标相关性减弱。从M2存量看，我国货币总量已经处于相当高的水平，M2/GDP已经接近200%。其中次贷危机后的天量信贷是货币存量大幅走高的主要因素。因此，未来的货币政策应更多的转向盘活存量，而非依靠增量。</p>
+<p>M1反映经济中的现实购买力；M2还反映了潜在的购买力。<br>如果M1增速较快，则消费和终端市场活跃；如果M2增速较快，则投资和中间市场活跃。<br>如果M2过高、M1过低，表明投资过热、需求不旺，有危机风险；<br>如果M1过高、M2过低，表明需求强劲、投资不足，有涨价风险。</p>
+<h3 id="社会融资总量"><a href="#社会融资总量" class="headerlink" title="社会融资总量"></a>社会融资总量</h3><p>随着表外业务的发展，传统的货币度量指标已经越来越难以衡量实体经济流动性状况。理财产品、信托、债券等的金融产品规模的迅速扩大提出拓展货币度量范围的而要求。央行在2011编制并公布了2002年以来的月度社会融资总量指标。<strong>社会融资总量主要度量非金融企业获得的信用总额，包括新增人民币贷款、外币贷款、委托贷款、信托贷款、未承兑汇票、企业债券、股票发行以及其他项</strong>。央行<em>月度</em>公布的社会融资总量为流量指标，在2015年2月央行公布了社会融资总量存量。结合月度净增量指标，可以计算得到2002年以来社会融资存量指标。</p>
+<p>2002年以来随着影子银行的发展，贷款在社会融资中占比持续下降，2013年最低时降至51.3%。委托贷款、信托贷款等表外业务融资对象主要是信贷受限的房地产、基础设施建设以及部分产能过剩制造业。<em>从预测角度看，社会融资总额对短期经济指标的先导关系显著优于信贷以及货币供应量。</em></p>
+<h2 id="货币超发的后果"><a href="#货币超发的后果" class="headerlink" title="货币超发的后果"></a>货币超发的后果</h2><h3 id="产生泡沫"><a href="#产生泡沫" class="headerlink" title="产生泡沫"></a>产生泡沫</h3><p>如果货币超发，而经济又没能同步增长，那么一定会体现为价格的上涨，体现为各种泡沫。</p>
+<ul>
+<li>物价上涨：70年代美国滞胀，10年内货币总量增加2.5倍，经济总量增加40%，物价也大致翻了一倍。</li>
+<li>资产价格上涨：委内瑞拉2012-2015年股市涨了近150倍；日本80年代的泡沫经济。</li>
+</ul>
+<p>历史上，所有的货币崩盘都与货币超发有关。</p>
+<blockquote>
+<p>委内瑞拉：广义货币M3在14年初只有1万亿玻利瓦尔，而到15年末已经超过4万亿玻利瓦尔，过去两年翻了4倍。而在1976年委内瑞拉货币总量只有4000万玻利瓦尔，过去40年其货币供应量增加了10万倍。这也难怪其政府会在2008年发行新货币，强行规定1新玻利瓦尔等于1000旧玻利瓦尔，因为货币实在是印得太多了。 </p>
+<p>津巴布韦：津巴布韦的货币都是以亿甚至万亿来计价，看似大家都是亿万富豪，其实都是一文不值，因为在2009年以后，津巴布韦宣布所有货币全部作废，不再发行自己的货币，而以美元等作为法定货币。</p>
+<p>一战后的德国：由于一战战败，德国需要支付大幅战争赔款，但是税收收入又不够，只得开动了印钞机，1919年马克发行量是500亿，到1921年上升到1220亿，1922年开始失控，当年货币发行量达到12950亿，而1923年高达496585000万亿，最终德国发行了新马克，以1新马克等于4.2万亿旧马克的比率回收了已经崩溃的旧货币，无数德国家庭数代累计的财富被洗劫一空。</p>
+<p>在07年以前，中国过去30年的货币增速大约是每年16%，而同期GDP实际增速大约每年10%，算上物价以后的GDP名义增速大约16%，与货币增速基本相当，所以货币增速如实地反映了经济进步和物价上涨，在资本市场上并没有显著的泡沫出现。但是从08年开始，中国的货币增速依然维持在每年16%左右，而同期GDP实际增速下降到8%，GDP名义增速也只有11%左右，很显然货币增速明显超过了经济和物价上涨的需要，这个时候其实就产生了资产泡沫的温床。</p>
+</blockquote>
+<h3 id="货币泡沫带来贬值压力"><a href="#货币泡沫带来贬值压力" class="headerlink" title="货币泡沫带来贬值压力"></a>货币泡沫带来贬值压力</h3><p>货币供应量M2来衡量，07年时美国M2是7.3万亿美金，中国是5.5万亿美金，当时美元兑人民币汇率是7.4，而目前美国的M2是12万亿美金，而中国的M2已经达到21万亿美金，而目前美元兑人民币汇率是6.6。</p>
+<h3 id="预期更重要"><a href="#预期更重要" class="headerlink" title="预期更重要"></a>预期更重要</h3><p>货币政策对债市的影响主要是在预期形成之时。</p>
+<blockquote>
+<p>2013年6月，FOMC会议上伯南克一改此前谨慎态度，明确表示将在今年开始收紧每月850亿美元的购债计划，随后美联储在2013年12月首次削减购债规模至750亿美元。而美国10年期国债收益率也达到高点。2015年12月美国正式宣布加息前同理。</p>
+</blockquote>
+<h3 id="格林斯潘难题"><a href="#格林斯潘难题" class="headerlink" title="格林斯潘难题"></a>格林斯潘难题</h3><p>解释“格林斯潘难题”有两条思路，一是从开放经济的角度来看，美国加息对应的是美国经济相对走强，新兴市场相对走弱，导致大量资金从新兴市场流入美元资产，其中收益稳健且流动性极强的美国长债备受追捧。因此全球热钱流动钝化了货币政策对美国长债收益率的影响；二是用长端利率与短端利率的期限利差隐含着对长期潜在经济增长前景的预期，而美国是一个服务业为主的国家，过去 30 年里，特别是在最近的 10 年里， 美国的潜在生产率增长十分缓慢， 且趋势性向下。更有甚者，美国前财长萨默斯认为，全球经济均处于“长期性停滞”，资本流动方向不再是更多地流向新兴市场，而是往发达国家流入，故而对长端利率构成了进一步的压制。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/宏观/" rel="tag">#宏观</a>
+          
+            <a href="/tags/货币/" rel="tag">#货币</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/01/28/Bond_primary_market.html" rel="next" title="债券收益率影响因素：一级市场行情">
+                <i class="fa fa-chevron-left"></i> 债券收益率影响因素：一级市场行情
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/02/22/Macro_Economy_Data_Basics_1.html" rel="prev" title="宏观经济数据分析基本概念">
+                宏观经济数据分析基本概念 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/02/16/Money_supply.html"
+     data-title="中央银行：货币供应量"
+     data-content=""
+     data-url="http://www.chenchen.co.uk/2016/02/16/Money_supply.html">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/02/16/Money_supply.html"
+           data-title="中央银行：货币供应量" data-url="http://www.chenchen.co.uk/2016/02/16/Money_supply.html">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/assets/images/avatar.jpg"
+               alt="CHEN CHEN" />
+          <p class="site-author-name" itemprop="name">CHEN CHEN</p>
+          <p class="site-description motion-element" itemprop="description">Geeky Quant Trader</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">39</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/chester890222" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/chester890222" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/chester890222" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中国货币流通机制"><span class="nav-text">中国货币流通机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#货币层次的划分"><span class="nav-text">货币层次的划分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础货币"><span class="nav-text">基础货币</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#货币总量"><span class="nav-text">货币总量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#层次的解读"><span class="nav-text">层次的解读</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#社会融资总量"><span class="nav-text">社会融资总量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#货币超发的后果"><span class="nav-text">货币超发的后果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#产生泡沫"><span class="nav-text">产生泡沫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#货币泡沫带来贬值压力"><span class="nav-text">货币泡沫带来贬值压力</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预期更重要"><span class="nav-text">预期更重要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#格林斯潘难题"><span class="nav-text">格林斯潘难题</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CHEN CHEN</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a> 
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+    NexT.Mist
+  </a>
+</div>
+
+        
+  <div class="busuanzi-count">
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    
+      <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+    
+
+    
+      <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+    
+  </div>
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"chester890222"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+
+  
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("xxK4eciDKJiCkCWyNGfb5Mtc-gzGzoHsz", "gyeRtApNcGtRbNa3OKh9XueX");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

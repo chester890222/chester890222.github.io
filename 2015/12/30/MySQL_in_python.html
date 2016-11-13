@@ -1,0 +1,887 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="O46hFL8z727ZiTwaDvXapjZwdWcO1eQGX05XFEpZH7k" />
+
+
+
+
+  <meta name="baidu-site-verification" content="lYyc7oZNSZ" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="MySQL,Python," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="在python中使用MySQL数据库的基础笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python笔记：MySQL的调用">
+<meta property="og:url" content="http://www.chenchen.co.uk/2015/12/30/MySQL_in_python.html">
+<meta property="og:site_name" content="CHEN's Quant Life">
+<meta property="og:description" content="在python中使用MySQL数据库的基础笔记">
+<meta property="og:updated_time" content="2016-06-21T06:25:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python笔记：MySQL的调用">
+<meta name="twitter:description" content="在python中使用MySQL数据库的基础笔记">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6218001015313008000,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://www.chenchen.co.uk/2015/12/30/MySQL_in_python.html"/>
+
+  <title> Python笔记：MySQL的调用 | CHEN's Quant Life </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-70604530-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?93e110d5533ac11f504999197e914603";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">CHEN's Quant Life</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Python笔记：MySQL的调用
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-12-30T00:00:00+08:00" content="2015-12-30">
+              2015-12-30
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/12/30/MySQL_in_python.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/30/MySQL_in_python.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/12/30/MySQL_in_python.html" class="leancloud_visitors" data-flag-title="Python笔记：MySQL的调用">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在python中使用MySQL数据库的基础笔记</p>
+<a id="more"></a>
+<p>MySQL Connector/Python 是MySQL官方提供的Python连接MySQL数据库的驱动程序。相较于MySQLdb模块来说，其支持python3，而MySQLdb目前只支持到python2.7版本。pandas也支持数据库的读写。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>可以直接使用下列命令安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install mysql-connector-python</span><br></pre></td></tr></table></figure>
+<p>也可以从官方下载mysql-connector-python的安装包使用。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="1-建立连接"><a href="#1-建立连接" class="headerlink" title="1. 建立连接"></a>1. 建立连接</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> mysql.connector</span><br><span class="line">config=&#123;<span class="string">'host'</span>:<span class="string">'127.0.0.1'</span>,<span class="comment">#默认127.0.0.1</span></span><br><span class="line">        <span class="string">'user'</span>:<span class="string">'root'</span>,</span><br><span class="line">        <span class="string">'password'</span>:<span class="string">'123456'</span>,</span><br><span class="line">        <span class="string">'port'</span>:<span class="number">3306</span> ,<span class="comment">#默认即为3306</span></span><br><span class="line">        <span class="string">'database'</span>:<span class="string">'test'</span>,</span><br><span class="line">        <span class="string">'charset'</span>:<span class="string">'utf8'</span><span class="comment">#默认即为utf8</span></span><br><span class="line">        &#125;</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  cnn=mysql.connector.connect(**config)</span><br><span class="line"><span class="keyword">except</span> mysql.connector.Error <span class="keyword">as</span> e:</span><br><span class="line">  print(<span class="string">'connect fails!&#123;&#125;'</span>.format(e))</span><br></pre></td></tr></table></figure>
+<p>如果要使用连接池功能可以多指定一个参数：pool_size或者pool_name：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conn=mysql.connector.connect(host=<span class="string">"127.0.0.1"</span>,user=<span class="string">"test"</span>,password=<span class="string">"1234"</span>,pool_size=<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<p>该命令会从连接池中分配一个连接使用。</p>
+<h3 id="2-执行语句"><a href="#2-执行语句" class="headerlink" title="2. 执行语句"></a>2. 执行语句</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cur=conn.cursor()</span><br><span class="line">cur.execute(<span class="string">"show databases"</span>)</span><br><span class="line">cur.fetchall()</span><br></pre></td></tr></table></figure>
+<h3 id="3-创建表格"><a href="#3-创建表格" class="headerlink" title="3. 创建表格"></a>3. 创建表格</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">sql_create_table=<span class="string">'CREATE TABLE `student` \</span><br><span class="line">	(`id` int(10) NOT NULL AUTO_INCREMENT,\</span><br><span class="line">	`name` varchar(10) DEFAULT NULL,\</span><br><span class="line">	`age` int(3) DEFAULT NULL,\</span><br><span class="line">	PRIMARY KEY (`id`)) \</span><br><span class="line">	ENGINE=MyISAM DEFAULT CHARSET=utf8'</span></span><br><span class="line"></span><br><span class="line">cursor=cnn.cursor()</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  cursor.execute(sql_create_table)</span><br><span class="line"><span class="keyword">except</span> mysql.connector.Error <span class="keyword">as</span> e:</span><br><span class="line">  print(<span class="string">'create table orange fails!&#123;&#125;'</span>.format(e))</span><br></pre></td></tr></table></figure>
+<h3 id="4-插入数据"><a href="#4-插入数据" class="headerlink" title="4. 插入数据"></a>4. 插入数据</h3><p>插入数据的语法上和MySQLdb上基本上是一样的：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">cursor=cnn.cursor()</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  <span class="comment">#第一种：直接字符串插入方式</span></span><br><span class="line">  sql_insert1=<span class="string">"insert into student (name, age) values ('orange', 20)"</span></span><br><span class="line">  cursor.execute(sql_insert1)</span><br><span class="line">  <span class="comment">#第二种：元组连接插入方式</span></span><br><span class="line">  sql_insert2=<span class="string">"insert into student (name, age) values (%s, %s)"</span></span><br><span class="line">  <span class="comment">#此处的%s为占位符，而不是格式化字符串，所以age用%s</span></span><br><span class="line">  data=(<span class="string">'shiki'</span>,<span class="number">25</span>)</span><br><span class="line">  cursor.execute(sql_insert2,data)</span><br><span class="line">  <span class="comment">#第三种：字典连接插入方式</span></span><br><span class="line">  sql_insert3=<span class="string">"insert into student (name, age) values (%(name)s, %(age)s)"</span></span><br><span class="line">  data=&#123;<span class="string">'name'</span>:<span class="string">'mumu'</span>,<span class="string">'age'</span>:<span class="number">30</span>&#125;</span><br><span class="line">  cursor.execute(sql_insert3,data)</span><br><span class="line">  <span class="comment">#如果数据库引擎为Innodb，执行完成后需执行cnn.commit()进行事务提交</span></span><br><span class="line"><span class="keyword">except</span> mysql.connector.Error <span class="keyword">as</span> e:</span><br><span class="line">  print(<span class="string">'insert datas error!&#123;&#125;'</span>.format(e))</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">  cursor.close()</span><br><span class="line">  cnn.close()</span><br></pre></td></tr></table></figure>
+<p>同样，MySQL Connector也支持多次插入，同样其使用的也是cursor.executemany，示例如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">stmt=<span class="string">'insert into student (name, age) values (%s,%s)'</span></span><br><span class="line">data=[</span><br><span class="line">     (<span class="string">'Lucy'</span>,<span class="number">21</span>),</span><br><span class="line">     (<span class="string">'Tom'</span>,<span class="number">22</span>),</span><br><span class="line">     (<span class="string">'Lily'</span>,<span class="number">21</span>)]</span><br><span class="line">cursor.executemany(stmt,data)</span><br></pre></td></tr></table></figure>
+<h3 id="5-查询操作"><a href="#5-查询操作" class="headerlink" title="5. 查询操作"></a>5. 查询操作</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">cursor=cnn.cursor()</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  sql_query=<span class="string">'select id,name from student where  age &gt; %s'</span></span><br><span class="line">  cursor.execute(sql_query,(<span class="number">21</span>,))</span><br><span class="line">  <span class="keyword">for</span> id,name <span class="keyword">in</span> cursor:</span><br><span class="line">    print(<span class="string">'%s\'s age is older than 21,and her/his id is %d'</span>%(name,id))</span><br><span class="line"><span class="keyword">except</span> mysql.connector.Error <span class="keyword">as</span> e:</span><br><span class="line">  print(<span class="string">'query error!&#123;&#125;'</span>.format(e))</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">  cursor.close()</span><br><span class="line">  cnn.close()</span><br></pre></td></tr></table></figure>
+<h3 id="6-删除操作"><a href="#6-删除操作" class="headerlink" title="6. 删除操作"></a>6. 删除操作</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cursor=cnn.cursor()</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  sql_delete=<span class="string">'delete from student where name = %(name)s and age &lt; %(age)s'</span></span><br><span class="line">  data=&#123;<span class="string">'name'</span>:<span class="string">'orange'</span>,<span class="string">'age'</span>:<span class="number">24</span>&#125;</span><br><span class="line">  cursor.execute(sql_delete,data)</span><br><span class="line"><span class="keyword">except</span> mysql.connector.Error <span class="keyword">as</span> e:</span><br><span class="line">  print(<span class="string">'delete error!&#123;&#125;'</span>.format(e))</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">  cursor.close()</span><br><span class="line">  cnn.close()</span><br></pre></td></tr></table></figure>
+<h3 id="7-关闭连接"><a href="#7-关闭连接" class="headerlink" title="7. 关闭连接"></a>7. 关闭连接</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conn.close()</span><br></pre></td></tr></table></figure>
+<p>如果conn是直接新建的连接则它会被关闭，如果是从线程池中分配一个连接则会被归还给连接池</p>
+<h3 id="8-关于游标"><a href="#8-关于游标" class="headerlink" title="8. 关于游标"></a>8. 关于游标</h3><p>mysql-python支持两种类型的游标：cursor和sscursor<br>根据文档介绍sscursor是server-side游标，但实际不是的，mysql本身不支持server-side游标。sscursor实际是一个non_buffered cursor。而cursor是一个buffered cursor。</p>
+<p>mysql-connector-python正好相反，它默认使用的是non_buffered cursor，创建buffered cursor时需要显示指定参数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#创建non_buffered cursor:</span></span><br><span class="line">cur=conn.cursor()</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建buffered cursor</span></span><br><span class="line">cur=conn.cursor(buffered=<span class="keyword">True</span>)</span><br></pre></td></tr></table></figure>
+<p>buffrered cursor与non_buffered cursor的区别见<a href="http://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursorbuffered.html" title="http://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursorbuffered.html" target="_blank" rel="external">官方说明</a></p>
+<p>mysql-connector-python正在模拟实现server-side cursor，实现办法是将查询结果集存放在server端的一个临时表中，客户端调用 fetch方法时从临时表中返回结果。<a href="http://geert.vanderkelen.org/simulating-server-side-cursors-with-mysql-connectorpython/" title="http://geert.vanderkelen.org/simulating-server-side-cursors-with-mysql-connectorpython/" target="_blank" rel="external">Read more</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MySQL/" rel="tag">#MySQL</a>
+          
+            <a href="/tags/Python/" rel="tag">#Python</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/29/MySQL_notes2.html" rel="next" title="MySQL基础(二)">
+                <i class="fa fa-chevron-left"></i> MySQL基础(二)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/12/30/MySQL_key&index.html" rel="prev" title="MySQL笔记：Primary Key, Unique, Index等索引的区别">
+                MySQL笔记：Primary Key, Unique, Index等索引的区别 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/12/30/MySQL_in_python.html"
+     data-title="Python笔记：MySQL的调用"
+     data-content=""
+     data-url="http://www.chenchen.co.uk/2015/12/30/MySQL_in_python.html">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/12/30/MySQL_in_python.html"
+           data-title="Python笔记：MySQL的调用" data-url="http://www.chenchen.co.uk/2015/12/30/MySQL_in_python.html">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/assets/images/avatar.jpg"
+               alt="CHEN CHEN" />
+          <p class="site-author-name" itemprop="name">CHEN CHEN</p>
+          <p class="site-description motion-element" itemprop="description">Geeky Quant Trader</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">39</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/chester890222" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/chester890222" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/chester890222" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-建立连接"><span class="nav-text">1. 建立连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-执行语句"><span class="nav-text">2. 执行语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-创建表格"><span class="nav-text">3. 创建表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-插入数据"><span class="nav-text">4. 插入数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-查询操作"><span class="nav-text">5. 查询操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-删除操作"><span class="nav-text">6. 删除操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-关闭连接"><span class="nav-text">7. 关闭连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-关于游标"><span class="nav-text">8. 关于游标</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CHEN CHEN</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a> 
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+    NexT.Mist
+  </a>
+</div>
+
+        
+  <div class="busuanzi-count">
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    
+      <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+    
+
+    
+      <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+    
+  </div>
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"chester890222"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+
+  
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("xxK4eciDKJiCkCWyNGfb5Mtc-gzGzoHsz", "gyeRtApNcGtRbNa3OKh9XueX");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

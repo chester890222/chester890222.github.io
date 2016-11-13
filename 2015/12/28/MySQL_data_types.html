@@ -1,0 +1,1046 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="O46hFL8z727ZiTwaDvXapjZwdWcO1eQGX05XFEpZH7k" />
+
+
+
+
+  <meta name="baidu-site-verification" content="lYyc7oZNSZ" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="MySQL," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="MySQL数据库中常用的一些数据类型及注意事项”">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL常用数据类型">
+<meta property="og:url" content="http://www.chenchen.co.uk/2015/12/28/MySQL_data_types.html">
+<meta property="og:site_name" content="CHEN's Quant Life">
+<meta property="og:description" content="MySQL数据库中常用的一些数据类型及注意事项”">
+<meta property="og:updated_time" content="2016-06-21T05:45:20.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MySQL常用数据类型">
+<meta name="twitter:description" content="MySQL数据库中常用的一些数据类型及注意事项”">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6218001015313008000,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://www.chenchen.co.uk/2015/12/28/MySQL_data_types.html"/>
+
+  <title> MySQL常用数据类型 | CHEN's Quant Life </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-70604530-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?93e110d5533ac11f504999197e914603";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">CHEN's Quant Life</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                MySQL常用数据类型
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-12-28T00:00:00+08:00" content="2015-12-28">
+              2015-12-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/MySQL/" itemprop="url" rel="index">
+                    <span itemprop="name">MySQL</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/12/28/MySQL_data_types.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/28/MySQL_data_types.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/12/28/MySQL_data_types.html" class="leancloud_visitors" data-flag-title="MySQL常用数据类型">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>MySQL数据库中常用的一些数据类型及注意事项”</p>
+<a id="more"></a>
+<p>数据类型是定义列中可以存储什么数据以及该数据实际怎么存储的基本规则。Mysql的常用数据类型主要有：</p>
+<h3 id="1-串数据类型-String"><a href="#1-串数据类型-String" class="headerlink" title="1. 串数据类型(String)"></a>1. 串数据类型(String)</h3><p>最常用的数据类型，有两种基本的串类型：分别为<code>定长串</code>和<code>不定长串</code>。</p>
+<ul>
+<li><p>定长串用于存储长度固定的字符，其长度是创建表时指定的，不允许多于指定字符数的数据，它们分配的存储空间与指定的一样多，CHAR属于定长串类型。</p>
+</li>
+<li><p>变长串存储长度可变的文本，TEXT属于变长串类型。</p>
+</li>
+</ul>
+<p>变长数据类型灵活，<strong>定长数据类型高效</strong>，MySQLl处理定长数据类型比变长列快很多，MySQL不允许对变长列（或一个列的可变部分）进行索引，这会极大影响性能。</p>
+<p>具体类型描述如下表：</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CHAR</td>
+<td>1~255个字符的定长串，它的长度必须在创建时指定，否则MySQL假定为CHAR(1)</td>
+</tr>
+<tr>
+<td>VARCHAR</td>
+<td>可变长度，最多不超过255字节，如在创建时指定VARCHAR(n)，则可存储0~n个字符的变长串</td>
+</tr>
+<tr>
+<td>TINYTEXT</td>
+<td>同TEXT，最大长度为255字节</td>
+</tr>
+<tr>
+<td>MEDUIMTEXT</td>
+<td>同TEXT，最大长度为16K</td>
+</tr>
+<tr>
+<td>TEXT</td>
+<td>最大长度为64K的变长文本</td>
+</tr>
+<tr>
+<td>LONGTEXT</td>
+<td>同Text，最大长度为4GB（纯文本，一般不会到4G）</td>
+</tr>
+<tr>
+<td>ENUM</td>
+<td>接受最多64K个串组成的预定义集合的某个串</td>
+</tr>
+<tr>
+<td>SET</td>
+<td>接受最多64K个串组成的预定义集合的零个或多个串</td>
+</tr>
+</tbody>
+</table>
+<p>注意：不管任何形式的串数据类型，串值都必须在引号内（通常单引号）；如果数值是计算中使用的数值，则应存储在数值数据类型列中，如果作为字符串使用（如电话号码、邮政编码）则应保存在串数据类型列中。</p>
+<h3 id="2-数值数据类型"><a href="#2-数值数据类型" class="headerlink" title="2. 数值数据类型"></a>2. 数值数据类型</h3><p>存储数值，每种类型具有不同的存储范围，支持取值范围越大，所需存储空间越多。所有数值类型（除BIT和Boolean外）都可以有符号或无符号，有符号数据列可存储正或负的数值，默认情况为有符号。</p>
+<p>MySQL提供了5种整型：tinyint、smallint、mediumint、int和bigint(字节数1、2、3、4、8)，这些类型在可表示的取值范围上是不同的。整数列可定义为unsigned从而禁用负值；这使列的取值范围为0以上。</p>
+<p>MySQL提供3种浮点类型：float、double和decimal。与整型不同，<code>浮点类型不能是unsigned的</code>，其取值范围也与整型不同，这种不同不仅在于这些类型有最大值，而且还有最小非零值。最小值提供了相应类型精度的一种度量，这对于记录科学数据来说是非常重要的（当然，也有负的最大和最小值）。</p>
+<table>
+<thead>
+<tr>
+<th>类型说明</th>
+<th>存储需求</th>
+<th>取值范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tinyint(m)</td>
+<td>1字节</td>
+<td>有符号值：-128 到127（-2^7到2^7-1）无符号值：0到255（0到2^8-1）</td>
+</tr>
+<tr>
+<td>smallint[(m)]</td>
+<td>2字节</td>
+<td>有符号值：-32768 到32767（-2^15到2^15-1）无符号值：0到65535（0到2^16-1）</td>
+</tr>
+<tr>
+<td>mediumint[(m)]</td>
+<td>3字节</td>
+<td>有符号值：-8388608 到8388607（- 2^23 到2^23 – 1 ） 无符号值：0到16777215（0 到2^24 – 1）</td>
+</tr>
+<tr>
+<td>int[(m)]</td>
+<td>4字节</td>
+<td>有符号值：-2147683648 到2147683647（-2^31到2^31-1） 无符号值：0到4294967295（0到2^32-1）</td>
+</tr>
+<tr>
+<td>bigint[(m)]</td>
+<td>8字节</td>
+<td>有符号值：-9223372036854775808 到9223373036854775807（-2^63到2^63-1）无符号值：0到18446744073709551615（0到2^64-1）</td>
+</tr>
+<tr>
+<td>float[(m, d)]</td>
+<td>4字节</td>
+<td>最小非零值：±1.175494351e-38</td>
+</tr>
+<tr>
+<td>double[(m, d)]</td>
+<td>8字节</td>
+<td>最小非零值：±2.2250738585072014e-308</td>
+</tr>
+<tr>
+<td>decimal (m, d)</td>
+<td></td>
+<td>可变；其值的范围依赖于m和d</td>
+</tr>
+</tbody>
+</table>
+<p>对于整型值，如果数据取值范围较小，如人员年龄或兄弟姐妹数，则tinyint最合适。mediumint能够表示数百万的值并且可用于更多类型的值，但存储代价较大。bigint在全部整型中取值范围最大，而且需要的存储空间是表示范围次大的整型int类型的两倍，因此只在确实需要时才用。  </p>
+<p>对于浮点值，double占用float的两倍空间。除非特别需要高精度或范围极大的值，一般应使用只用一半存储代价的float型来表示数据。</p>
+<p>在定义整型列时，可以指定可选的显示尺寸m。如果这样，m应该是一个1到255的整数。它表示用来显示列中值的字符数。</p>
+<blockquote>
+<p>例如，mediumint(4)指定了一个具有4个字符显示宽度的mediumint列。如果定义了一个没有明确宽度的整数列，将会自动分配给它一个缺省的宽度。缺省值为每种类型的”最长”值的长度。如果某个特定值的可打印表示需要不止m个字符，则显示完全的值；不会将值截断以适合m个字符。需要注意的是，使用一个宽度指示器不会影响字段的大小和它可以存储的值的范围。</p>
+</blockquote>
+<p>对每种浮点类型，可指定一个最大的显示尺寸m和小数位数d。m的值应该取1到255，d的值可为0 到30，但是不应大于m–2。m和d对float和double都是可选的，但<code>对于decimal是必须的</code>。在选项m和d时，如果省略了它们，则使用缺省值。</p>
+<h3 id="3-日期和时间数据类型"><a href="#3-日期和时间数据类型" class="headerlink" title="3. 日期和时间数据类型"></a>3. 日期和时间数据类型</h3><p>MySQl中有多种表示日期和时间的数据类型。其中YEAR表示年份，DATE表示日期，TIME表示时间，DATETIME和TIMESTAMP表示日期和时间。具体如下表：</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>存储字节数</th>
+<th>取值范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DATE</td>
+<td>4</td>
+<td>1000-01-01——9999-12-31</td>
+</tr>
+<tr>
+<td>TIME</td>
+<td>3</td>
+<td>-838:59:59——838:59:59</td>
+</tr>
+<tr>
+<td>DATETIME</td>
+<td>8</td>
+<td>1000-01-01 00:00:00——9999-12-31 23:59:59</td>
+</tr>
+<tr>
+<td>TIMESTAMP</td>
+<td>4</td>
+<td>19700101080001——20380119111407</td>
+</tr>
+<tr>
+<td>YEAR</td>
+<td>1</td>
+<td>1901——2155</td>
+</tr>
+</tbody>
+</table>
+<p><code>当插入值超出有效取值范围时，系统会报错，并将零值插入到数据库中。</code></p>
+<p>MySQL是以YYYY-MM-DD格式来显示DATE类型的值，插入数据时，数据可以保持这种格式。另外，MySQL还支持一些不严格的语法格式，分隔符”-“可以用”@”、”.”等符号来替代。 在插入数据时，也可以使用”YY-MM-DD”格式，YY转化成对应的年份的规则与YEAR类型类似。如果我们想插入当前系统的时间，则可以插入CURRENT_DATE或者NOW()。</p>
+<p>TIME类型表示为”时：分：秒”，尽管小时范围一般是0~23，但是为了表示某些特殊时间间隔，MySQL将TIME的小时范围扩发了，而且支持负值。对TIME类型赋值，标准格式是’HH：MM：SS’，但不一定非要是这种格式。 如果插入的是’D HH：MM：SS’格式，则类似插入了’（D*24+HH）：MM：SS’。比如插入’2 23:50:50’，相当于插入了’71:50:50’。如果插入的是’HH：MM’或’SS’格式，则效果是其他未被表示位的值赋为零值。比如插入’30’，相当于插入了’00:00:30’；如果插入’11:25’，相当于插入了’11:25:00’。在MySQl中，对于’HHMMSS’格式，系统能够自动转化为标准格式。如果我们想插入当前系统的时间，则可以插入CURRENT_TIME或者NOW()。</p>
+<p>DATETIME类型准格式为”YYYY-MM-DD HH：MM：SS”，具体赋值方法与上面的方法相似。</p>
+<p>TIMESTAMP的取值范围比较小，没有DATETIME的取值范围大，因此输入值时一定要保证在TIMESTAMP的范围之内。它的插入也与插入其他日期和时间数据类型类似。那么TIMESTAMP类型如何插入当前时间？第一，可以使用CURRENT_TIMESTAMP；第二，输入NULL，系统自动输入当前的TIMESTAMP；第三，无任何输入，系统自动输入当前的TIMESTAMP。 另外有很特殊的一点：TIMESTAMP的数值是与时区相关。</p>
+<p>给YEAR类型复制可以有三种方法： 第一种是直接插入4位字符串或者4位数字； 第二种是插入2位字符串，这种情况下如果插入’00’~’69’，则相当于插入2000~2069；如果插入’70’~’99’，则相当于插入1970~1999。第二种情况下插入的如果是’0’，则与插入’00’效果相同，都是表示2000年； 第三种是插入2位数字，它与第二种（插入两位字符串）不同之处仅在于：如果插入的是一位数字0，则表示的是0000，而不是2000年。所以在给YEAR类型赋值时，一定要分清0和’0’，虽然两者相差个引号，但实际效果确实相差了2000年。</p>
+<h3 id="4-二进制数据类型"><a href="#4-二进制数据类型" class="headerlink" title="4. 二进制数据类型"></a>4. 二进制数据类型</h3><p>二进制类型可存储任何数据，如文字、图像、多媒体等。具体类型描述如下：</p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TITYBLOB</td>
+<td>最大长度为255字节</td>
+</tr>
+<tr>
+<td>BLOB</td>
+<td>最大长度为64KB</td>
+</tr>
+<tr>
+<td>MEDIUMBLOB</td>
+<td>最大长度为16MB</td>
+</tr>
+<tr>
+<td>LONGBLOB</td>
+<td>最大长度为4GB</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MySQL/" rel="tag">#MySQL</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/22/pip_tutorial.html" rel="next" title="pip用法记录">
+                <i class="fa fa-chevron-left"></i> pip用法记录
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/12/29/MySQL_notes1.html" rel="prev" title="MySQL基础(一)">
+                MySQL基础(一) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/12/28/MySQL_data_types.html"
+     data-title="MySQL常用数据类型"
+     data-content=""
+     data-url="http://www.chenchen.co.uk/2015/12/28/MySQL_data_types.html">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/12/28/MySQL_data_types.html"
+           data-title="MySQL常用数据类型" data-url="http://www.chenchen.co.uk/2015/12/28/MySQL_data_types.html">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/assets/images/avatar.jpg"
+               alt="CHEN CHEN" />
+          <p class="site-author-name" itemprop="name">CHEN CHEN</p>
+          <p class="site-description motion-element" itemprop="description">Geeky Quant Trader</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">39</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/chester890222" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/chester890222" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/chester890222" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-串数据类型-String"><span class="nav-text">1. 串数据类型(String)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-数值数据类型"><span class="nav-text">2. 数值数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-日期和时间数据类型"><span class="nav-text">3. 日期和时间数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-二进制数据类型"><span class="nav-text">4. 二进制数据类型</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CHEN CHEN</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a> 
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+    NexT.Mist
+  </a>
+</div>
+
+        
+  <div class="busuanzi-count">
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    
+      <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+    
+
+    
+      <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+    
+  </div>
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"chester890222"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+
+  
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("xxK4eciDKJiCkCWyNGfb5Mtc-gzGzoHsz", "gyeRtApNcGtRbNa3OKh9XueX");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>

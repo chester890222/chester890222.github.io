@@ -1,0 +1,936 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="O46hFL8z727ZiTwaDvXapjZwdWcO1eQGX05XFEpZH7k" />
+
+
+
+
+  <meta name="baidu-site-verification" content="lYyc7oZNSZ" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Blog,Jekyll,Github,Markdown," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="利用Github Pages的免费静态网页功能，搭建个人博客，markdown编辑让你更专注于内容。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jekyll+Github+Markdown的个人博客">
+<meta property="og:url" content="http://www.chenchen.co.uk/2015/12/01/Jekyll+Github+Markdown.html">
+<meta property="og:site_name" content="CHEN's Quant Life">
+<meta property="og:description" content="利用Github Pages的免费静态网页功能，搭建个人博客，markdown编辑让你更专注于内容。">
+<meta property="og:updated_time" content="2016-06-21T06:22:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jekyll+Github+Markdown的个人博客">
+<meta name="twitter:description" content="利用Github Pages的免费静态网页功能，搭建个人博客，markdown编辑让你更专注于内容。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6218001015313008000,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://www.chenchen.co.uk/2015/12/01/Jekyll+Github+Markdown.html"/>
+
+  <title> Jekyll+Github+Markdown的个人博客 | CHEN's Quant Life </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-70604530-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?93e110d5533ac11f504999197e914603";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">CHEN's Quant Life</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Jekyll+Github+Markdown的个人博客
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-12-01T00:00:00+08:00" content="2015-12-01">
+              2015-12-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Blog/" itemprop="url" rel="index">
+                    <span itemprop="name">Blog</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/12/01/Jekyll+Github+Markdown.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/01/Jekyll+Github+Markdown.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/12/01/Jekyll+Github+Markdown.html" class="leancloud_visitors" data-flag-title="Jekyll+Github+Markdown的个人博客">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>利用Github Pages的免费静态网页功能，搭建个人博客，markdown编辑让你更专注于内容。</p>
+<a id="more"></a>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
+<li>Github 账号</li>
+<li>Sublime Text 3 （或者其他编辑器）</li>
+<li>网站域名（不是必须）</li>
+</ol>
+<p>简单说，只需要三步，就可以在 Github 搭建起一个博客：</p>
+<ol>
+<li>在 Github 上建一个名为 xxx.github.io 的库；</li>
+<li>把看中了的 Jekyll 模板 clone 到本地；</li>
+<li>把这个模板 push 到自己的库；</li>
+</ol>
+<h2 id="基础搭建"><a href="#基础搭建" class="headerlink" title="基础搭建"></a>基础搭建</h2><h3 id="1-在-Github-创建名为-username-github-io-的库"><a href="#1-在-Github-创建名为-username-github-io-的库" class="headerlink" title="1. 在 Github 创建名为 username.github.io 的库"></a>1. 在 Github 创建名为 username.github.io 的库</h3><p>首先要创建一个新的库，把它命名为 username.github.io。所以如果你的用户名是 quant222（实际并不存在），库的名字就要 quant222.github.io。<br>博客搭建成功后，就可以直接通过quant222.github.io来访问你的博客了。</p>
+<blockquote>
+<p>其实这里的库并不一定需要用<code>username.github.io</code>来创建，也可以叫<code>whateveriwant</code>。这样的话需要在gh-pages的分支上push commits。将来访问博客则是通过<code>quant222.github.io/whateveriwant/</code>。</p>
+</blockquote>
+<p>创建成功后，把已经创建的库 clone 到本地，或者在本地电脑保存网页的目录下用cmd输入以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;# quant222.github.io&quot; &gt;&gt; README.md</span><br><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin https://github.com/quant222/quant222.github.io.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+<h3 id="2-选择模板"><a href="#2-选择模板" class="headerlink" title="2. 选择模板"></a>2. 选择模板</h3><p>如果想从0开始学jekyll搭建网页，可以在本地创建一个空的文件夹，按照其他教程一步步创建空白博客。</p>
+<p>更方便直观的办法就是在网上找别人已经创建完成的模版。现在 Jekyll 有很多好看的模板，可以到<br><a href="http://jekyllthemes.org/" title="http://jekyllthemes.org/" target="_blank" rel="external">Jekyll Themes</a>或者<a href="http://www.zhihu.com/question/20223939" title="http://www.zhihu.com/question/20223939" target="_blank" rel="external">知乎</a>上找自己喜欢的风格的博客。我使用的是<a href="http://huangxuan.me/" title="http://huangxuan.me/" target="_blank" rel="external">Hux blog</a>的模版。</p>
+<h3 id="3-把博客托管到-Github-Pages"><a href="#3-把博客托管到-Github-Pages" class="headerlink" title="3. 把博客托管到 Github Pages"></a>3. 把博客托管到 Github Pages</h3><p><code>_config.yml</code>里的个人信息，再把整个文件夹push到github上之前创建的库里就可以了。</p>
+<p>模版下载非常简单可以clone或者直接下载，记得下载完把其中的.git文件给删了，是别人创建模版时历史commit等等记录，另外需要删除<code>_post</code>文档中别人的博客，再修改配置文件因模版不同而略有区别，一般需要改的有site url，github等网站账号等。</p>
+<p>修改完成后，可以把所有文件放到之前一步在本地创建的库目录下。<br>之后每次更新博客，我们就需要重复 git add 和 git commit 这两步：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add . </span><br><span class="line">$ git commit -m &apos;modified _config.yml&apos;</span><br><span class="line">$ git push -u origin master</span><br></pre></td></tr></table></figure>
+<p>现在，进入quant222.github.com/quant222.github.io，里面应该已经有刚上传的文件了。<br>现在在浏览器输入网址 <a href="http://quant222.github.io，就可以看到博客的样子了（第一次上传完可能需要几分钟后才会显示）。" target="_blank" rel="external">http://quant222.github.io，就可以看到博客的样子了（第一次上传完可能需要几分钟后才会显示）。</a></p>
+<p>如果没有修改模板的需求，Jekyll+Github的个人博客就搭建完成了。</p>
+<p>以后写文章，只需要在 _post/ 文件加中，加入带有 YAML 头信息（YAML front matter）的 markdown 文件，然后 push 到 Github，就会被自动渲染成 HTML。比如，增加一篇名为 My First Post 的博客，在本地创建一个文件名带有日期的 markdown 文件 2015-04-20-my-first-post.md（里面要写好头信息）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">layout: post</span><br><span class="line">title: My First Post </span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"># 这是我的第一篇博客</span><br></pre></td></tr></table></figure>
+<p><code>需要特别注意yaml头信息里的标点，中文输入里的冒号：和双引号“”可能会使网页出错、无法正常显示等问题。</code></p>
+<p>写完文章后，按上述方法(git add commit push的顺序)推送到Github就能在网站上看到写的文章了。<br>至此，一个可以正常使用的个人博客搭建完成了。</p>
+<h2 id="进阶修改"><a href="#进阶修改" class="headerlink" title="进阶修改"></a>进阶修改</h2><p>由于在建这个博客前，我对javascript、css等网站设计相关语言完全不懂，只是依靠其他编程语言的一点基础，照着别人的模版稍作修改。以下的“进阶”过程只是我个人建站的记录，可能会有误导，但至少在我的网站上启动了。</p>
+<h3 id="增加个人域名"><a href="#增加个人域名" class="headerlink" title="增加个人域名"></a>增加个人域名</h3><p>大概流程如下：</p>
+<ol>
+<li>注册Godaddy账户（还有其他一些域名管理的网站，如Name，万网等，可以根据自己的需要及价格选择）</li>
+<li>挑选自己心仪的域名，购买多少就看自己钱包了，Godaddy有不少promotion code，我的域名折扣之后10年60多美金。支持支付宝支付，人民币400元左右，相当于每年40几块钱，还是可以接受的。</li>
+<li><p>接下来就是解析DNS到自己的github page上：Godaddy自己也有DNS manager，也可以绑定到github上。但据说国内对godaddy的访问效果不好，所以通过<a href="http://www.dnspod.cn" title="http://www.dnspod.cn" target="_blank" rel="external">DNSpod</a>设置。</p>
+<ul>
+<li>首先需要在godaddy的域名设置里将nameservers修改成F1G1NS1.DNSPOD.NET和F1G1NS2.DNSPOD.NET</li>
+<li>然后进入DNSpod，添加域名记录，可参考DNSPod的<a href="https://www.dnspod.cn/Support" title="https://www.dnspod.cn/Support" target="_blank" rel="external">帮助文档</a></li>
+<li>添加域名记录后，进入会有个加载配置啥的，不要保存，使用默认的两个解析就行</li>
+<li>在DNSPod自己的域名下添加一条A记录，地址就是Github Pages的服务IP地址：103.245.222.133（最好自行ping获取最新的ip,因为ip可能改变。）</li>
+</ul>
+</li>
+<li><p>在Github项目目录下创建CNAME文件，添入刚注册的域名，push到Github上，静候DNS生效，差不多十几分钟就OK了</p>
+</li>
+</ol>
+<h3 id="pygments语法高亮"><a href="#pygments语法高亮" class="headerlink" title="pygments语法高亮"></a>pygments语法高亮</h3><p>用markdown写东西的一个特色就是可以语法高亮。主要的两个插件有google code prittify和pygments。<br>Hux的博客里默认使用的pygments，可以在_config.yml文件里设置：<code>highlighter: pygments</code><br>也可以自定义一些语法高亮的主题（Hux默认主题设置在_include文件夹的<code>head.html</code>），个人比较喜欢Monokai theme，在项目css目录下创建<code>monokai-syntax.css</code>文件，保存下面的代码</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.highlight</span> <span class="selector-tag">pre</span> &#123; <span class="attribute">color</span>: <span class="number">#fff</span>; <span class="attribute">padding</span>: <span class="number">7px</span>; <span class="attribute">background-color</span>:<span class="number">#333</span>&#125;</span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.hll</span> &#123; <span class="attribute">background-color</span>: <span class="number">#49483e</span> &#125;</span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.c</span> &#123; <span class="attribute">color</span>: <span class="number">#75715e</span> &#125; <span class="comment">/* Comment */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.err</span> &#123; <span class="attribute">color</span>: <span class="number">#960050</span>; <span class="attribute">background-color</span>: <span class="number">#1e0010</span> &#125; <span class="comment">/* Error */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.k</span> &#123; <span class="attribute">color</span>: <span class="number">#66d9ef</span> &#125; <span class="comment">/* Keyword */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.l</span> &#123; <span class="attribute">color</span>: <span class="number">#ae81ff</span> &#125; <span class="comment">/* Literal */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.n</span> &#123; <span class="attribute">color</span>: <span class="number">#f8f8f2</span> &#125; <span class="comment">/* Name */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.o</span> &#123; <span class="attribute">color</span>: <span class="number">#f92672</span> &#125; <span class="comment">/* Operator */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.p</span> &#123; <span class="attribute">color</span>: <span class="number">#f8f8f2</span> &#125; <span class="comment">/* Punctuation */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.cm</span> &#123; <span class="attribute">color</span>: <span class="number">#75715e</span> &#125; <span class="comment">/* Comment.Multiline */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.cp</span> &#123; <span class="attribute">color</span>: <span class="number">#75715e</span> &#125; <span class="comment">/* Comment.Preproc */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.c1</span> &#123; <span class="attribute">color</span>: <span class="number">#75715e</span> &#125; <span class="comment">/* Comment.Single */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.cs</span> &#123; <span class="attribute">color</span>: <span class="number">#75715e</span> &#125; <span class="comment">/* Comment.Special */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.ge</span> &#123; <span class="attribute">font-style</span>: italic &#125; <span class="comment">/* Generic.Emph */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.gs</span> &#123; <span class="attribute">font-weight</span>: bold &#125; <span class="comment">/* Generic.Strong */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.kc</span> &#123; <span class="attribute">color</span>: <span class="number">#66d9ef</span> &#125; <span class="comment">/* Keyword.Constant */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.kd</span> &#123; <span class="attribute">color</span>: <span class="number">#66d9ef</span> &#125; <span class="comment">/* Keyword.Declaration */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.kn</span> &#123; <span class="attribute">color</span>: <span class="number">#f92672</span> &#125; <span class="comment">/* Keyword.Namespace */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.kp</span> &#123; <span class="attribute">color</span>: <span class="number">#66d9ef</span> &#125; <span class="comment">/* Keyword.Pseudo */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.kr</span> &#123; <span class="attribute">color</span>: <span class="number">#66d9ef</span> &#125; <span class="comment">/* Keyword.Reserved */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.kt</span> &#123; <span class="attribute">color</span>: <span class="number">#66d9ef</span> &#125; <span class="comment">/* Keyword.Type */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.ld</span> &#123; <span class="attribute">color</span>: <span class="number">#e6db74</span> &#125; <span class="comment">/* Literal.Date */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.m</span> &#123; <span class="attribute">color</span>: <span class="number">#ae81ff</span> &#125; <span class="comment">/* Literal.Number */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.s</span> &#123; <span class="attribute">color</span>: <span class="number">#e6db74</span> &#125; <span class="comment">/* Literal.String */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.na</span> &#123; <span class="attribute">color</span>: <span class="number">#a6e22e</span> &#125; <span class="comment">/* Name.Attribute */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.nb</span> &#123; <span class="attribute">color</span>: <span class="number">#f8f8f2</span> &#125; <span class="comment">/* Name.Builtin */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.nc</span> &#123; <span class="attribute">color</span>: <span class="number">#a6e22e</span> &#125; <span class="comment">/* Name.Class */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.no</span> &#123; <span class="attribute">color</span>: <span class="number">#66d9ef</span> &#125; <span class="comment">/* Name.Constant */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.nd</span> &#123; <span class="attribute">color</span>: <span class="number">#a6e22e</span> &#125; <span class="comment">/* Name.Decorator */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.ni</span> &#123; <span class="attribute">color</span>: <span class="number">#f8f8f2</span> &#125; <span class="comment">/* Name.Entity */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.ne</span> &#123; <span class="attribute">color</span>: <span class="number">#a6e22e</span> &#125; <span class="comment">/* Name.Exception */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.nf</span> &#123; <span class="attribute">color</span>: <span class="number">#a6e22e</span> &#125; <span class="comment">/* Name.Function */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.nl</span> &#123; <span class="attribute">color</span>: <span class="number">#f8f8f2</span> &#125; <span class="comment">/* Name.Label */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.nn</span> &#123; <span class="attribute">color</span>: <span class="number">#f8f8f2</span> &#125; <span class="comment">/* Name.Namespace */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.nx</span> &#123; <span class="attribute">color</span>: <span class="number">#a6e22e</span> &#125; <span class="comment">/* Name.Other */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.py</span> &#123; <span class="attribute">color</span>: <span class="number">#f8f8f2</span> &#125; <span class="comment">/* Name.Property */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.nt</span> &#123; <span class="attribute">color</span>: <span class="number">#f92672</span> &#125; <span class="comment">/* Name.Tag */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.nv</span> &#123; <span class="attribute">color</span>: <span class="number">#f8f8f2</span> &#125; <span class="comment">/* Name.Variable */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.ow</span> &#123; <span class="attribute">color</span>: <span class="number">#f92672</span> &#125; <span class="comment">/* Operator.Word */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.w</span> &#123; <span class="attribute">color</span>: <span class="number">#f8f8f2</span> &#125; <span class="comment">/* Text.Whitespace */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.mf</span> &#123; <span class="attribute">color</span>: <span class="number">#ae81ff</span> &#125; <span class="comment">/* Literal.Number.Float */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.mh</span> &#123; <span class="attribute">color</span>: <span class="number">#ae81ff</span> &#125; <span class="comment">/* Literal.Number.Hex */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.mi</span> &#123; <span class="attribute">color</span>: <span class="number">#ae81ff</span> &#125; <span class="comment">/* Literal.Number.Integer */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.mo</span> &#123; <span class="attribute">color</span>: <span class="number">#ae81ff</span> &#125; <span class="comment">/* Literal.Number.Oct */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.sb</span> &#123; <span class="attribute">color</span>: <span class="number">#e6db74</span> &#125; <span class="comment">/* Literal.String.Backtick */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.sc</span> &#123; <span class="attribute">color</span>: <span class="number">#e6db74</span> &#125; <span class="comment">/* Literal.String.Char */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.sd</span> &#123; <span class="attribute">color</span>: <span class="number">#e6db74</span> &#125; <span class="comment">/* Literal.String.Doc */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.s2</span> &#123; <span class="attribute">color</span>: <span class="number">#e6db74</span> &#125; <span class="comment">/* Literal.String.Double */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.se</span> &#123; <span class="attribute">color</span>: <span class="number">#ae81ff</span> &#125; <span class="comment">/* Literal.String.Escape */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.sh</span> &#123; <span class="attribute">color</span>: <span class="number">#e6db74</span> &#125; <span class="comment">/* Literal.String.Heredoc */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.si</span> &#123; <span class="attribute">color</span>: <span class="number">#e6db74</span> &#125; <span class="comment">/* Literal.String.Interpol */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.sx</span> &#123; <span class="attribute">color</span>: <span class="number">#e6db74</span> &#125; <span class="comment">/* Literal.String.Other */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.sr</span> &#123; <span class="attribute">color</span>: <span class="number">#e6db74</span> &#125; <span class="comment">/* Literal.String.Regex */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.s1</span> &#123; <span class="attribute">color</span>: <span class="number">#e6db74</span> &#125; <span class="comment">/* Literal.String.Single */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.ss</span> &#123; <span class="attribute">color</span>: <span class="number">#e6db74</span> &#125; <span class="comment">/* Literal.String.Symbol */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.bp</span> &#123; <span class="attribute">color</span>: <span class="number">#f8f8f2</span> &#125; <span class="comment">/* Name.Builtin.Pseudo */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.vc</span> &#123; <span class="attribute">color</span>: <span class="number">#f8f8f2</span> &#125; <span class="comment">/* Name.Variable.Class */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.vg</span> &#123; <span class="attribute">color</span>: <span class="number">#f8f8f2</span> &#125; <span class="comment">/* Name.Variable.Global */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.vi</span> &#123; <span class="attribute">color</span>: <span class="number">#f8f8f2</span> &#125; <span class="comment">/* Name.Variable.Instance */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.il</span> &#123; <span class="attribute">color</span>: <span class="number">#ae81ff</span> &#125; <span class="comment">/* Literal.Number.Integer.Long */</span></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.gh</span> &#123; &#125; <span class="comment">/* Generic Heading &amp; Diff Header */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.gu</span> &#123; <span class="attribute">color</span>: <span class="number">#75715e</span>; &#125; <span class="comment">/* Generic.Subheading &amp; Diff Unified/Comment? */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.gd</span> &#123; <span class="attribute">color</span>: <span class="number">#f92672</span>; &#125; <span class="comment">/* Generic.Deleted &amp; Diff Deleted */</span></span><br><span class="line"><span class="selector-class">.highlight</span> <span class="selector-class">.gi</span> &#123; <span class="attribute">color</span>: <span class="number">#a6e22e</span>; &#125; <span class="comment">/* Generic.Inserted &amp; Diff Inserted */</span></span><br></pre></td></tr></table></figure>
+<p>之后在_include文件夹下的<code>footer.html</code>里添加</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"&#123;&#123; "</span>/<span class="attr">css</span>/<span class="attr">monokai-syntax.css</span>" | <span class="attr">prepend:</span> <span class="attr">site.baseurl</span> &#125;&#125;"&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"http://cdn.bootcss.com/highlight.js/8.9.1/highlight.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined">hljs.initHighlightingOnLoad();</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="添加back-to-top按钮"><a href="#添加back-to-top按钮" class="headerlink" title="添加back-to-top按钮"></a>添加back-to-top按钮</h3><p>在页面右下角添加一个返回页首的按钮，看上去挺实用的，所以就模仿了一个。</p>
+<p>首先,网上找一张back-to-top的图片放在img文件夹下。<br>在css文件夹下创建<code>backtop.css</code>（也可以放在其他的css文件里）</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#back-top</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: fixed;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">30px</span>;</span><br><span class="line">  <span class="attribute">margin-left</span>: <span class="number">1040px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#back-top</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">54px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">54px</span>;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#ddd</span> <span class="built_in">url</span>(../img/back-to-top.png) no-repeat center center;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#ddd</span>;</span><br><span class="line">  <span class="attribute">-webkit-border-radius</span>: <span class="number">7px</span>;</span><br><span class="line">  <span class="attribute">-moz-border-radius</span>: <span class="number">7px</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">7px</span>;</span><br><span class="line">  <span class="attribute">-webkit-transition</span>: <span class="number">1s</span>;</span><br><span class="line">  <span class="attribute">-moz-transition</span>: <span class="number">1s</span>;</span><br><span class="line">  <span class="attribute">transition</span>: <span class="number">1s</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#back-top</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#777</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">media</span> (min-width: <span class="number">768px</span>) &#123;</span><br><span class="line"><span class="selector-id">#back-top</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在js文件夹下创建<code>backtop.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#back-top"</span>).hide();</span><br><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  $(<span class="built_in">window</span>).scroll(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> ($(<span class="keyword">this</span>).scrollTop() &gt; <span class="number">100</span>) &#123;</span><br><span class="line">      $(<span class="string">'#back-top'</span>).fadeIn();</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      $(<span class="string">'#back-top'</span>).fadeOut();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">  $(<span class="string">'#back-top a'</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">'body,html'</span>).animate(&#123;</span><br><span class="line">      scrollTop: <span class="number">0</span></span><br><span class="line">    &#125;, <span class="number">800</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>然后，在<code>footer.html</code>里加上</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"&#123;&#123; "</span>/<span class="attr">js</span>/<span class="attr">backtop.js</span> " | <span class="attr">prepend:</span> <span class="attr">site.baseurl</span> &#125;&#125;"&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>最后，在想让它出现的位置，比如<code>post.html</code>里加入</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"back-top"</span> <span class="attr">class</span>=<span class="string">"hidden-print hidden-sm hidden-xs"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#top"</span> <span class="attr">title</span>=<span class="string">"Back to top"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="添加table-of-content文章目录的sidebar"><a href="#添加table-of-content文章目录的sidebar" class="headerlink" title="添加table of content文章目录的sidebar"></a>添加table of content文章目录的sidebar</h3><p>目标是在页面足够的情况下，文章的右侧出现该文章的目录，并悬浮窗口。<br>参考自 <a href="http://www.thomaszhao.cn/2015/01/08/how-do-i-build-this-jekyll-blog/#section-4" title="http://www.thomaszhao.cn/2015/01/08/how-do-i-build-this-jekyll-blog/#section-4" target="_blank" rel="external">Thomas Zhao Studio</a></p>
+<p>在css文件夹下创建<code>toc.css</code>（也可以放在其他的css文件里）</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* By default it's not affixed in mobile views, so undo that */</span></span><br><span class="line"><span class="selector-class">.bs-docs-sidebar</span><span class="selector-class">.affix</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: static;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">media</span> (min-width: <span class="number">768px</span>) &#123;</span><br><span class="line">  <span class="selector-class">.bs-docs-sidebar</span> &#123;</span><br><span class="line">    <span class="attribute">padding-left</span>: <span class="number">10px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* First level of nav */</span></span><br><span class="line"><span class="selector-class">.bs-docs-sidenav</span> &#123;</span><br><span class="line">  <span class="attribute">margin-top</span>: <span class="number">40px</span>;</span><br><span class="line">  <span class="attribute">margin-bottom</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* All levels of nav */</span></span><br><span class="line"><span class="selector-class">.bs-docs-sidebar</span> <span class="selector-class">.nav</span> &gt; <span class="selector-tag">li</span> &gt; <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">4px</span> <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">font-weight</span>: <span class="number">300</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#696969</span>;</span><br><span class="line">  <span class="comment">/*no wrap*/</span></span><br><span class="line">  <span class="attribute">overflow</span>:hidden;</span><br><span class="line">  <span class="attribute">white-space</span>:nowrap;</span><br><span class="line">  <span class="attribute">text-overflow</span>:ellipsis</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.bs-docs-sidebar</span> <span class="selector-class">.nav</span> &gt; <span class="selector-tag">li</span> &gt; <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>,</span><br><span class="line"><span class="selector-class">.bs-docs-sidebar</span> <span class="selector-class">.nav</span> &gt; <span class="selector-tag">li</span> &gt; <span class="selector-tag">a</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#563d7c</span>;</span><br><span class="line">  <span class="attribute">text-decoration</span>: none;</span><br><span class="line">  <span class="attribute">background-color</span>: transparent;</span><br><span class="line">  <span class="attribute">border-left</span>: <span class="number">1px</span> solid <span class="number">#563d7c</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.bs-docs-sidebar</span> <span class="selector-class">.nav</span> &gt; <span class="selector-class">.active</span> &gt; <span class="selector-tag">a</span>,</span><br><span class="line"><span class="selector-class">.bs-docs-sidebar</span> <span class="selector-class">.nav</span> &gt; <span class="selector-class">.active</span><span class="selector-pseudo">:hover</span> &gt; <span class="selector-tag">a</span>,</span><br><span class="line"><span class="selector-class">.bs-docs-sidebar</span> <span class="selector-class">.nav</span> &gt; <span class="selector-class">.active</span><span class="selector-pseudo">:focus</span> &gt; <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">9px</span>;</span><br><span class="line">  <span class="attribute">font-weight</span>: <span class="number">300</span>;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">  <span class="attribute">background-color</span>: transparent;</span><br><span class="line">  <span class="attribute">border-left</span>: <span class="number">2px</span> solid <span class="number">#563d7c</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Nav: second level (shown on .active) */</span></span><br><span class="line"><span class="selector-class">.bs-docs-sidebar</span> <span class="selector-class">.nav</span> <span class="selector-class">.nav</span> &#123;</span><br><span class="line">  <span class="comment">/* display: none; Hide by default, but at &gt;768px, show it */</span></span><br><span class="line">  <span class="comment">/* padding-bottom: 10px; */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.bs-docs-sidebar</span> <span class="selector-class">.nav</span> <span class="selector-class">.nav</span> &gt; <span class="selector-tag">li</span> &gt; <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">padding-top</span>: <span class="number">1px</span>;</span><br><span class="line">  <span class="attribute">padding-bottom</span>: <span class="number">1px</span>;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">18px</span>;</span><br><span class="line">  <span class="attribute">font-weight</span>: bold;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.bs-docs-sidebar</span> <span class="selector-class">.nav</span> <span class="selector-class">.nav</span> &gt; <span class="selector-tag">li</span> &gt; <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>,</span><br><span class="line"><span class="selector-class">.bs-docs-sidebar</span> <span class="selector-class">.nav</span> <span class="selector-class">.nav</span> &gt; <span class="selector-tag">li</span> &gt; <span class="selector-tag">a</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">19px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.bs-docs-sidebar</span> <span class="selector-class">.nav</span> <span class="selector-class">.nav</span> &gt; <span class="selector-class">.active</span> &gt; <span class="selector-tag">a</span>,</span><br><span class="line"><span class="selector-class">.bs-docs-sidebar</span> <span class="selector-class">.nav</span> <span class="selector-class">.nav</span> &gt; <span class="selector-class">.active</span><span class="selector-pseudo">:hover</span> &gt; <span class="selector-tag">a</span>,</span><br><span class="line"><span class="selector-class">.bs-docs-sidebar</span> <span class="selector-class">.nav</span> <span class="selector-class">.nav</span> &gt; <span class="selector-class">.active</span><span class="selector-pseudo">:focus</span> &gt; <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">18px</span>;</span><br><span class="line">  <span class="attribute">font-weight</span>: bold;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Nav: 3rd level (shown on .active) */</span></span><br><span class="line"><span class="selector-class">.bs-docs-sidebar</span> <span class="selector-class">.nav</span> <span class="selector-class">.nav</span> <span class="selector-class">.nav</span> &#123;</span><br><span class="line">  <span class="comment">/*display: none;  Hide by default, but at &gt;768px, show it */</span></span><br><span class="line">  <span class="comment">/* padding-bottom: 10px;*/</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.bs-docs-sidebar</span> <span class="selector-class">.nav</span> <span class="selector-class">.nav</span> <span class="selector-class">.nav</span> &gt; <span class="selector-tag">li</span> &gt; <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">padding-top</span>: <span class="number">1px</span>;</span><br><span class="line">  <span class="attribute">padding-bottom</span>: <span class="number">1px</span>;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">30px</span>;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">17px</span>;</span><br><span class="line">  <span class="attribute">font-weight</span>: normal;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.bs-docs-sidebar</span> <span class="selector-class">.nav</span> <span class="selector-class">.nav</span> <span class="selector-class">.nav</span> &gt; <span class="selector-tag">li</span> &gt; <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span>,</span><br><span class="line"><span class="selector-class">.bs-docs-sidebar</span> <span class="selector-class">.nav</span> <span class="selector-class">.nav</span> <span class="selector-class">.nav</span> &gt; <span class="selector-tag">li</span> &gt; <span class="selector-tag">a</span><span class="selector-pseudo">:focus</span> &#123;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">29px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.bs-docs-sidebar</span> <span class="selector-class">.nav</span> <span class="selector-class">.nav</span> <span class="selector-class">.nav</span> &gt; <span class="selector-class">.active</span> &gt; <span class="selector-tag">a</span>,</span><br><span class="line"><span class="selector-class">.bs-docs-sidebar</span> <span class="selector-class">.nav</span> <span class="selector-class">.nav</span> <span class="selector-class">.nav</span> &gt; <span class="selector-class">.active</span><span class="selector-pseudo">:hover</span> &gt; <span class="selector-tag">a</span>,</span><br><span class="line"><span class="selector-class">.bs-docs-sidebar</span> <span class="selector-class">.nav</span> <span class="selector-class">.nav</span> <span class="selector-class">.nav</span> &gt; <span class="selector-class">.active</span><span class="selector-pseudo">:focus</span> &gt; <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">28px</span>;</span><br><span class="line">  <span class="attribute">font-weight</span>: bold;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在js文件夹下创建<code>toc.js</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> BlogDirectory = &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span><br><span class="line">     * Side Nav Affixing</span><br><span class="line">     *</span><br><span class="line">     * reference to:</span><br><span class="line">     * https://github.com/twbs/bootstrap/blob/master/docs/assets/js/src/application.js#L35</span><br><span class="line">     */</span></span><br><span class="line">    setSideNavAffixing:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Scrollspy</span></span><br><span class="line">        <span class="keyword">var</span> $<span class="built_in">window</span> = $(<span class="built_in">window</span>)</span><br><span class="line">        <span class="keyword">var</span> $body   = $(<span class="built_in">document</span>.body)</span><br><span class="line"></span><br><span class="line">        $body.scrollspy(&#123;</span><br><span class="line">            target: <span class="string">'.bs-docs-sidebar'</span></span><br><span class="line">        &#125;)</span><br><span class="line">        $<span class="built_in">window</span>.on(<span class="string">'load'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $body.scrollspy(<span class="string">'refresh'</span>)</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Kill links</span></span><br><span class="line">        $(<span class="string">'.bs-docs-container [href=#]'</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">            e.preventDefault()</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Sidenav affixing</span></span><br><span class="line">        setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> $sideBar = $(<span class="string">'.bs-docs-sidebar'</span>)</span><br><span class="line"></span><br><span class="line">            $sideBar.affix(&#123;</span><br><span class="line">                offset: &#123;</span><br><span class="line">                    top: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                        <span class="keyword">var</span> offsetTop      = $sideBar.offset().top</span><br><span class="line">                        <span class="keyword">var</span> sideBarMargin  = <span class="built_in">parseInt</span>($sideBar.children(<span class="number">0</span>).css(<span class="string">'margin-top'</span>), <span class="number">10</span>)</span><br><span class="line">                        <span class="keyword">var</span> navOuterHeight = $(<span class="string">'.bs-docs-bar-top'</span>).height()</span><br><span class="line"></span><br><span class="line">                        <span class="keyword">return</span> (<span class="keyword">this</span>.top = offsetTop - navOuterHeight - sideBarMargin)</span><br><span class="line">                    &#125;,</span><br><span class="line">                    bottom: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                        <span class="keyword">return</span> (<span class="keyword">this</span>.bottom = <span class="number">0</span> - $(<span class="string">'.bs-docs-container'</span>).outerHeight(<span class="literal">true</span>))</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;, <span class="number">100</span>)</span><br><span class="line"></span><br><span class="line">        setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">'.bs-top'</span>).affix()</span><br><span class="line">        &#125;, <span class="number">100</span>)</span><br><span class="line">    &#125;, <span class="comment">// end of setSideNavAffixing:function()</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Generate directory tree</span><br><span class="line">     *</span><br><span class="line">     * side_nav_element: side navigation element</span><br><span class="line">     * article_body_element:  article body container.</span><br><span class="line">     *</span><br><span class="line">     * processing: search header elements(h1,h2,h3) in `article_body_element`,</span><br><span class="line">     * generate directory tree list, and put them into side_nav_element.</span><br><span class="line">     */</span></span><br><span class="line">    createBlogDirectory:<span class="function"><span class="keyword">function</span> (<span class="params">side_nav_element, article_body_element</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!article_body_element || article_body_element.length &lt; <span class="number">1</span> ||</span><br><span class="line">                !side_nav_element) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> nodes = article_body_element.find(<span class="string">"h1,h2,h3"</span>);</span><br><span class="line">        <span class="keyword">var</span> ulSideNav = side_nav_element;</span><br><span class="line"></span><br><span class="line">        $.each(nodes,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> $<span class="keyword">this</span> = $(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">var</span> nodetext = $<span class="keyword">this</span>.text();</span><br><span class="line">            <span class="comment">// There maybe HTML tags in header inner text, use regex to erase them</span></span><br><span class="line">            nodetext = nodetext.replace(<span class="regexp">/&lt;\/?[^&gt;]+&gt;/g</span>,<span class="string">""</span>);</span><br><span class="line">            nodetext = nodetext.replace(<span class="regexp">/&amp;nbsp;/ig</span>, <span class="string">""</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// btw: Jekyll generates id for each header.</span></span><br><span class="line">            <span class="keyword">var</span> nodeid = $<span class="keyword">this</span>.attr(<span class="string">"id"</span>);</span><br><span class="line">            <span class="keyword">if</span>(!nodeid) &#123;</span><br><span class="line">                nodeid = <span class="string">"top"</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">var</span> item_a = $(<span class="string">"&lt;a&gt;&lt;/a&gt;"</span>);</span><br><span class="line">            item_a.attr(<span class="string">"href"</span>, <span class="string">"#"</span> + nodeid);</span><br><span class="line">            item_a.text(nodetext);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">var</span> ret_li;</span><br><span class="line">            <span class="comment">// wrapper: ul ( in the template, outside this code )</span></span><br><span class="line">            <span class="comment">// h1: layer 1: li - a</span></span><br><span class="line">            <span class="comment">// h2: layer 2: ul - li - a</span></span><br><span class="line">            <span class="comment">// h3: layer 3: ul - ul - li - a</span></span><br><span class="line">            <span class="keyword">switch</span>($<span class="keyword">this</span>.get(<span class="number">0</span>).tagName) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"H1"</span>:</span><br><span class="line">                <span class="keyword">var</span> li_a = $(<span class="string">"&lt;li&gt;&lt;/li&gt;"</span>).append(item_a);</span><br><span class="line">                ret_li = li_a;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"H2"</span>:</span><br><span class="line">                <span class="keyword">var</span> li_a = $(<span class="string">"&lt;li&gt;&lt;/li&gt;"</span>).append(item_a);</span><br><span class="line">                <span class="keyword">var</span> nav_li_a = $(<span class="string">"&lt;ul class=\"nav\"&gt;&lt;/ul&gt;"</span>).append(li_a);</span><br><span class="line">                ret_li = nav_li_a;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"H3"</span>:</span><br><span class="line">                <span class="keyword">var</span> li_a = $(<span class="string">"&lt;li&gt;&lt;/li&gt;"</span>).append(item_a);</span><br><span class="line">                <span class="keyword">var</span> nav_li_a = $(<span class="string">"&lt;ul class=\"nav\"&gt;&lt;/ul&gt;"</span>).append(li_a);</span><br><span class="line">                <span class="keyword">var</span> nav_nav_li_a = $(<span class="string">"&lt;ul class=\"nav\"&gt;&lt;/ul&gt;"</span>).append(nav_li_a);</span><br><span class="line">                ret_li = nav_nav_li_a;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(!ret_li) &#123;</span><br><span class="line">                <span class="comment">// do nothing</span></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                ulSideNav.append(ret_li);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)  <span class="comment">// end of each</span></span><br><span class="line"></span><br><span class="line">    &#125; <span class="comment">//end of createBlogDirectory:function()</span></span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">jQuery(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>) </span>&#123;</span><br><span class="line">    $(<span class="built_in">document</span>).ready( <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">/* qrcode</span><br><span class="line">        var opt = &#123; text : window.location.href, width:150, height:150 &#125;;</span><br><span class="line">        try &#123;</span><br><span class="line">            document.createElement("canvas").getContext("2d");</span><br><span class="line">        &#125; catch (e) &#123;</span><br><span class="line">            $.extend(opt,&#123; render : "table" &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        $('.qrcode').html('').qrcode(opt);</span><br><span class="line">    */</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// Generate the side navigation `ul` elements</span></span><br><span class="line"><span class="comment">//        BlogDirectory.createBlogDirectory($("#sideNav"), $(".bs-docs-container"));</span></span><br><span class="line">        BlogDirectory.createBlogDirectory($(<span class="string">"#sideNav"</span>), $(<span class="string">".post-container"</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// caculate affixing</span></span><br><span class="line">        BlogDirectory.setSideNavAffixing();</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>然后，在<code>footer.html</code>里加上</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- TOC sidebar--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"&#123;&#123; "</span>/<span class="attr">js</span>/<span class="attr">toc.js</span> " | <span class="attr">prepend:</span> <span class="attr">site.baseurl</span> &#125;&#125;"&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>最后，在<code>post.html</code>里加入</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;% unless page.fullwidth == true %&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">nav</span> <span class="attr">class</span>=<span class="string">"bs-docs-sidebar "</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"sideNav"</span> <span class="attr">class</span>=<span class="string">"nav bs-docs-sidenav"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- code will be generated in application.js --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line">&#123;% endunless %&#125;</span><br></pre></td></tr></table></figure>
+<p>（可能需要对原来的post位置做一些调整）</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Blog/" rel="tag">#Blog</a>
+          
+            <a href="/tags/Jekyll/" rel="tag">#Jekyll</a>
+          
+            <a href="/tags/Github/" rel="tag">#Github</a>
+          
+            <a href="/tags/Markdown/" rel="tag">#Markdown</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/11/27/treasury_futures_strategy.html" rel="next" title="国债期货交易策略">
+                <i class="fa fa-chevron-left"></i> 国债期货交易策略
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/12/03/Recommend_sites.html" rel="prev" title="量化投资相关的网站">
+                量化投资相关的网站 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/12/01/Jekyll+Github+Markdown.html"
+     data-title="Jekyll+Github+Markdown的个人博客"
+     data-content=""
+     data-url="http://www.chenchen.co.uk/2015/12/01/Jekyll+Github+Markdown.html">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/12/01/Jekyll+Github+Markdown.html"
+           data-title="Jekyll+Github+Markdown的个人博客" data-url="http://www.chenchen.co.uk/2015/12/01/Jekyll+Github+Markdown.html">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/assets/images/avatar.jpg"
+               alt="CHEN CHEN" />
+          <p class="site-author-name" itemprop="name">CHEN CHEN</p>
+          <p class="site-description motion-element" itemprop="description">Geeky Quant Trader</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">39</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/chester890222" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/chester890222" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/chester890222" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础搭建"><span class="nav-text">基础搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-在-Github-创建名为-username-github-io-的库"><span class="nav-text">1. 在 Github 创建名为 username.github.io 的库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-选择模板"><span class="nav-text">2. 选择模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-把博客托管到-Github-Pages"><span class="nav-text">3. 把博客托管到 Github Pages</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进阶修改"><span class="nav-text">进阶修改</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#增加个人域名"><span class="nav-text">增加个人域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pygments语法高亮"><span class="nav-text">pygments语法高亮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加back-to-top按钮"><span class="nav-text">添加back-to-top按钮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加table-of-content文章目录的sidebar"><span class="nav-text">添加table of content文章目录的sidebar</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CHEN CHEN</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a> 
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+    NexT.Mist
+  </a>
+</div>
+
+        
+  <div class="busuanzi-count">
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    
+      <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
+    
+
+    
+      <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+    
+  </div>
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"chester890222"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+
+  
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("xxK4eciDKJiCkCWyNGfb5Mtc-gzGzoHsz", "gyeRtApNcGtRbNa3OKh9XueX");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
