@@ -94,7 +94,7 @@
 <meta property="og:url" content="http://www.chenchen.co.uk/2015/12/22/pip_tutorial.html">
 <meta property="og:site_name" content="CHEN's Quant Life">
 <meta property="og:description" content="python pip安装工具的常用方法">
-<meta property="og:updated_time" content="2016-06-21T06:32:22.000Z">
+<meta property="og:updated_time" content="2017-05-07T01:57:23.015Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pip用法记录">
 <meta name="twitter:description" content="python pip安装工具的常用方法">
@@ -361,17 +361,15 @@
       
         <p>python pip安装工具的常用方法</p>
 <a id="more"></a>
-<p>查找与安装：<br>使用search、install这两个参数。</p>
+<h3 id="修改pip国内镜像"><a href="#修改pip国内镜像" class="headerlink" title="修改pip国内镜像"></a>修改pip国内镜像</h3><p>在user\pip文件夹内添加pip.ini文件：</p>
+<p>[global]<br>index-url = <a href="http://mirrors.aliyun.com/pypi/simple/" target="_blank" rel="external">http://mirrors.aliyun.com/pypi/simple/</a><br>trusted-host=mirrors.aliyun.com</p>
+<h3 id="查找与安装："><a href="#查找与安装：" class="headerlink" title="查找与安装："></a>查找与安装：</h3><p>使用search、install这两个参数。</p>
 <p>查看某个库的信息： </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pip show Jinja2</span><br><span class="line">---</span><br><span class="line">Name: Jinja2</span><br><span class="line">Version: 2.7.3</span><br><span class="line">Location: /path/to/virtualenv/lib/python2.7/site-packages</span><br><span class="line">Requires: markupsafe</span><br></pre></td></tr></table></figure>
-<p>查看已经安装的库： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip list</span><br></pre></td></tr></table></figure>
-<p>获取并更新过期的库：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip list --outdated</span><br><span class="line">pip install --upgrade package_name</span><br></pre></td></tr></table></figure>
-<p>pip升级自己： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m pip install --upgrade pip</span><br></pre></td></tr></table></figure>
-<p>pip的参数解释：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">pip --help</span><br><span class="line"> </span><br><span class="line">Usage:   </span><br><span class="line">  pip &lt;command&gt; [options]</span><br><span class="line"> </span><br><span class="line">Commands:</span><br><span class="line">  install                     安装包.</span><br><span class="line">  uninstall                   卸载包.</span><br><span class="line">  freeze                      按着一定格式输出已安装包列表</span><br><span class="line">  list                        列出已安装包.</span><br><span class="line">  show                        显示包详细信息.</span><br><span class="line">  search                      搜索包，类似yum里的search.</span><br><span class="line">  wheel                       Build wheels from your requirements.</span><br><span class="line">  zip                         不推荐. Zip individual packages.</span><br><span class="line">  unzip                       不推荐. Unzip individual packages.</span><br><span class="line">  bundle                      不推荐. Create pybundles.</span><br><span class="line">  help                        当前帮助.</span><br><span class="line"> </span><br><span class="line">General Options:</span><br><span class="line">  -h, --help                  显示帮助.</span><br><span class="line">  -v, --verbose               更多的输出，最多可以使用3次</span><br><span class="line">  -V, --version               现实版本信息然后退出.</span><br><span class="line">  -q, --quiet                 最少的输出.</span><br><span class="line">  --log-file &lt;path&gt;           覆盖的方式记录verbose错误日志，默认文件：/root/.pip/pip.log</span><br><span class="line">  --log &lt;path&gt;                不覆盖记录verbose输出的日志.</span><br><span class="line">  --proxy &lt;proxy&gt;             Specify a proxy in the form [user:passwd@]proxy.server:port.</span><br><span class="line">  --timeout &lt;sec&gt;             连接超时时间 (默认15秒).</span><br><span class="line">  --exists-action &lt;action&gt;    Default action when a path already exists: (s)witch, (i)gnore, (w)ipe, (b)ackup.</span><br><span class="line">  --cert &lt;path&gt;               证书.</span><br></pre></td></tr></table></figure>
+<h3 id="查看已经安装的库："><a href="#查看已经安装的库：" class="headerlink" title="查看已经安装的库："></a>查看已经安装的库：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip list</span><br></pre></td></tr></table></figure>
+<h3 id="获取并更新过期的库："><a href="#获取并更新过期的库：" class="headerlink" title="获取并更新过期的库："></a>获取并更新过期的库：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip list --outdated</span><br><span class="line">pip install --upgrade package_name</span><br></pre></td></tr></table></figure>
+<h3 id="pip升级自己："><a href="#pip升级自己：" class="headerlink" title="pip升级自己："></a>pip升级自己：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m pip install --upgrade pip</span><br></pre></td></tr></table></figure>
+<h3 id="pip的参数解释："><a href="#pip的参数解释：" class="headerlink" title="pip的参数解释："></a>pip的参数解释：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">pip --help</span><br><span class="line"> </span><br><span class="line">Usage:   </span><br><span class="line">  pip &lt;command&gt; [options]</span><br><span class="line"> </span><br><span class="line">Commands:</span><br><span class="line">  install                     安装包.</span><br><span class="line">  uninstall                   卸载包.</span><br><span class="line">  freeze                      按着一定格式输出已安装包列表</span><br><span class="line">  list                        列出已安装包.</span><br><span class="line">  show                        显示包详细信息.</span><br><span class="line">  search                      搜索包，类似yum里的search.</span><br><span class="line">  wheel                       Build wheels from your requirements.</span><br><span class="line">  zip                         不推荐. Zip individual packages.</span><br><span class="line">  unzip                       不推荐. Unzip individual packages.</span><br><span class="line">  bundle                      不推荐. Create pybundles.</span><br><span class="line">  help                        当前帮助.</span><br><span class="line"> </span><br><span class="line">General Options:</span><br><span class="line">  -h, --help                  显示帮助.</span><br><span class="line">  -v, --verbose               更多的输出，最多可以使用3次</span><br><span class="line">  -V, --version               现实版本信息然后退出.</span><br><span class="line">  -q, --quiet                 最少的输出.</span><br><span class="line">  --log-file &lt;path&gt;           覆盖的方式记录verbose错误日志，默认文件：/root/.pip/pip.log</span><br><span class="line">  --log &lt;path&gt;                不覆盖记录verbose输出的日志.</span><br><span class="line">  --proxy &lt;proxy&gt;             Specify a proxy in the form [user:passwd@]proxy.server:port.</span><br><span class="line">  --timeout &lt;sec&gt;             连接超时时间 (默认15秒).</span><br><span class="line">  --exists-action &lt;action&gt;    Default action when a path already exists: (s)witch, (i)gnore, (w)ipe, (b)ackup.</span><br><span class="line">  --cert &lt;path&gt;               证书.</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -503,7 +501,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">39</span>
+              <span class="site-state-item-count">41</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -520,7 +518,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-count">33</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -578,7 +576,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改pip国内镜像"><span class="nav-text">修改pip国内镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找与安装："><span class="nav-text">查找与安装：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看已经安装的库："><span class="nav-text">查看已经安装的库：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取并更新过期的库："><span class="nav-text">获取并更新过期的库：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pip升级自己："><span class="nav-text">pip升级自己：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pip的参数解释："><span class="nav-text">pip的参数解释：</span></a></li></ol></div>
             
           </div>
         </section>
@@ -597,7 +595,7 @@
         <div class="copyright" >
   
   &copy;  2015 - 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

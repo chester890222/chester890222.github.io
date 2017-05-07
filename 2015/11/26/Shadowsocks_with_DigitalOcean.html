@@ -88,16 +88,16 @@
 
 
 
-<meta name="description" content="通过海外vps构建科学上网，大大提升工作学习生活质量。">
+<meta name="description" content="没有google的日子实在是太痛苦了。只能用百度，工作学习效率大打折扣。陆陆续续用过不少科学上网的手段，但速度、稳定性和安全度都无法保障。于是出于爱折腾的精神，决定自己用vps架代理。通过海外vps构建科学上网，大大提升工作学习效率。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用DigitalOcean和shadowsocks来科学上网">
 <meta property="og:url" content="http://www.chenchen.co.uk/2015/11/26/Shadowsocks_with_DigitalOcean.html">
 <meta property="og:site_name" content="CHEN's Quant Life">
-<meta property="og:description" content="通过海外vps构建科学上网，大大提升工作学习生活质量。">
-<meta property="og:updated_time" content="2016-06-21T06:30:15.000Z">
+<meta property="og:description" content="没有google的日子实在是太痛苦了。只能用百度，工作学习效率大打折扣。陆陆续续用过不少科学上网的手段，但速度、稳定性和安全度都无法保障。于是出于爱折腾的精神，决定自己用vps架代理。通过海外vps构建科学上网，大大提升工作学习效率。">
+<meta property="og:updated_time" content="2016-12-02T05:44:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用DigitalOcean和shadowsocks来科学上网">
-<meta name="twitter:description" content="通过海外vps构建科学上网，大大提升工作学习生活质量。">
+<meta name="twitter:description" content="没有google的日子实在是太痛苦了。只能用百度，工作学习效率大打折扣。陆陆续续用过不少科学上网的手段，但速度、稳定性和安全度都无法保障。于是出于爱折腾的精神，决定自己用vps架代理。通过海外vps构建科学上网，大大提升工作学习效率。">
 
 
 
@@ -359,11 +359,11 @@
       
 
       
-        <p>通过海外vps构建科学上网，大大提升工作学习生活质量。<br><a id="more"></a></p>
-<p>没有google的日子实在是太痛苦了。只能用百度搜索的结果就是工作学习效率大打折扣。陆陆续续用过不少科学上网的手段，但都维持不了太长时间。于是出于爱折腾的精神，决定自己用vps架代理。</p>
-<p>最初买完VPS想着搭建VPN，但由于自己对服务器系统毫无基础，在尝试了多个教程后决定暂时放弃。感谢 <a href="http://jerryzou.com/posts/shadowsocks-with-digitalocean/" title="http://jerryzou.com/posts/shadowsocks-with-digitalocean/" target="_blank" rel="external">Jerry的教程</a>，不到10分钟就能连上google了。以下内容基于他的教程的修改。</p>
-<h2 id="DigitalOcean"><a href="#DigitalOcean" class="headerlink" title="DigitalOcean"></a>DigitalOcean</h2><p>首先注册账号（通过<a href="http://www.digitalocean.com/?refcode=2771cda1acf0" title="www.digitalocean.com/?refcode=2771cda1acf0" target="_blank" rel="external">我的邀请链接</a>可以收到\$10的奖励)，激活邮箱自不必说。激活后就会收到奖励，但是仅仅这样还是无法在Digital Ocean上创建虚拟主机。你需要绑定信用卡或者直接向你的账户里冲入\$5才能正式开始使用。我是在paypal账号上直接用信用卡支付的，支持人民币。</p>
-<p>然后就可以创建你的云主机了，选择\$5/mon的那一档来支撑shadowsocks的服务足矣。经过测试San Francisco的机房延迟最低，平均在230ms左右。而Singapore的机房延迟在280ms，还有5%左右的丢包率。所以经过几次创建后又销毁重新创建地倒腾，我最后还是选择了使用San Francisco的节点。另外操作系统的话，我选择的是<code>ubuntu 14.04 x64</code>的。</p>
+        <p>没有google的日子实在是太痛苦了。只能用百度，工作学习效率大打折扣。陆陆续续用过不少科学上网的手段，但速度、稳定性和安全度都无法保障。于是出于爱折腾的精神，决定自己用vps架代理。通过海外vps构建科学上网，大大提升工作学习效率。<br><a id="more"></a></p>
+<p>最初买完VPS想着搭建VPN（因为以前大学时用学校的VPN网速超快），但由于自己对服务器系统毫无基础，在尝试了多个教程后决定放弃。之后参照 <a href="http://jerryzou.com/posts/shadowsocks-with-digitalocean/" title="http://jerryzou.com/posts/shadowsocks-with-digitalocean/" target="_blank" rel="external">Jerry的教程</a>，不到10分钟就能连上google了。以下内容基于教程的个人操作步骤。</p>
+<h2 id="服务器选择：DigitalOcean"><a href="#服务器选择：DigitalOcean" class="headerlink" title="服务器选择：DigitalOcean"></a>服务器选择：DigitalOcean</h2><p>现在云服务器公司有不少，网上推荐的主要有Linode, DigitalOcean, Bandwagon, AWS等。结合购买成本、网友推荐等因素，我选择了DigitalOcean。</p>
+<p>首先注册账号（通过<a href="http://www.digitalocean.com/?refcode=2771cda1acf0" title="www.digitalocean.com/?refcode=2771cda1acf0" target="_blank" rel="external">我的邀请链接</a>可以收到\$10的奖励)，并充值。</p>
+<p>然后就可以创建自己的云主机了。如果没有其他特殊需要，选择\$5/mon的足矣。节点方面，之前别人推荐的都是San Francisco，速度更稳定。但最近（2016年底）我的vps一直登不上，换了两次IP都只能连上一天。（猜测是美国的节点被墙了？）。于是换到了Singapore，目前使用2个月一切正常，网速似乎不如旧金山，但关键是能用。另外操作系统的话，我选择的是<code>ubuntu 14.04 x64</code>的。</p>
 <h3 id="创建SSH-key"><a href="#创建SSH-key" class="headerlink" title="创建SSH key"></a>创建SSH key</h3><p>接下来可以添加SSH key，这一步不是必须的，但是我觉得使用SSH key比使用Digital Ocean为你创建的随机密码好一点。如果不想做这一步，或者你之前已经创建过SSH key的话，可以跳过这一部分。</p>
 <h4 id="什么是SSH-key"><a href="#什么是SSH-key" class="headerlink" title="什么是SSH key"></a>什么是SSH key</h4><p>SSH key是一个简单而又安全地连接到你的远端设备的方式，通过它你不需要在网络上传输你的密码。SSH key有public和private两部分，其中private部分存储在你的设备本地，而public部分则需要上传到远程设备上。当你通过ssh连接到远程设备上时，只有私钥和公钥匹配上才能登陆。</p>
 <h4 id="如何创建SSH-key"><a href="#如何创建SSH-key" class="headerlink" title="如何创建SSH key"></a>如何创建SSH key</h4><p>第一步，首先查看你本地设备上是否有SSH keys。你可以运行以下指令：</p>
@@ -373,16 +373,15 @@
 <p>后面的email请替换成你自己的email。接着你就会看到类似下面的信息：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]</span><br><span class="line">Enter passphrase (empty for no passphrase): [Type a passphrase]</span><br><span class="line">Enter same passphrase again: [Type passphrase again]</span><br><span class="line">Now your SSH key will be generated.</span><br><span class="line">Your identification has been saved in /Users/your_username/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved in /Users/your_username/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db email@example.com</span><br></pre></td></tr></table></figure>
 <p>比如我的公钥就生成于：/Users/Jerry/.ssh/id_rsa.pub，接下来就可以把公钥内容传到Digital Ocean上了。</p>
-<h2 id="Shadowsocks"><a href="#Shadowsocks" class="headerlink" title="Shadowsocks"></a>Shadowsocks</h2><p>其实在shadowsocks的<a href="https://github.com/shadowsocks/shadowsocks" target="_blank" rel="external">github主页</a>上有很详细地说明，但是为了本文的完整性，还是将这些操作放在本文中以供参考。</p>
+<h2 id="Shadowsocks"><a href="#Shadowsocks" class="headerlink" title="Shadowsocks"></a>Shadowsocks</h2><p>在shadowsocks的<a href="https://github.com/shadowsocks/shadowsocks" target="_blank" rel="external">github主页</a>上有很详细地说明。</p>
 <h3 id="在服务器端安装shadowsocks"><a href="#在服务器端安装shadowsocks" class="headerlink" title="在服务器端安装shadowsocks"></a>在服务器端安装shadowsocks</h3><p>首先需要远程登录到Digital Ocean的主机上，因为之前已经建好了SSH Key，所以直接用root用户登录即可：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@VPS IP address</span><br></pre></td></tr></table></figure>
 <p>在 Debian / Ubuntu 下 安装shadowsocks</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-get install python-pip</span><br><span class="line">pip install shadowsocks</span><br></pre></td></tr></table></figure>
-<p>我在实际安装下发现很多依赖缺失，所以需要先执行一下：apt-get update。另外也有一些同学会选择CentOS的服务器，附上在CentOS下安装shadowsocks的方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install python-setuptools &amp;&amp; easy_install pip</span><br><span class="line">pip install shadowsocks</span><br></pre></td></tr></table></figure>
+<p>我在实际安装下发现很多依赖缺失，需要先执行一下：apt-get update。</p>
 <h3 id="启动shadowsocks服务"><a href="#启动shadowsocks服务" class="headerlink" title="启动shadowsocks服务"></a>启动shadowsocks服务</h3><p>安装好shadowsocks以后，启动shadowsocks服务可以通过以下指令：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ssserver -p 8836 -k `password` -m rc4-md5</span><br><span class="line"></span><br><span class="line">#或者可以通过以下指令在后台启动shadowsocks的服务：</span><br><span class="line">ssserver -p 8836 -k `password` -m rc4-md5 -d start</span><br><span class="line">ssserver -p 8836 -k `password` -m rc4-md5 -d stop</span><br></pre></td></tr></table></figure>
-<p>但上面的方法很不方便，我还是推荐使用配置文件的方法。首先创建一个文件：/etc/shadowsocks.json，示例如下：</p>
+<p>但上面的方法很不方便，推荐使用配置文件的方法。首先创建一个文件：/etc/shadowsocks.json，内容如下：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"server"</span>:<span class="string">"你的服务器ip地址"</span>,</span><br><span class="line">    <span class="attr">"server_port"</span>:<span class="number">8388</span>,</span><br><span class="line">    <span class="attr">"local_address"</span>: <span class="string">"127.0.0.1"</span>,</span><br><span class="line">    <span class="attr">"local_port"</span>:<span class="number">1080</span>,</span><br><span class="line">    <span class="attr">"password"</span>:<span class="string">"你设置的密码"</span>,</span><br><span class="line">    <span class="attr">"timeout"</span>:<span class="number">300</span>,</span><br><span class="line">    <span class="attr">"method"</span>:<span class="string">"aes-256-cfb"</span>,</span><br><span class="line">    <span class="attr">"fast_open"</span>: <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>接下来你就可以使用下面这个指令启动服务</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ssserver -c /etc/shadowsocks.json</span><br><span class="line"></span><br><span class="line">#或者在后台运行</span><br><span class="line">ssserver -c /etc/shadowsocks.json -d start</span><br><span class="line">ssserver -c /etc/shadowsocks.json -d stop</span><br></pre></td></tr></table></figure>
@@ -522,7 +521,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">39</span>
+              <span class="site-state-item-count">41</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -539,7 +538,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-count">33</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -597,7 +596,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#DigitalOcean"><span class="nav-text">DigitalOcean</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建SSH-key"><span class="nav-text">创建SSH key</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是SSH-key"><span class="nav-text">什么是SSH key</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何创建SSH-key"><span class="nav-text">如何创建SSH key</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shadowsocks"><span class="nav-text">Shadowsocks</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在服务器端安装shadowsocks"><span class="nav-text">在服务器端安装shadowsocks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动shadowsocks服务"><span class="nav-text">启动shadowsocks服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用shadowsocks客户端"><span class="nav-text">使用shadowsocks客户端</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器选择：DigitalOcean"><span class="nav-text">服务器选择：DigitalOcean</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建SSH-key"><span class="nav-text">创建SSH key</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是SSH-key"><span class="nav-text">什么是SSH key</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何创建SSH-key"><span class="nav-text">如何创建SSH key</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shadowsocks"><span class="nav-text">Shadowsocks</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在服务器端安装shadowsocks"><span class="nav-text">在服务器端安装shadowsocks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动shadowsocks服务"><span class="nav-text">启动shadowsocks服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用shadowsocks客户端"><span class="nav-text">使用shadowsocks客户端</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
@@ -616,7 +615,7 @@
         <div class="copyright" >
   
   &copy;  2015 - 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
