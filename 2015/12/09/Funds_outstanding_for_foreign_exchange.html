@@ -1,15 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
   
 
 
-<html class="theme-next mist use-motion">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
+
 
 
 
@@ -23,7 +34,9 @@
 
 
 
-  <meta name="baidu-site-verification" content="lYyc7oZNSZ" />
+
+
+
 
 
 
@@ -33,7 +46,7 @@
 
   
   
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -67,76 +80,96 @@
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="宏观,货币," />
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
 
 
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon.ico?v=5.1.3">
 
 
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon.ico?v=5.1.3">
 
 
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon.ico?v=5.1.3">
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico?v=5.0.1" />
-
-
+  <link rel="mask-icon" href="/assets/images/favicon.ico?v=5.1.3" color="#222">
 
 
 
 
-<meta name="description" content="外汇占款（Funds outstanding for foreign exchange）是指受资国中央银行收购外汇资产而相应投放的本国货币。由于人民币是非自由兑换货币，外资引入后需兑换成人民币才能进入流通使用，国家为了外资换汇要投入大量的资金，需要国家用本国货币购买外汇，因此增加了“货币供给”，从而形成了外汇占款。">
+
+  <meta name="keywords" content="货币,宏观 - 资产负债表 - 央行," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="外汇占款（Funds outstanding for foreign exchange）是指受资国中央银行收购外汇资产而相应投放的本国货币。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何理解外汇占款">
 <meta property="og:url" content="http://www.chenchen.co.uk/2015/12/09/Funds_outstanding_for_foreign_exchange.html">
 <meta property="og:site_name" content="CHEN's Quant Life">
-<meta property="og:description" content="外汇占款（Funds outstanding for foreign exchange）是指受资国中央银行收购外汇资产而相应投放的本国货币。由于人民币是非自由兑换货币，外资引入后需兑换成人民币才能进入流通使用，国家为了外资换汇要投入大量的资金，需要国家用本国货币购买外汇，因此增加了“货币供给”，从而形成了外汇占款。">
+<meta property="og:description" content="外汇占款（Funds outstanding for foreign exchange）是指受资国中央银行收购外汇资产而相应投放的本国货币。">
 <meta property="og:image" content="http://www.chenchen.co.uk/post_img/2015/Funds outstanding for foreign exchange/Funds-outstanding-2000-2015.png">
 <meta property="og:image" content="http://www.chenchen.co.uk/post_img/2015/Funds outstanding for foreign exchange/reserve-vs-outstanding-2000-2015.png">
-<meta property="og:image" content="http://www.chenchen.co.uk/post_img/2015/Funds outstanding for foreign exchange/Funds-outstanding-change-2010-2015.png">
-<meta property="og:updated_time" content="2016-06-21T06:19:23.000Z">
+<meta property="og:updated_time" content="2017-09-22T08:36:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何理解外汇占款">
-<meta name="twitter:description" content="外汇占款（Funds outstanding for foreign exchange）是指受资国中央银行收购外汇资产而相应投放的本国货币。由于人民币是非自由兑换货币，外资引入后需兑换成人民币才能进入流通使用，国家为了外资换汇要投入大量的资金，需要国家用本国货币购买外汇，因此增加了“货币供给”，从而形成了外汇占款。">
+<meta name="twitter:description" content="外汇占款（Funds outstanding for foreign exchange）是指受资国中央银行收购外汇资产而相应投放的本国货币。">
 <meta name="twitter:image" content="http://www.chenchen.co.uk/post_img/2015/Funds outstanding for foreign exchange/Funds-outstanding-2000-2015.png">
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Mist',
-    sidebar: {"position":"left","display":"post"},
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: true,
-    motion: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
-      userId: 6218001015313008000,
-      author: 'Author'
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
 
 
 
-
   <link rel="canonical" href="http://www.chenchen.co.uk/2015/12/09/Funds_outstanding_for_foreign_exchange.html"/>
 
-  <title> 如何理解外汇占款 | CHEN's Quant Life </title>
-</head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
+
+
+  <title>如何理解外汇占款 | CHEN's Quant Life</title>
   
+
+
 
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-70604530-1', 'auto');
   ga('send', 'pageview');
 </script>
@@ -146,7 +179,7 @@
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?93e110d5533ac11f504999197e914603";
+      hm.src = "https://hm.baidu.com/hm.js?93e110d5533ac11f504999197e914603";
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
@@ -155,38 +188,42 @@
 
 
 
+</head>
 
-
-
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">CHEN's Quant Life</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">CHEN's Quant Life</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
   </div>
-  <p class="site-subtitle"></p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
@@ -207,7 +244,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
+          <a href="/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -217,7 +254,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
+          <a href="/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -227,7 +264,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
+          <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -237,7 +274,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
+          <a href="/about/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -247,11 +284,51 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
   
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
 </nav>
+
+
 
  </div>
     </header>
@@ -266,49 +343,68 @@
     
 
   
-  
 
   
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.chenchen.co.uk/2015/12/09/Funds_outstanding_for_foreign_exchange.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CHEN CHEN">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CHEN's Quant Life">
+    </span>
 
     
       <header class="post-header">
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                如何理解外汇占款
-              
-            
-          </h1>
+          <h1 class="post-title" itemprop="name headline">如何理解外汇占款</h1>
         
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-12-09T00:00:00+08:00" content="2015-12-09">
-              2015-12-09
-            </time>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-12-09T00:00:00+08:00">
+                2015-12-09
+              </time>
+            
+
+            
+
+            
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
+            
+              <span class="post-meta-divider">|</span>
+            
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/金融笔记/" itemprop="url" rel="index">
                     <span itemprop="name">金融笔记</span>
                   </a>
@@ -316,121 +412,109 @@
 
                 
                 
-
               
             </span>
           
 
           
             
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/12/09/Funds_outstanding_for_foreign_exchange.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/09/Funds_outstanding_for_foreign_exchange.html" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
           
 
           
           
              <span id="/2015/12/09/Funds_outstanding_for_foreign_exchange.html" class="leancloud_visitors" data-flag-title="如何理解外汇占款">
-               &nbsp; | &nbsp;
+               <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
                </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
           
 
           
-              &nbsp; | &nbsp;
-              <span class="page-pv"><i class="fa fa-file-o"></i>
-              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
-              </span>
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
           
+
+          
+
+          
+
         </div>
       </header>
     
 
-
-    <div class="post-body" itemprop="articleBody">
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
 
       
       
 
       
-        <p><em>外汇占款（Funds outstanding for foreign exchange）</em>是指受资国中央银行收购外汇资产而相应投放的本国货币。由于人民币是非自由兑换货币，外资引入后需兑换成人民币才能进入流通使用，国家为了外资换汇要投入大量的资金，需要国家用本国货币购买外汇，因此增加了“货币供给”，从而形成了外汇占款。</p>
+        <p><em>外汇占款（Funds outstanding for foreign exchange）</em>是指受资国中央银行收购外汇资产而相应投放的本国货币。</p>
 <a id="more"></a>
-<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><blockquote>
-<p><code>例子</code><a href="http://www.zhihu.com/question/28444662" target="_blank" rel="external">^1</a></p>
-<ol>
-<li>农民企业家王老五赶着一群羊羊羊出口到美国。美国那边买羊羊羊的买主山姆拿美元结账给王老五。三只羊羊羊一共卖了100美元。</li>
-<li>王老五揣着美元回国。美元在国内是非流通货币，花不掉啊。就算黑市让你花，国家也不许啊。要不怎么说叫<code>强行结汇</code>呢。所以，银行收了王老五的100美元，就按汇率给了620块人民币。自此，这100美元就跟山姆、王老五无关了。</li>
-<li>商业银行不是收了王老五的100美元嘛。这个钱他还得上交给央行。不然它拿了这个非流通货币，自己白掏出去620，账做不平啊。央行收到这100美元，就会增加620块额度货币投放量给商业银行。</li>
-<li>央行拿着这100美元，还得交给外管局。为啥要交给外管局呢？因为央行拿着这美元在国内也没法投资没法管理。所以要交给一个专门的机构，对这些外汇进行统一的投资、增值保值等各项操作，外管局还有更重要的职能，就是稳定汇率。</li>
-<li>到了外管局手里，这100美元的神奇之旅就算结束了吗？没有。外管局要用它去购买正收益预期的美元资产。比如，两房债啊，十年期美国国债啊，还有投资黑石啊等等等等。为什么要去投资呢？</li>
-<li>还记得王老五从商业银行拿走的那个620元人民币吗？在王老五没有赶着他的羊羊羊去美国换回来这100美元的时候，中国当时货币投放量总计为100亿。王老五回来之后，社会总的货币投放量就变成了100亿零620元。羊羊羊没了，通货多了，必然导致更多的通货追逐更少的资产，哇，大事不好，万一王老五再赶着无数的羊羊羊去换美元回来，不就是通货膨胀了嘛。正在这万分危急的时候，央行从天而降，摸着商业银行的头说：小行行，别怕，你把这620借给爸爸，这样社会总货币投放量还是100亿。爸比给你开个借条。这个借条就是<code>央票</code>。</li>
-<li>借人钱要给利息，亲父子也得明算账。在央行的资产负债表里，这时候他的资产是100美元，它的负债是620人民币。那谁谁说了，这不是一码事吗。事情没你想的那么简单。…央行给小行行的利息是每年3%，而他如果捂着另一边的100美元不动弹，那么，央行每年固定亏损18块六毛。</li>
-<li>央行突然如有神助的灵机一动：如果我把那100美元用于投资，能产生3%的年化收益率，那我不就可以对冲掉那18块六毛的债务成本了嘛。想到这里，央行激动的说不出话来，马上就干，外管局，小管子，你赶紧去给我买买买。</li>
-<li>外管局接到老板央行的命令。心里七上八下。万一搞砸了咋办，不仅18.6没对冲掉，100美元也被狗啃了一块下来，一反一正，老板会亏更多啊。首先，本金不能亏，其次，收益率要超过3%，再次，不能有流动性风险。这活好难呐。</li>
-<li>话说，天无绝人之路。地球上还真被外管局给找到了一个合适的投资对象，简直上量身定做好吧，那就是美债。安全，容量大，流动性高，还能保证收益率，完美！</li>
-<li>王老五赶着羊羊羊赚了大钱，于是美国佬想，这么赚钱的生意为什么我们不做？于是乎，美国佬来中国投资设厂了，这其中必然包含了他拿大笔美元兑换人民币的过程，对于银行，由于银行拿人民币买了美国佬的美元，于是报表上形成了“外汇占款”项目，即外占增加。</li>
-<li>突然有一天美国佬发现中国羊不赚钱了，又想回美国搞页岩气，那怎么办？他把中国厂子一关，决定去银行换回美元，回美国搞矿产，于是，银行要把之前收到的美元还给他，银行拿到了一笔人民币，同时外汇占款项目减少了，这个过程就是<code>外汇出逃</code>的过程。那么，这笔钱银行怎么办呢？</li>
-<li>首先，我国现在已经不是强制结汇了，其次，一个数据很重要，中国的外汇占款绝大部分是在央行手中，商业银行手里的很少，也就是说商业银行手中屯着的美金总量很少，一旦资本大规模外流、外汇巨幅波动的时候，商业银行会惊悚的发现手里外汇不是很充裕了，于是商业银行不得不去央行换外汇。回到这个故事里，就是一旦美国佬成群结派得来大规模换取美元，商业银行只能一手收美国佬的人民币，一手拼命奔跑去央行用人民币换美元回来应急。当外汇大规模出逃时，商业银行给美国佬的美元其实是他去央行换的，所以美国佬手中的人民币自然会回到央行手中，退出流通，也就是<code>基础货币收缩</code>。</li>
-<li>那么问题来了，如果资本外流的规模很小呢？比如只有1亿左右？答，在不强制结汇的情况下，商业银行相当于在用自己的钱去和美国佬交易。那么，无论是换回来的美元，还是人民币，商业银行都有绝对支配权，可以用它来放贷，也可以用它来买债券，还可以用它来借给信托做表外融资。也就是说此时收回的钱是可以继续流通的，不影响基础货币总量。</li>
-</ol>
-</blockquote>
-<h2 id="统计口径"><a href="#统计口径" class="headerlink" title="统计口径"></a>统计口径</h2><p>外汇占款有两个统计口径，金融机构外汇占款和央行外汇占款（2016年1月起，央行宣布停止公布“金融机构外汇占款项目”）。在央行公布的数据中，两个统计口径分属于不同的统计表。</p>
-<ul>
-<li>（<code>已停止</code>）金融机构外汇占款统计在《金融机构人民币信贷收支表》中，计入资金运用方的外汇买卖项下。以前，这个项目叫外汇占款，含义是存款性金融机构购买外汇而占用的人民币资金。2015年1月起更名，英文是“Position for Forex Purchase”，与金融机构外汇信贷收支表资金来源方“外汇买卖”中英文名字一致。</li>
-<li>央行外汇占款统计在《货币当局资产负债表》中，国外资产项下的外汇资产，其变动对<br>负债方基础货币的投放产生影响。</li>
-</ul>
-<p>两种统计口径的区别在于，金融机构外汇占款由央行外汇占款和银行类金融机构的外汇占款合并组成。</p>
+<h2 id="统计口径"><a href="#统计口径" class="headerlink" title="统计口径"></a>统计口径</h2><p>2016年之前，我国外汇占款有两个统计口径，金融机构外汇占款（金融机构信贷收支表，已停止）和央行外汇占款（货币当局资产负债表）。</p>
+<p>两种统计口径的区别在于，金融机构外汇占款是一个更广义的概念，涵盖央行银行和银行类金融机构购买外汇形成的人民币投放总和：</p>
 <p>$$金融机构外汇占款 = 央行外汇占款 + 银行类机构外汇占款$$</p>
-<p>例如，企业和个人通过与商业银行的结售汇柜台操作，实现外汇和人民币之间的兑换，或者银行自身在银行间市场进行本外币兑换操作，均计入商业银行的信贷收支表，形成金融机构外汇占款。然而，只有商业银行与央行之间进行结售汇操作，实现外汇和人民币之间的兑换，才计入央行的资产负债表，形成货币当局的外汇资产，这样才会影响基础货币。<br>两种口径同向波动，过去金融机构外汇占款公布较早，更有意义，但现在两者基本同步。</p>
+<p>例如，企业和个人通过与商业银行的结售汇柜台操作，实现外汇和人民币之间的兑换，或者银行自身在银行间市场进行本外币兑换操作，均计入商业银行的信贷收支表，形成金融机构外汇占款。然而，只有商业银行与央行之间进行结售汇操作，实现外汇和人民币之间的兑换，才计入央行的资产负债表，形成货币当局的外汇资产，这样才会影响基础货币。</p>
 <p><img src="/post_img/2015/Funds outstanding for foreign exchange/Funds-outstanding-2000-2015.png" alt="外汇占款2000-2015" title="外汇占款2000-2015"></p>
-<p>从历史走势来看，从2004年起，金融机构外汇占款余额开始高于央行外汇占款余额，并且差距有逐步增大的趋势。这是因为银行类金融机构会把外汇利润、外汇存款准备金、以及引入境外投资者或者境外上市而获得的外汇资金结汇而形成外汇占款。例如，交通银行于2004年引入战略投资者，2005年在香港上市，是第一家海外上市的国内银行。</p>
-<h2 id="外汇储备与外汇占款"><a href="#外汇储备与外汇占款" class="headerlink" title="外汇储备与外汇占款"></a>外汇储备与外汇占款</h2><p>外汇占款是历史成本计价的，以人民币统计，而外汇储备是市值计价的，以美元统计。外汇占款只反映央行为取得外汇投放的基础货币数额（只有交易变动）。而央行公布的外汇储备虽然以美元计，但并非只有美元一种储备，欧元、日元兑美元的汇率波动，都会使外汇储备发生变化。欧元等非美元储备的占比已超过 35%。</p>
+<p>从历史走势来看，从2004年起，金融机构外汇占款余额开始高于央行外汇占款余额，并且差距有逐步增大的趋势。这是因为银行类金融机构会把外汇利润、外汇存款准备金、以及引入境外投资者或者境外上市而获得的外汇资金结汇而形成外汇占款。</p>
+<p>2016年以后央行停止公布金融机构外汇占款，理由是避免市场误读。</p>
+<h2 id="外汇储备与外汇占款"><a href="#外汇储备与外汇占款" class="headerlink" title="外汇储备与外汇占款"></a>外汇储备与外汇占款</h2><p>外汇占款是历史成本计价的，以人民币统计；而外汇储备是市值计价的，以美元统计。外汇占款只反映央行为取得外汇投放的基础货币数额（只有交易变动）。而央行公布的外汇储备虽然以美元计，但并非只有美元一种储备，欧元、日元兑美元的汇率波动，都会使外汇储备发生变化。</p>
 <blockquote>
-<p><code>例子</code><br>假设央行有3万亿美元，那么现在央行的外汇储备就是3万亿美元。<br>而其中1万亿美元是用汇率8.3时买的，1万亿是7买的，1万亿是6.5买的，那么外汇占款就是21.8万亿人民币。</p>
+<p><code>例子</code><br>假设央行有3万亿美元，那么现在央行的外汇储备就是3万亿美元。<br>而其中1万亿美元是用汇率8.3时买的，1万亿是7买的，1万亿是6.5买的，那么外汇占款就是21.8（8.3+7+6.5）万亿人民币。</p>
 </blockquote>
-<p>从历史数据可以看出，外汇储备与外汇占款总体是同向变化的。从2000年到2014年6月，我国外汇占款余额、外汇储备呈现高速上升的状态，外汇储备规模从1500亿美元迅速增长至3.99万亿美元，是迄今为止的最高点。自此之后，外汇储备余额就进入下行通道。在过去的15个月当中，只有两个月份的外汇储备余额出现上升，其它月份都是下降。最近几个月，外汇储备减少速度加快，其中7-9三个月份每月都减少400亿美元以上，其中8月份的减少额更是达到历史最高值，为939亿美元。最新的11月数据也超出市场预期，达到-872亿美元。<br>外汇管理局对不断下降的外汇储备的解释分为三个部分：藏汇于民、对外投资、以及非美元货币贬值。</p>
 <p><img src="/post_img/2015/Funds outstanding for foreign exchange/reserve-vs-outstanding-2000-2015.png" alt="外汇占款和储备2000-2015" title="外汇占款和储备2000-2015"></p>
-<h2 id="外汇占款、储备变动的影响因素"><a href="#外汇占款、储备变动的影响因素" class="headerlink" title="外汇占款、储备变动的影响因素"></a>外汇占款、储备变动的影响因素</h2><p>人民币汇率贬值与金融机构外汇占款下降往往同时出现，反之亦然。<br>人民币汇率走弱，贬值预期上升，企业和居民的购汇意愿上升，结汇意愿减弱，套汇的跨境资本流出，金融机构外汇占款增量下降；相反，人民币汇率走强，升值预期上升，企业和居民的结汇意愿上升，购汇意愿减弱，吸引跨境资金流入，金融机构外汇占款增量上升。因此，在绝大多数时间里，人民币汇率和金融机构外汇占款是同向变化的，但是由于汇率反映的信息更为庞杂，外汇管理政策的改革和央行在外汇市场的参与往往也会对汇率走势造成冲击，两者有时可能会出现短暂的背离。</p>
-<h3 id="1-持汇意愿"><a href="#1-持汇意愿" class="headerlink" title="1. 持汇意愿"></a>1. 持汇意愿</h3><p>持汇意愿主要反应机构和个人持有外汇的倾向。一般而言，持汇意愿越高，企业和个人<br>就越不愿意向商业银行等金融机构出售外汇，商业银行也越不愿意向央行出售外汇，由此导<br>致非央行金融机构外汇占款和央行外汇占款增量的双双下降。</p>
-<h3 id="2-央行干预"><a href="#2-央行干预" class="headerlink" title="2. 央行干预"></a>2. 央行干预</h3><p>我国实行以市场供求为基础、参考一篮子货币进行调节、有管理的浮动汇率制度，央行就是这个管理人。央行对外汇市场做过几次较大的改革。在2012年4月和2014年3月，把银行间即期外汇市场人民币兑美元交易价浮动幅度由0.5%先扩大至1.0%，再增加至 2.0%，最近一次是 2015 年 8 月11日的中间价报价机制改革。<br>在12年和14年两次汇改之后约半年的时间里，央行确实退出外汇市场的常态式干预，这一点可以从央行外汇占款变化证实。在2012年之前，外管局规定商业银行可以保留的外汇头寸规模有限，实行<code>强制结售汇</code>制度，商业银行所有收到的外汇都会卖给央行。这样造成两个结果：一是金融机构外汇占款与央行外汇占款同向同幅波动；二是形成了规模庞大的外汇储备。在实现<code>意愿结售汇</code>制度和汇改之后，商业银行持有外汇头寸的自主空间增加，央行外汇占款与金融机构外汇占款的走势不再一致。<br>央行退出外汇市场的常态式干预意在提升货币政策有效性。根据“三元悖论”（The Impossible Trinity）的观点，一国货币政策的独立性、汇率的稳定性、资本的完全流动性不能同时实现，最多只能同时满足两个目标，而放弃另外一个目标。央行需要在货币政策有效性、汇率浮动和资本自由流动之间进行取舍。一直以来，央行为实现人民币汇率渐进升值而不得不投放基础货币干预外汇市场，饱受“货币超发”的诟病。从 2011 年底以来，中国的跨境资金流动波动更加频繁，资本管制的压<br>力上升，央行不得不在货币政策有效性和汇率稳定这两个目标之间做出权衡。这两次汇<br>改就是央行提升货币有效性这一目标之举。<br>这一举措带来的重要变化就是——央行外汇占款的波幅大幅减弱。2012 年 4 月汇改后，<br>央行外汇占款增量从 2011 年的月均 2135 亿元下降到 2012 年 5 至 11 月间的月均 4 亿<br>元；2014 年 3 月汇改之后，央行外汇占款增量从前三个月的月均 2626 亿元缩小至月<br>均-22 亿元。从数据来看，央行确实在朝着退出常态式干预的方向努力着。 </p>
-<p><img src="/post_img/2015/Funds outstanding for foreign exchange/Funds-outstanding-change-2010-2015.png" alt="外汇占款变动2010-2015" title="外汇占款变动2010-2015"></p>
-<p>除了央行外汇占款基本在零附近波动之外，金融机构外汇占款增速也大幅降低，外汇占款与我国国际资金流动状况“脱钩”，将不再是刻画跨境资金流动的最好指标，并且外汇占款与汇率的关联度会减弱。例如，2014年10月和11月金融机构外汇占款分别为660.75亿元和11.66亿元，如果仅从数据来看，外汇占款净增加，甚至10月外汇占款还是回升走势。如果据此判断国际资本仍在流入中国，与此后中人民币汇率不断承受贬值压力的走势相违背。实际上境内银行代客涉外收付款差额从8月至11月连续4个月为逆差，银行代客结售汇差额从9月至11月连续3个月为逆差，更准确反映了真实的跨境资金外流状况。</p>
-<h3 id="3-对外贸易形势"><a href="#3-对外贸易形势" class="headerlink" title="3. 对外贸易形势"></a>3. 对外贸易形势</h3><h2 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h2>
+<h2 id="重要性"><a href="#重要性" class="headerlink" title="重要性"></a>重要性</h2><p>外汇占款与央行基础货币供给以及市场流动性状况直接挂钩。研究外汇占款的最终目的就是为了研究基础货币供给。</p>
+<p>市场一般更关注外汇占款的环比变动。</p>
+<h2 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h2>
       
     </div>
+    
+    
+    
 
-    <div>
-      
-        
-      
-    </div>
+    
 
-    <div>
-      
-        
+    
 
-      
-    </div>
+    
 
     <footer class="post-footer">
       
         <div class="post-tags">
           
-            <a href="/tags/宏观/" rel="tag">#宏观</a>
+            <a href="/tags/货币/" rel="tag"># 货币</a>
           
-            <a href="/tags/货币/" rel="tag">#货币</a>
+            <a href="/tags/宏观-资产负债表-央行/" rel="tag"># 宏观 - 资产负债表 - 央行</a>
           
         </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
       
 
       
@@ -442,6 +526,8 @@
               </a>
             
           </div>
+
+          <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
@@ -456,30 +542,15 @@
       
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
 
     <div class="post-spread">
-      
-        <div class="ds-share flat" data-thread-key="2015/12/09/Funds_outstanding_for_foreign_exchange.html"
-     data-title="如何理解外汇占款"
-     data-content=""
-     data-url="http://www.chenchen.co.uk/2015/12/09/Funds_outstanding_for_foreign_exchange.html">
-  <div class="ds-share-inline">
-    <ul  class="ds-share-icons-16">
-
-      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-
-    </ul>
-    <div class="ds-share-icons-more">
-    </div>
-  </div>
-</div>
       
     </div>
   </div>
@@ -490,13 +561,9 @@
 
 
           
-  <div class="comments" id="comments">
-    
-      <div class="ds-thread" data-thread-key="2015/12/09/Funds_outstanding_for_foreign_exchange.html"
-           data-title="如何理解外汇占款" data-url="http://www.chenchen.co.uk/2015/12/09/Funds_outstanding_for_foreign_exchange.html">
-      </div>
-    
-  </div>
+
+  
+
 
 
         </div>
@@ -512,111 +579,133 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
             站点概览
           </li>
         </ul>
       
 
-      <section class="site-overview sidebar-panel ">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/assets/images/avatar.jpg"
-               alt="CHEN CHEN" />
-          <p class="site-author-name" itemprop="name">CHEN CHEN</p>
-          <p class="site-description motion-element" itemprop="description">Geeky Quant Trader</p>
-        </div>
-        <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">41</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/assets/images/avatar.jpg"
+                alt="CHEN CHEN" />
+            
+              <p class="site-author-name" itemprop="name">CHEN CHEN</p>
+              <p class="site-description motion-element" itemprop="description">Geeky Quant Trader</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="http://weibo.com/chester890222" target="_blank" title="微博">
+                    
+                      <i class="fa fa-fw fa-weibo"></i>微博</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://www.zhihu.com/people/chester890222" target="_blank" title="知乎">
+                    
+                      <i class="fa fa-fw fa-globe"></i>知乎</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/chester890222" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            
           </div>
 
           
-            <div class="site-state-item site-state-categories">
-              <a href="/categories">
-                <span class="site-state-item-count">9</span>
-                <span class="site-state-item-name">分类</span>
-              </a>
-            </div>
           
 
           
-            <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">33</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
           
 
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
           
-            
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/chester890222" target="_blank" title="微博">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  微博
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.zhihu.com/people/chester890222" target="_blank" title="知乎">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  知乎
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/chester890222" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-          
+
         </div>
-
-        
-        
-
-        
-        
-
       </section>
 
       
+      <!--noindex-->
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
           <div class="post-toc">
+
             
               
             
+
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念"><span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#统计口径"><span class="nav-text">统计口径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#外汇储备与外汇占款"><span class="nav-text">外汇储备与外汇占款</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#外汇占款、储备变动的影响因素"><span class="nav-text">外汇占款、储备变动的影响因素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-持汇意愿"><span class="nav-text">1. 持汇意愿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-央行干预"><span class="nav-text">2. 央行干预</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-对外贸易形势"><span class="nav-text">3. 对外贸易形势</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料："><span class="nav-text">参考资料：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#统计口径"><span class="nav-text">统计口径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#外汇储备与外汇占款"><span class="nav-text">外汇储备与外汇占款</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重要性"><span class="nav-text">重要性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料："><span class="nav-text">参考资料：</span></a></li></ol></div>
             
+
           </div>
         </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
       
 
     </div>
@@ -629,48 +718,65 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy;  2015 - 
-  <span itemprop="copyrightYear">2017</span>
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">CHEN CHEN</span>
+
+  
 </div>
 
-<div class="powered-by">
-  Powered by <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a> 
-</div>
 
-<div class="theme-info">
-  Theme -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
-    NexT.Mist
-  </a>
-</div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.3</div>
+
+
+
 
         
-  <div class="busuanzi-count">
-    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-    
-      <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span>
-    
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
 
-    
-      <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
-    
-  </div>
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
 
 
         
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+
+    
+
   </div>
 
   
@@ -693,110 +799,439 @@
 
 
 
-  
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
-  
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
 
 
 
   
-  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
 
 
 
   
 
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
   
-    
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
   
 
   <script type="text/javascript">
-    var duoshuoQuery = {short_name:"chester890222"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
 
-  
-    
-      
-      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-      <script src="/js/src/hook-duoshuo.js"></script>
-    
-  
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
 
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
 
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
 
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
 
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
 
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
 
-  
-  
-  
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
       }
     });
   </script>
 
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-      var all = MathJax.Hub.getAllJax(), i;
-      for (i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-      }
-    });
-  </script>
-  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.3"></script>
+
 
 
   
 
   
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
   <script>AV.initialize("xxK4eciDKJiCkCWyNGfb5Mtc-gzGzoHsz", "gyeRtApNcGtRbNa3OKh9XueX");</script>
   <script>
     function showTime(Counter) {
@@ -901,6 +1336,77 @@
   </script>
 
 
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "default";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
 
   
 
