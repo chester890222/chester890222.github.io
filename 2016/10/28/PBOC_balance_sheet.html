@@ -66,13 +66,19 @@
   
 
   
+    
+      
+    
+
+    
+  
 
   
 
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Play:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -115,10 +121,10 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="央行资产负债表">
 <meta property="og:url" content="http://www.chenchen.co.uk/2016/10/28/PBOC_balance_sheet.html">
-<meta property="og:site_name" content="CHEN's Quant Life">
+<meta property="og:site_name" content="Quant Life">
 <meta property="og:description" content="要看懂央行货币政策，最值得研究的就是货币当局的资产负债表。因为央行不一定所有操作都是公开透明的，但是这些操作都会涵盖在资产负债表中。尽管这个表的公布不及时，央行操作对市场的影响可能已经过去，但从长期来看，可以帮助我们确认央行的意图。">
 <meta property="og:image" content="http://www.chenchen.co.uk/\post_img\2016\PBOC_balance_sheet\20170831央行资产负债表.jpg">
-<meta property="og:updated_time" content="2017-10-11T09:50:22.000Z">
+<meta property="og:updated_time" content="2017-10-12T15:00:32.695Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="央行资产负债表">
 <meta name="twitter:description" content="要看懂央行货币政策，最值得研究的就是货币当局的资产负债表。因为央行不一定所有操作都是公开透明的，但是这些操作都会涵盖在资产负债表中。尽管这个表的公布不及时，央行操作对市场的影响可能已经过去，但从长期来看，可以帮助我们确认央行的意图。">
@@ -158,7 +164,7 @@
 
 
 
-  <title>央行资产负债表 | CHEN's Quant Life</title>
+  <title>央行资产负债表 | Quant Life</title>
   
 
 
@@ -207,12 +213,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">CHEN's Quant Life</span>
+        <span class="site-title">Quant Life</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <p class="site-subtitle">Chen's Blog</p>
       
   </div>
 
@@ -300,26 +306,22 @@
   
     <div class="site-search">
       
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
   </div>
-
+  <div id="local-search-result"></div>
+</div>
 
 
 
@@ -361,7 +363,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CHEN's Quant Life">
+      <meta itemprop="name" content="Quant Life">
     </span>
 
     
@@ -469,6 +471,16 @@
 <li><strong>货币黄金</strong>记录央行在国内外市场上购买黄金所投放的人民币（国外市场用外汇储备购买，换算成人民币）。</li>
 <li><strong>其他国外资产</strong>包括央行持有的国际货币基金组织头寸、SDR等。</li>
 </ul>
+<h3 id="对政府债权"><a href="#对政府债权" class="headerlink" title="对政府债权"></a>对政府债权</h3><p>该项记录央行持有的政府发行证券，主要是特别国债。<br>1995年《中国人民银行法》规定“中国人民银行不得对政府透支，<strong>不得直接</strong>认购、<strong>包销</strong>国债和其他政府债权”。</p>
+<blockquote>
+<p>央行为中投注资导致2007年资产中“持有的政府债权 ”快速扩张。<br>2007年，中国投资公司（中投公司）正式成立。为了给中投公司注入资本，财政部向市场发行了15500亿元的人民币债券（表现形式为特别国债），其中有13500亿元通过农业银行转手至人民银行（2000亿元人民币特别国债通过市场发行方式发行），因此到2007年底人民银行持有的国债数量大幅度增加至16000亿元左右。<br>财政部向银行发行特殊国债，募集人民币，再向央行购买外汇，注入中投公司；央行将出售外汇所得人民币向银行购买特殊国债。基础货币规模不受影响。<br>2017年财政部又续作了该部分到期的特别国债。</p>
+</blockquote>
+<h3 id="对其他存款性公司债权"><a href="#对其他存款性公司债权" class="headerlink" title="对其他存款性公司债权"></a>对其他存款性公司债权</h3><p>该项是指央行对商业银行、政策性银行等其他存款性公司的再贴现、再贷款、逆回购操作和结构性货币政策工具余额。</p>
+<ul>
+<li>2002-2010：央行以再贷款和再贴现进行主动投放。</li>
+<li>2011-2014：公开市场操作取代再贴现和再贷款。</li>
+<li>2015~：公开市场操作以及其他货币政策工具（SLF、MLF、PSL等）。</li>
+</ul>
 <h2 id="负债端"><a href="#负债端" class="headerlink" title="负债端"></a>负债端</h2><h3 id="基础货币，流通中的货币和存款准备金的关系"><a href="#基础货币，流通中的货币和存款准备金的关系" class="headerlink" title="基础货币，流通中的货币和存款准备金的关系"></a>基础货币，流通中的货币和存款准备金的关系</h3><p>储备货币又称基础货币、高能货币；</p>
 <p>$$<br>基础货币=货币发行+其他存款性公司存款；<br>货币发行=金融机构库存现金+流通中现金M0；<br>其他存款性公司存款=存款准备金和超额存款准备金。<br>$$</p>
 <h3 id="其他存款性公司"><a href="#其他存款性公司" class="headerlink" title="其他存款性公司"></a>其他存款性公司</h3><p>所谓其他存款性公司，指的是除中央银行以外的，主要进行吸收存款、发放贷款、办理（支票）转账结算等中介服务的存款性公司或准公司。主要包括商业银行（存款货币银行）、信用合作社以及专门把储蓄存款作为资金来源的储蓄机构等。可见，其他存款性公司只是存款性公司的一个组成部分，其他存款性公司与中央银行共同构成所谓的存款性公司。</p>
@@ -496,8 +508,7 @@
 <p>在历史上，中国人民银行对商业银行的再贷款、外汇占款是中国人民银行基础货币投放的主要方式。</p>
 <p><code>四是货币当局经由公开市场业务买入有价证券。</code>由于中央银行的公开市场业务以金融机构为交易对方，买卖的标的是国债，所以在货币当局的资产负债表中，这将表现为资产项下“对政府债权”的增加以及负债项下“储备货币（其他存款性公司存款）”或“不计入储备货币的其他存款性公司存款”的增加。</p>
 <p>另外，中国人民银行还通过央行票据的发行、正回购交易以及外汇掉期交易等途径调控基础货币在不同时间点上的数量分布。在货币当局的资产负债表中，央行票据的发行表现为负债项下“储备货币（其他存款性公司存款）”的减少以及“发行债券”的增加；正回购交易中的第一次交易表现为负债项下“储备货币（其他存款性公司存款）”的减少以及“其他负债”的增加；外汇掉期交易当中的售出外汇表现为资产项下“外汇（储备）”的减少以及负债项下“储备货币（其他存款性公司存款）”的减少。</p>
-<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><h3 id="案列解读1：央行为中投注资导致2007年资产中“持有的政府债权-”快速扩张。"><a href="#案列解读1：央行为中投注资导致2007年资产中“持有的政府债权-”快速扩张。" class="headerlink" title="案列解读1：央行为中投注资导致2007年资产中“持有的政府债权 ”快速扩张。"></a>案列解读1：央行为中投注资导致2007年资产中“持有的政府债权 ”快速扩张。</h3><p>2007年，中国投资公司（中投公司）正式成立。为了给中投公司注入资本，财政部向市场发行了15500亿元的人民币债券（表现形式为特别国债），其中有13500亿元通过商业银行转手至人民银行（2000亿元人民币特别国债通过市场发行方式发行），因此到2007年底人民银行持有的国债数量大幅度增加至16000亿元左右。<br>人民银行持有国债数量的大幅扩张，由于是采用外汇储备进行购买，所以没有导致总资产规模的扩张，基础货币规模没有受到影响。相反，如果中国人民银行对特别国债发行采用发行货币的方式来进行购买，则将造成基础货币扩张从而导致货币供应量上升，这不符合2007年货币政策紧缩的调控基调。</p>
-<h3 id="案例解读2：央行要求以外汇缴存本币存款资本金导致“国外资产—其他”骤升。"><a href="#案例解读2：央行要求以外汇缴存本币存款资本金导致“国外资产—其他”骤升。" class="headerlink" title="案例解读2：央行要求以外汇缴存本币存款资本金导致“国外资产—其他”骤升。"></a>案例解读2：央行要求以外汇缴存本币存款资本金导致“国外资产—其他”骤升。</h3><p>2007年8月，为缓解外汇兑付导致的流动性过剩压力，人行要求各商业银行以外汇缴存本币存款准备金。缴存的外汇准备金，进入“国外资产-其他”，导致报表上该项目骤升。随着外汇兑付压力减缓，该项目金额也逐渐降下来。</p>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><h3 id="案例解读2：央行要求以外汇缴存本币存款资本金导致“国外资产—其他”骤升。"><a href="#案例解读2：央行要求以外汇缴存本币存款资本金导致“国外资产—其他”骤升。" class="headerlink" title="案例解读2：央行要求以外汇缴存本币存款资本金导致“国外资产—其他”骤升。"></a>案例解读2：央行要求以外汇缴存本币存款资本金导致“国外资产—其他”骤升。</h3><p>2007年8月，为缓解外汇兑付导致的流动性过剩压力，人行要求各商业银行以外汇缴存本币存款准备金。缴存的外汇准备金，进入“国外资产-其他”，导致报表上该项目骤升。随着外汇兑付压力减缓，该项目金额也逐渐降下来。</p>
 <h3 id="央行公开市场操作（央票、正回购、逆回购）"><a href="#央行公开市场操作（央票、正回购、逆回购）" class="headerlink" title="央行公开市场操作（央票、正回购、逆回购）"></a>央行公开市场操作（央票、正回购、逆回购）</h3><p>公开市场操作（公开市场业务）是中央银行吞吐基础货币，调节市场流动性的主要货币政策工具，通过中央银行与指定交易商进行有价证券和外汇交易，实现货币政策调控目标。从交易品种看，中国人民银行公开市场业务债券交易主要包括回购交易、现券交易和发行中央银行票据，即央票。 其中回购交易分为正回购和逆回购两种，正回购为中国人民银行向一级交易商卖出有价证券，并约定在未来特定日期买回有价证券的交易行为，正回购为央行从市场 收回流动性的操作，正回购到期则为央行向市场投放流动性的操作；逆回购为中国人民银行向一级交易商购买有价证券，并约定在未来特定日期将有价证券卖给一级 交易商的交易行为，逆回购为央行向市场上投放流动性的操作，逆回购到期则为央行从市场收回流动性的操作（正收逆投）。</p>
 <p>现券交易分为现券买断和现券卖断两种，前者为央行直接从二级市场买入债券，一次性地投放基础货币；后者为央行直接卖出持有债券，一次性地回笼基础货币。</p>
 <p>中央银行票据即中国人民银行发行的短期债券，央行通过发行央行票据可以回笼基础货币，央行票据到期则体现为投放基础货币。</p>
@@ -555,7 +566,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/21/MySQL_key&index.html" rel="next" title="MySQL笔记：Primary Key, Unique, Index等索引的区别">
+              <a href="/2016/10/21/MySQL_key_index.html" rel="next" title="MySQL笔记：Primary Key, Unique, Index等索引的区别">
                 <i class="fa fa-chevron-left"></i> MySQL笔记：Primary Key, Unique, Index等索引的区别
               </a>
             
@@ -725,7 +736,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#央行资产负债表概览"><span class="nav-text">央行资产负债表概览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资产端"><span class="nav-text">资产端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#国外资产"><span class="nav-text">国外资产</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#负债端"><span class="nav-text">负债端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础货币，流通中的货币和存款准备金的关系"><span class="nav-text">基础货币，流通中的货币和存款准备金的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他存款性公司"><span class="nav-text">其他存款性公司</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过央行报表计算货币供应量M0、M1、M2"><span class="nav-text">通过央行报表计算货币供应量M0、M1、M2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#央行投放基础货币（放松银根）对央行资产负债表的影响"><span class="nav-text">央行投放基础货币（放松银根）对央行资产负债表的影响</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#案例"><span class="nav-text">案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#案列解读1：央行为中投注资导致2007年资产中“持有的政府债权-”快速扩张。"><span class="nav-text">案列解读1：央行为中投注资导致2007年资产中“持有的政府债权 ”快速扩张。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例解读2：央行要求以外汇缴存本币存款资本金导致“国外资产—其他”骤升。"><span class="nav-text">案例解读2：央行要求以外汇缴存本币存款资本金导致“国外资产—其他”骤升。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#央行公开市场操作（央票、正回购、逆回购）"><span class="nav-text">央行公开市场操作（央票、正回购、逆回购）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#几种常用的公开市场工具"><span class="nav-text">几种常用的公开市场工具</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考："><span class="nav-text">参考：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#央行资产负债表概览"><span class="nav-text">央行资产负债表概览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资产端"><span class="nav-text">资产端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#国外资产"><span class="nav-text">国外资产</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对政府债权"><span class="nav-text">对政府债权</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对其他存款性公司债权"><span class="nav-text">对其他存款性公司债权</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#负债端"><span class="nav-text">负债端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础货币，流通中的货币和存款准备金的关系"><span class="nav-text">基础货币，流通中的货币和存款准备金的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他存款性公司"><span class="nav-text">其他存款性公司</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过央行报表计算货币供应量M0、M1、M2"><span class="nav-text">通过央行报表计算货币供应量M0、M1、M2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#央行投放基础货币（放松银根）对央行资产负债表的影响"><span class="nav-text">央行投放基础货币（放松银根）对央行资产负债表的影响</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#案例"><span class="nav-text">案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#案例解读2：央行要求以外汇缴存本币存款资本金导致“国外资产—其他”骤升。"><span class="nav-text">案例解读2：央行要求以外汇缴存本币存款资本金导致“国外资产—其他”骤升。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#央行公开市场操作（央票、正回购、逆回购）"><span class="nav-text">央行公开市场操作（央票、正回购、逆回购）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#几种常用的公开市场工具"><span class="nav-text">几种常用的公开市场工具</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考："><span class="nav-text">参考：</span></a></li></ol></div>
             
 
           </div>
@@ -933,7 +944,7 @@
     var isfetched = false;
     var isXml = true;
     // Search DB path;
-    var search_path = "";
+    var search_path = "search.xml";
     if (search_path.length === 0) {
       search_path = "search.xml";
     } else if (/json$/i.test(search_path)) {
@@ -1135,7 +1146,7 @@
 
                   // select top N slices in content
 
-                  var upperBound = parseInt('-1');
+                  var upperBound = parseInt('1');
                   if (upperBound >= 0) {
                     slicesOfContent = slicesOfContent.slice(0, upperBound);
                   }
@@ -1246,19 +1257,6 @@
   </script>
 
 
-
-
-  
-  
-  
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/js/src/algolia-search.js?v=5.1.3"></script>
 
 
 
