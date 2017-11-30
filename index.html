@@ -352,6 +352,165 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.chenchen.co.uk/2017/11/30/Google_scholar_error.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="CHEN CHEN">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Quant Life">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/30/Google_scholar_error.html" itemprop="url">Digital Ocean + SS无法访问Google Scholar的解决方法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-30T00:00:00+08:00">
+                2017-11-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机相关/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机相关</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/11/30/Google_scholar_error.html" class="leancloud_visitors" data-flag-title="Digital Ocean + SS无法访问Google Scholar的解决方法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>在使用ss访问google scholar时提示：</p>
+<p>We’re sorry… but your computer or network may be sending automated queries. To protect our users, we can’t process your request right now.</p>
+<p>在网上搜到的解决办法。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/30/Google_scholar_error.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.chenchen.co.uk/2017/07/12/Python_matrix_cal.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1167,7 +1326,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/10/21/MySQL_key_index.html" itemprop="url">MySQL笔记：Primary Key, Unique, Index等索引的区别</a></h1>
+                <a class="post-title-link" href="/2016/10/21/MySQL_key_index.html" itemprop="url">MySQL笔记：Key, Unique, Index等的区别</a></h1>
         
 
         <div class="post-meta">
@@ -1219,7 +1378,7 @@
 
           
           
-             <span id="/2016/10/21/MySQL_key_index.html" class="leancloud_visitors" data-flag-title="MySQL笔记：Primary Key, Unique, Index等索引的区别">
+             <span id="/2016/10/21/MySQL_key_index.html" class="leancloud_visitors" data-flag-title="MySQL笔记：Key, Unique, Index等的区别">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1251,47 +1410,14 @@
 
       
         
-          
-            <a id="more"></a>
-<p>MYSQL索引用来快速地寻找那些具有特定值的记录。如果没有索引，执行查询时MySQL必须从第一个记录开始扫描整个表的所有记录，直至找到符合要求的记录。表里面的记录数量越多，这个操作的代价就越高。如果作为搜索条件的列上已经创建了索引，MySQL无需扫描任何记录即可迅速得到目标记录所在的位置。如果表有1000个记录，通过索引查找记录至少要比顺序扫描记录快100倍。</p>
- <!-- more -->
-<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>一本词典，数据就是书的正文内容，索引，则是书的目录。<br>大多数情况下索引能大幅度提高查询效率，但：</p>
-<ul>
-<li>数据的变更（增删改）都需要维护索引，因此更多的索引意味着更多的维护成本</li>
-<li>更多的索引意味着也需要更多的空间 （一本100页的书，却有50页目录？）</li>
-<li>过小的表，建索引可能会更慢哦（读个2页的宣传手册，你还先去找目录？）</li>
-</ul>
-<p>PRIMARY, INDEX, UNIQUE 这3种是一类</p>
-<ul>
-<li>PRIMARY 主键。 就是 唯一 且 不能为空。</li>
-<li>INDEX 索引，普通的</li>
-<li>UNIQUE 唯一索引。 不允许有重复。</li>
-<li>FULLTEXT 是全文索引，用于在一篇文章中，检索文本信息的。</li>
-</ul>
-<blockquote>
-<p>举个例子来说，比如你在为某商场做一个会员卡的系统。这个系统有一个会员表,有下列字段：<br>会员编号 INT<br>会员姓名 VARCHAR(10)<br>会员身份证号码 VARCHAR(18)<br>会员电话 VARCHAR(10)<br>会员住址 VARCHAR(50)<br>会员备注信息 TEXT<br>那么这个 会员编号，作为主键，使用PRIMARY KEY;<br>会员姓名，如果要建索引的话，那么就是普通的INDEX;<br>会员身份证号码，如果要建索引的话，那么可以选择UNIQUE（唯一的，不允许重复）<br>会员备注信息 ，如果需要建索引的话，可以选择FULLTEXT，全文搜索。不过FULLTEXT用于搜索很长一篇文章的时候，效果最好。用在比较短的文本，如果就一两行字的，普通的INDEX也可以。</p>
-</blockquote>
-<h2 id="创建索引使用说明"><a href="#创建索引使用说明" class="headerlink" title="创建索引使用说明"></a>创建索引使用说明</h2><h3 id="普通索引"><a href="#普通索引" class="headerlink" title="普通索引"></a>普通索引</h3><p>这是最基本的索引类型，而且它没有唯一性之类的限制。</p>
-<ol>
-<li>创建索引</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE INDEX &lt;索引的名字&gt; ON tablename (列的列表);</span><br></pre></td></tr></table></figure>
-<ol>
-<li>修改表索引</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE tablename ADD INDEX [索引的名字] (列的列表);</span><br></pre></td></tr></table></figure>
-<ol>
-<li>创建表的时候指定索引</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE tablename ( […], INDEX [索引的名字] (列的列表) );</span><br></pre></td></tr></table></figure>
-<h3 id="唯一性索引"><a href="#唯一性索引" class="headerlink" title="唯一性索引"></a>唯一性索引</h3><p>这种索引和前面的“普通索引”基本相同，但有一个区别：索引列的所有值都只能出现一次，即必须唯一。但允许有空值。</p>
-<h3 id="MYSQL主键："><a href="#MYSQL主键：" class="headerlink" title="MYSQL主键："></a>MYSQL主键：</h3><p>MYSQL主键是一种唯一性索引，但它必须指定为“PRIMARY KEY”。每个表只能有一个主键。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE tablename ( […], PRIMARY KEY (列的列表) );</span><br></pre></td></tr></table></figure>
-<p>但是，我们也可以通过修改表的方式加入主键：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE tablename ADD PRIMARY KEY (列的列表);</span><br></pre></td></tr></table></figure>
-<h3 id="全文索引"><a href="#全文索引" class="headerlink" title="全文索引"></a>全文索引</h3><p>MySQL从3.23.23版开始支持全文索引和全文检索。在MySQL中，全文索引的索引类型为FULLTEXT。全文索引可以在VARCHAR或者TEXT类型的列上创建。它可以通过CREATE TABLE命令创建，也可以通过ALTER TABLE或CREATE INDEX命令创建。对于大规模的数据集，通过ALTER TABLE（或者CREATE INDEX）命令创建全文索引要比把记录插入带有全文索引的空表更快。</p>
-
-          
+          <p>MYSQL索引用来快速地寻找那些具有特定值的记录。如果没有索引，执行查询时MySQL必须从第一个记录开始扫描整个表的所有记录，直至找到符合要求的记录。表里面的记录数量越多，这个操作的代价就越高。如果作为搜索条件的列上已经创建了索引，MySQL无需扫描任何记录即可迅速得到目标记录所在的位置。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/10/21/MySQL_key_index.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1831,204 +1957,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.chenchen.co.uk/2016/08/02/MPA.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="CHEN CHEN">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/assets/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Quant Life">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/08/02/MPA.html" itemprop="url">宏观审慎评估体系</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-02T00:00:00+08:00">
-                2016-08-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/金融笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">金融笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2016/08/02/MPA.html" class="leancloud_visitors" data-flag-title="宏观审慎评估体系">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <a id="more"></a>
-<p>在实施MPA以前，监管主要盯住银行贷款。MPA之后转向关注广义信贷（包括贷款、债券投资、股权及其他投资、买入返售资产以及非银同业存放等）。</p>
-<table>
-<thead>
-<tr>
-<th>七大方面</th>
-<th>14个指标</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>资本和杠杆情况</td>
-<td>资本充足率（80分）、杠杆率（20分）</td>
-</tr>
-<tr>
-<td>资产负债情况</td>
-<td>广义信贷（60分）、委托贷款（15分）、同业负债（25分）</td>
-</tr>
-<tr>
-<td>流动性</td>
-<td>流动性覆盖率（40分）、净稳定资本比例（40分）、遵守准备金制度情况（20分）</td>
-</tr>
-<tr>
-<td>定价行为</td>
-<td>利率定价（100分）</td>
-</tr>
-<tr>
-<td>资产质量</td>
-<td>不良贷款率（50分）、拨备覆盖率（50分）</td>
-</tr>
-<tr>
-<td>外债风险</td>
-<td>外债风险加权余额（100分）</td>
-</tr>
-<tr>
-<td>信贷政策执行</td>
-<td>信贷执行情况（70分）、央行资金运用情况（30分）</td>
-</tr>
-</tbody>
-</table>
-<p>MPA每季度考核一次，结果分ABC三档。</p>
-<ul>
-<li>如果7大方面得分均在90以上，则为A档，执行最优档激励。</li>
-<li>如果资本和杠杆情况、定价行为二者任意一项低于60分，或其他五大方面中任意两项及以上低于60分，则为C档，给予适当约束。</li>
-<li>其他情况为B档，执行正常激励。</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2083,7 +2011,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2105,7 +2033,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

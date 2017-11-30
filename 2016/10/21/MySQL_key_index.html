@@ -117,22 +117,16 @@
 
 
 
-<meta name="description" content="MYSQL索引用来快速地寻找那些具有特定值的记录。如果没有索引，执行查询时MySQL必须从第一个记录开始扫描整个表的所有记录，直至找到符合要求的记录。表里面的记录数量越多，这个操作的代价就越高。如果作为搜索条件的列上已经创建了索引，MySQL无需扫描任何记录即可迅速得到目标记录所在的位置。如果表有1000个记录，通过索引查找记录至少要比顺序扫描记录快100倍。
- 
-概念一本词典，数据就是书的正文">
+<meta name="description" content="MYSQL索引用来快速地寻找那些具有特定值的记录。如果没有索引，执行查询时MySQL必须从第一个记录开始扫描整个表的所有记录，直至找到符合要求的记录。表里面的记录数量越多，这个操作的代价就越高。如果作为搜索条件的列上已经创建了索引，MySQL无需扫描任何记录即可迅速得到目标记录所在的位置。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL笔记：Primary Key, Unique, Index等索引的区别">
+<meta property="og:title" content="MySQL笔记：Key, Unique, Index等的区别">
 <meta property="og:url" content="http://www.chenchen.co.uk/2016/10/21/MySQL_key_index.html">
 <meta property="og:site_name" content="Quant Life">
-<meta property="og:description" content="MYSQL索引用来快速地寻找那些具有特定值的记录。如果没有索引，执行查询时MySQL必须从第一个记录开始扫描整个表的所有记录，直至找到符合要求的记录。表里面的记录数量越多，这个操作的代价就越高。如果作为搜索条件的列上已经创建了索引，MySQL无需扫描任何记录即可迅速得到目标记录所在的位置。如果表有1000个记录，通过索引查找记录至少要比顺序扫描记录快100倍。
- 
-概念一本词典，数据就是书的正文">
-<meta property="og:updated_time" content="2017-03-10T05:55:30.000Z">
+<meta property="og:description" content="MYSQL索引用来快速地寻找那些具有特定值的记录。如果没有索引，执行查询时MySQL必须从第一个记录开始扫描整个表的所有记录，直至找到符合要求的记录。表里面的记录数量越多，这个操作的代价就越高。如果作为搜索条件的列上已经创建了索引，MySQL无需扫描任何记录即可迅速得到目标记录所在的位置。">
+<meta property="og:updated_time" content="2017-10-19T08:37:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL笔记：Primary Key, Unique, Index等索引的区别">
-<meta name="twitter:description" content="MYSQL索引用来快速地寻找那些具有特定值的记录。如果没有索引，执行查询时MySQL必须从第一个记录开始扫描整个表的所有记录，直至找到符合要求的记录。表里面的记录数量越多，这个操作的代价就越高。如果作为搜索条件的列上已经创建了索引，MySQL无需扫描任何记录即可迅速得到目标记录所在的位置。如果表有1000个记录，通过索引查找记录至少要比顺序扫描记录快100倍。
- 
-概念一本词典，数据就是书的正文">
+<meta name="twitter:title" content="MySQL笔记：Key, Unique, Index等的区别">
+<meta name="twitter:description" content="MYSQL索引用来快速地寻找那些具有特定值的记录。如果没有索引，执行查询时MySQL必须从第一个记录开始扫描整个表的所有记录，直至找到符合要求的记录。表里面的记录数量越多，这个操作的代价就越高。如果作为搜索条件的列上已经创建了索引，MySQL无需扫描任何记录即可迅速得到目标记录所在的位置。">
 
 
 
@@ -168,7 +162,7 @@
 
 
 
-  <title>MySQL笔记：Primary Key, Unique, Index等索引的区别 | Quant Life</title>
+  <title>MySQL笔记：Key, Unique, Index等的区别 | Quant Life</title>
   
 
 
@@ -375,7 +369,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">MySQL笔记：Primary Key, Unique, Index等索引的区别</h1>
+          <h1 class="post-title" itemprop="name headline">MySQL笔记：Key, Unique, Index等的区别</h1>
         
 
         <div class="post-meta">
@@ -427,7 +421,7 @@
 
           
           
-             <span id="/2016/10/21/MySQL_key_index.html" class="leancloud_visitors" data-flag-title="MySQL笔记：Primary Key, Unique, Index等索引的区别">
+             <span id="/2016/10/21/MySQL_key_index.html" class="leancloud_visitors" data-flag-title="MySQL笔记：Key, Unique, Index等的区别">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -463,24 +457,30 @@
       
 
       
-        <a id="more"></a>
-<p>MYSQL索引用来快速地寻找那些具有特定值的记录。如果没有索引，执行查询时MySQL必须从第一个记录开始扫描整个表的所有记录，直至找到符合要求的记录。表里面的记录数量越多，这个操作的代价就越高。如果作为搜索条件的列上已经创建了索引，MySQL无需扫描任何记录即可迅速得到目标记录所在的位置。如果表有1000个记录，通过索引查找记录至少要比顺序扫描记录快100倍。</p>
- <!-- more -->
+        <p>MYSQL索引用来快速地寻找那些具有特定值的记录。如果没有索引，执行查询时MySQL必须从第一个记录开始扫描整个表的所有记录，直至找到符合要求的记录。表里面的记录数量越多，这个操作的代价就越高。如果作为搜索条件的列上已经创建了索引，MySQL无需扫描任何记录即可迅速得到目标记录所在的位置。</p>
+<a id="more"></a>
 <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>一本词典，数据就是书的正文内容，索引，则是书的目录。<br>大多数情况下索引能大幅度提高查询效率，但：</p>
 <ul>
 <li>数据的变更（增删改）都需要维护索引，因此更多的索引意味着更多的维护成本</li>
 <li>更多的索引意味着也需要更多的空间 （一本100页的书，却有50页目录？）</li>
-<li>过小的表，建索引可能会更慢哦（读个2页的宣传手册，你还先去找目录？）</li>
+<li>过小的表，建索引可能会更慢（读个2页的宣传手册，先去找目录？）</li>
 </ul>
-<p>PRIMARY, INDEX, UNIQUE 这3种是一类</p>
-<ul>
-<li>PRIMARY 主键。 就是 唯一 且 不能为空。</li>
-<li>INDEX 索引，普通的</li>
-<li>UNIQUE 唯一索引。 不允许有重复。</li>
-<li>FULLTEXT 是全文索引，用于在一篇文章中，检索文本信息的。</li>
-</ul>
+<h3 id="Key和Index的区别"><a href="#Key和Index的区别" class="headerlink" title="Key和Index的区别"></a>Key和Index的区别</h3><p><strong>在网上看到不少类似解释，还是不太明白，有待继续学习：</strong></p>
+<p>KEY通常是INDEX同义词。如果关键字属性PRIMARY KEY在列定义中已给定，则PRIMARY KEY也可以只指定为KEY。这么做的目的是与其它数据库系统兼容。PRIMARY KEY是一个唯一KEY，此时，所有的关键字列必须定义为NOT NULL。如果这些列没有被明确地定义为NOT NULL，MySQL应隐含地定义这些列。</p>
+<p>KEY即键值，是关系模型理论中的一部份，比如有主键（PRIMARY KEY)，外键（Foreign KEY）等，用于数据完整性检否与唯一性约束等。而INDEX则处于实现层面，比如可以对表个的任意列建立索引，那么当建立索引的列处于SQL语句中的Where条件中时，就可以得到快速的数据定位，从而快速检索。至于UNIQUE INDEX，则只是属于INDEX中的一种而已，建立了UNIQUE INDEX表示此列数据不可重复，猜想MySQL对UNIQUE INDEX类型的索引可以做进一步特殊优化吧。</p>
+<p>于是，在设计表的时候，KEY只是要处于模型层面的，而当需要进行查询优化，则对相关列建立索引即可。</p>
+<h3 id="KEY"><a href="#KEY" class="headerlink" title="KEY"></a>KEY</h3><p>KEY是数据库的物理结构，包含两层含义，一是约束，偏重于约束和规范数据库的结构完整性，二是索引，辅助查询。</p>
+<p>primary key 有两个作用，一是约束作用（constraint），用来规范一个存储主键和唯一性，但同时也在此key上建立了一个index；<br>unique key 也有两个作用，一是约束作用（constraint），规范数据的唯一性，但同时也在这个key上建立了一个index；<br>foreign key也有两个作用，一是约束作用（constraint），规范数据的引用完整性，但同时也在这个key上建立了一个index；<br>可见，key是同时具有constraint和index的意义.</p>
+<h3 id="INDEX"><a href="#INDEX" class="headerlink" title="INDEX"></a>INDEX</h3><p>INDEX也是数据库的物理结构，但他只有辅助查询作用，它会在创建时占用另外的空间。索引分为前缀索引、全文索引等。索引只是索引，不会去约束索引字段的行为。</p>
+<h3 id="PRIMARY-KEY-和-UNIQUE-KEY-的区别"><a href="#PRIMARY-KEY-和-UNIQUE-KEY-的区别" class="headerlink" title="PRIMARY KEY 和 UNIQUE KEY 的区别"></a>PRIMARY KEY 和 UNIQUE KEY 的区别</h3><p>PRIMARY KEYs（主键）和UNIQUE KEYs（唯一键约束）是类似的， PRIMARY KEY通常是一列，也有可能多列，通常由他来决定一行数据(row)。 一张表只能有一个PRIMARY KEY，但可以有很多UNIQUE KEY。当给一列设置为UNIQUE KEY之后，不能有两行在该列上有相同的数据。 PRIMARY KEY不允许有 NULL值，但是UNIQUE KEY可以。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE table_name ADD PRIMARY KEY(column_name, …)</span><br></pre></td></tr></table></figure>
+<p><strong>相同点：</strong><br>PRIMARY KEY和UNIQUE KEY都是用来保证列上数据的为原型；<br>都可以在一列或者多列上加</p>
+<p><strong>差异点：</strong><br>同一张表PRIMARY KEY只能有一个， UNIQUE KEY可以有多个<br>PRIMARY KEY不能有空值， UNIQUE KEY可以有。如果PRIMARY KEY 的1个或多个列为NULL，在增加PRIMARY KEY时，列自动更改为NOT NULL 。而UNIQUE KEY对列没有要求是通过参考索引实施的，如果插入的值均为NULL，则根据索引的原理，全NULL值不被记录在索引上，所以插入全NULL值时，可以有重复的，而其他的则不能插入重复值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table t add constraint uk_t_1 UNIQUE (a,b); insert into t (a ,b ) values (null,1); # 不能重复 insert into t (a ,b ) values (null,null);#可以重复</span><br></pre></td></tr></table></figure>
+<p>在MySQL中，对于一个PRIMARY KEY的列，MySQL已经自动对其建立了UNIQUE INDEX，无需重复再在上面建立索引了。</p>
+<p>网上关于 PRIMARY KEY 和 UNIQUE INDEX 的一段解释：</p>
 <blockquote>
-<p>举个例子来说，比如你在为某商场做一个会员卡的系统。这个系统有一个会员表,有下列字段：<br>会员编号 INT<br>会员姓名 VARCHAR(10)<br>会员身份证号码 VARCHAR(18)<br>会员电话 VARCHAR(10)<br>会员住址 VARCHAR(50)<br>会员备注信息 TEXT<br>那么这个 会员编号，作为主键，使用PRIMARY KEY;<br>会员姓名，如果要建索引的话，那么就是普通的INDEX;<br>会员身份证号码，如果要建索引的话，那么可以选择UNIQUE（唯一的，不允许重复）<br>会员备注信息 ，如果需要建索引的话，可以选择FULLTEXT，全文搜索。不过FULLTEXT用于搜索很长一篇文章的时候，效果最好。用在比较短的文本，如果就一两行字的，普通的INDEX也可以。</p>
+<p>Note that “PRIMARY” is called PRIMARY KEY not INDEX.<br>KEY is something on the logical level, describes your table and database design (i.e. enforces referential integrity …)<br>INDEX is something on the physical level, helps improve access time for table operations.<br>Behind every PK there is (usually) UNIQUE INDEX created (automatically). </p>
 </blockquote>
 <h2 id="创建索引使用说明"><a href="#创建索引使用说明" class="headerlink" title="创建索引使用说明"></a>创建索引使用说明</h2><h3 id="普通索引"><a href="#普通索引" class="headerlink" title="普通索引"></a>普通索引</h3><p>这是最基本的索引类型，而且它没有唯一性之类的限制。</p>
 <ol>
@@ -501,6 +501,9 @@
 <p>但是，我们也可以通过修改表的方式加入主键：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE tablename ADD PRIMARY KEY (列的列表);</span><br></pre></td></tr></table></figure>
 <h3 id="全文索引"><a href="#全文索引" class="headerlink" title="全文索引"></a>全文索引</h3><p>MySQL从3.23.23版开始支持全文索引和全文检索。在MySQL中，全文索引的索引类型为FULLTEXT。全文索引可以在VARCHAR或者TEXT类型的列上创建。它可以通过CREATE TABLE命令创建，也可以通过ALTER TABLE或CREATE INDEX命令创建。对于大规模的数据集，通过ALTER TABLE（或者CREATE INDEX）命令创建全文索引要比把记录插入带有全文索引的空表更快。</p>
+<blockquote>
+<p>举个例子来说，比如你在为某商场做一个会员卡的系统。这个系统有一个会员表,有下列字段：<br>会员编号 INT<br>会员姓名 VARCHAR(10)<br>会员身份证号码 VARCHAR(18)<br>会员电话 VARCHAR(10)<br>会员住址 VARCHAR(50)<br>会员备注信息 TEXT<br>那么这个 会员编号，作为主键，使用PRIMARY KEY;<br>会员姓名，如果要建索引的话，那么就是普通的INDEX;<br>会员身份证号码，如果要建索引的话，那么可以选择UNIQUE（唯一的，不允许重复）<br>会员备注信息 ，如果需要建索引的话，可以选择FULLTEXT，全文搜索。不过FULLTEXT用于搜索很长一篇文章的时候，效果最好。用在比较短的文本，如果就一两行字的，普通的INDEX也可以。</p>
+</blockquote>
 
       
     </div>
@@ -639,7 +642,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -661,7 +664,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -716,7 +719,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建索引使用说明"><span class="nav-text">创建索引使用说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#普通索引"><span class="nav-text">普通索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#唯一性索引"><span class="nav-text">唯一性索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MYSQL主键："><span class="nav-text">MYSQL主键：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全文索引"><span class="nav-text">全文索引</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Key和Index的区别"><span class="nav-text">Key和Index的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#KEY"><span class="nav-text">KEY</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#INDEX"><span class="nav-text">INDEX</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PRIMARY-KEY-和-UNIQUE-KEY-的区别"><span class="nav-text">PRIMARY KEY 和 UNIQUE KEY 的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建索引使用说明"><span class="nav-text">创建索引使用说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#普通索引"><span class="nav-text">普通索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#唯一性索引"><span class="nav-text">唯一性索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MYSQL主键："><span class="nav-text">MYSQL主键：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全文索引"><span class="nav-text">全文索引</span></a></li></ol></li></ol></div>
             
 
           </div>
