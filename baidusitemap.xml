@@ -4,6 +4,70 @@
 
     
   <url>
+    <loc>http://www.chenchen.co.uk/2017/12/27/Python_os.html</loc>
+    <lastmod>2017-12-27T05:43:40.000Z</lastmod>
+    <data>
+        <display>
+        <title>Python笔记：操作系统目录和文件</title>
+        <pubTime>2017-12-26T16:00:00.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>os</tag>
+         
+         
+           
+             
+              <breadCrumb title="Python" url="http://www.chenchen.co.uk/categories/Python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.chenchen.co.uk/2017/12/01/Quant_notes.html</loc>
+    <lastmod>2017-12-21T01:58:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>量化学习笔记</title>
+        <pubTime>2017-11-30T16:00:00.000Z</pubTime>
+        
+        <tag>Quant</tag>
+         
+         
+           
+             
+              <breadCrumb title="Quant" url="http://www.chenchen.co.uk/categories/Quant/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.chenchen.co.uk/2017/12/01/Pandas_reference_copy.html</loc>
+    <lastmod>2017-12-11T15:48:39.257Z</lastmod>
+    <data>
+        <display>
+        <title>Python笔记：Pandas的引用和复制</title>
+        <pubTime>2017-11-30T16:00:00.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>pandas</tag>
+         
+         
+           
+             
+              <breadCrumb title="Python" url="http://www.chenchen.co.uk/categories/Python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.chenchen.co.uk/2017/11/30/Google_scholar_error.html</loc>
     <lastmod>2017-11-30T15:12:45.350Z</lastmod>
     <data>
@@ -291,9 +355,9 @@
         <title>Python笔记：MySQL的调用</title>
         <pubTime>2015-12-29T16:00:00.000Z</pubTime>
         
-        <tag>Python</tag>
-         
         <tag>MySQL</tag>
+         
+        <tag>Python</tag>
          
          
            
@@ -719,9 +783,9 @@
          
         <tag>套利</tag>
          
-        <tag>国债ETF</tag>
-         
         <tag>策略</tag>
+         
+        <tag>国债ETF</tag>
          
          
            

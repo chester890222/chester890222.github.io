@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python笔记：操作系统目录和文件]]></title>
+    <url>%2F2017%2F12%2F27%2FPython_os.html</url>
+    <content type="text"><![CDATA[Python操作系统目录和文件的笔记 os模块Python的os模块封装了操作系统的目录和文件操作。这些函数有的在os模块中，有的在os.path模块中。 目录操作12345678910111213141516# -*- coding: utf-8 -*-import osprint(os.name)#输出操作系统类型，如果是posix，说明系统是Linux、Unix或Mac OS X，如果是nt，就是Windows。print(os.environ)#输出操作系统中定义的全部环境变量print(os.environ.get('PATH'))#要获取某个环境变量的值，可以调用os.environ.get('key')print(os.path.abspath('.'))#查看当前目录的绝对路径 在某个目录下创建一个新目录 123#把新目录的完整路径表示出来os.path.join('H:/', 'testdir')#在H盘创建了一个testdir文件夹。 把两个路径合成一个时，不要直接拼字符串，而要通过os.path.join()函数，这样可以正确处理不同操作系统的路径分隔符。 12#创建一个目录os.mkdir('H:/testdir') 拆分路径时，也不要直接去拆字符串，而要通过os.path.split()函数，这样可以把一个路径拆分为两部分，后一部分总是最后级别的目录或文件名。 12345678910print(os.path.split('H:/name.txt'))#输出('H:','name.txt')os.path.splitext()可以直接得到文件扩展名：```pythonprint(os.path.splitext('H:/name.py'))#输出('H:/name','.py') 注：这些合并、拆分路径的函数并不要求目录和文件要真实存在，它们只对字符串进行操作。 利用Python的特性来过滤文件： os.listdir()：返回指定的文件夹包含的文件或文件夹的名字的列表。os.path.isdir()：判断某一路径是否为目录 。os.path.isfile()：判断某一路径是否为文件 1234567891011#列出当前目录下的所有目录（即文件夹）file1=[x for x in os.listdir('.') if os.path.isdir(x)]print(file1)#列出当前目录下所有的.py文件file2=[x for x in os.listdir('.') if os.path.isfile(x) and os.path.splitext(x)[1]=='.py']print(file2)#输出['a.py', 'b.py', 'c.py'] 文件操作1，创建文件方法： 12f=open("D://111.cc",mode="w",encoding="UTF-8") f.close() 2，删除一个文件 12os.remove("D://222.ccc123") os.close() 3,创建一个目录或多个目录 12os.mkdir("E://bb") os.makedirs("D:\\a\\b") 4，删除依旧用remove方法或多级删除 12os.removedirs(path) os.remove() 5,拷贝，重命名，查看文件大小，打开文件 1234567import os import shutil #第一个参数是源文件，第二个拷贝文件 shutil.copyfile("D://111.CC","D://222.ccc") os.rename("D://222.ccc","D://222.ccc123") os.stat("D://abc.txt").st_size os.startfile("D://abc.txt") 6,查看某个目录下文件数量： 12345678def countDirs(dp): tt=tuple(os.walk(dp)) print("文件夹"+dp+"的信息:") print("文件夹的个数: ",len(tt[0][1]),"文件的个数: ",len(tt[0][2])) d1="D:\\tomcat7\\bin" countDirs(d1) 结果如下：文件夹D:\tomcat7\bin的信息:文件夹的个数: 0 文件的个数: 28Process finished with exit code 0 7，递归打印文件夹的方法： 12345def showAllDirs(dp): tt=os.walk(dp); for l in tt: for lf in l[1]: print("目录的路径是：",l[0]+"\\"+lf) 递归打印文件的方法： 12345def showAllDirsFiles(dirPath): tt=os.walk(dirPath); for l in tt: for ll in l[2]: print("文件的路径是：",l[0]+"\\"+ll) 8，读取文件的方法： 123456def readFile(): f=open(r"D:///bbb.txt",encoding="UTF-8") for line in f: #去除多余的换行符 print(line.strip()) f.close(); 批量载入读取： 1234567891011def readFile1(): f=open(r"D:///bbb.txt",encoding="UTF-8") while 1: #print("j") lines=f.readlines(10000); if not lines: #print("end") break; for line in lines: print(line.strip()) f.close() 写入文件例子： 12345678910111213def writeFile(): a=list(); a.append("a你好") a.append("b哈喽") a.append("c") #a追加模式w覆盖模式 f=open("D://pp.txt",mode='a',encoding="UTF-8") print("文件大小：",f) for c in a: f.write(c+"\n") f.close() print("写入成功!")]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>os</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Python笔记：Pandas的引用和复制]]></title>
+    <url>%2F2017%2F12%2F01%2FPandas_reference_copy.html</url>
+    <content type="text"><![CDATA[之前一直以为pandas任何的切片和筛选都是引用，也就是说，会改变最原始的数据。但是前几天发现并不是这样的。 下面对最常见的几种pandas 数据截取的方式做一个整理。[python] view plain copyimport pandas as pddef df_gen(): l1 = [1,2,3] l2 = [4,5,6] l3 = [7,6,5] df_t = pd.DataFrame() df_t[‘a’] = l1 df_t[‘b’] = l2 df_t[‘c’] = l3 return df_tprint ‘df:’, df_gen() print ‘refernece:’ df = df_gen()d1 = df.ad1[0] = 999print ‘1’, dfdf = df_gen()d1 = df.ix[0]d1[0] = 999print ‘2’, dfdf = df_gen()d1 = df.loc[1,:]d1[0] = 999print ‘3’, dfdf = df_gen()d1 = df[‘a’]d1[0] = 999print ‘4’, df print ‘copy:’ df = df_gen()d1 = df.iloc[1]d1[0] = 999print ‘1’, dfdf = df_gen()d1 = df[df.a &gt; 1]d1[0] = 999print ‘2’, dfdf = df_gen()d1 = df.loc[df.a &gt; 1, ‘b’]d1[0] = 999print ‘3’, df 上面总共7种方式，前面四种是引用的方式，后面的三种是复制。 输出是这样一串：df: a b c0 1 4 71 2 5 62 3 6 5refernece:1 a b c0 999 4 71 2 5 62 3 6 51 a b c0 999 4 71 2 5 62 3 6 51 a b c0 1 4 71 999 5 62 3 6 51 a b c0 999 4 71 2 5 62 3 6 5copy:F:/int/ProjectIntern/DatabaseTransfer/dd.py:37: SettingWithCopyWarning:A value is trying to be set on a copy of a slice from a DataFrame See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy d1[0] = 9991 a b c0 1 4 71 2 5 62 3 6 51 F:/int/ProjectIntern/DatabaseTransfer/dd.py:41: SettingWithCopyWarning:A value is trying to be set on a copy of a slice from a DataFrame.Try using .loc[row_indexer,col_indexer] = value instead See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy d1[0] = 999 a b c0 1 4 71 2 5 62 3 6 51 a b c0 1 4 71 2 5 62 3 6 5 我们发现pandas不是refernce的时候会有警告。refernce的时候，df原始的值被改变了，说明d1只是一个引用，而后面的copy则不然。 在使用pandas的时候要注意这一特性。 在Python中，字符串、列表、字典是能够很容易进行相互转换的，这无疑增加了Python数据结构的灵活性。但是作为几大数据结构中的成员，它们又存在一些非常值得我们注意的差别，很典型的情况就是进行引用与复制时，注意不同对象结构下带来结果的不同。 在C/C++中，复制分为深复制和浅复制。它们的区别就在于复制对象的差别，浅复制只是实现对指针的拷贝，最后两个指针指向内存空间的同一个地址；深复制则不仅仅实现对指针的拷贝，还实现了对指针所指内容的拷贝，就是说，最后两个指针指向了内容空间的不同地址。由此看来，浅复制是不太可靠的，因为在实施浅复制后，如果一个指针改变了指向内容，那么其他指针指向的内容也会随之改变，他们本来就指向的同一个内容。 同样的，Python中也存在深复制与浅复制。 对于字符串，由于字符串是不可变对象，调用对象自身的任意方法，也不会改变该对象自身的内容。所以用=可以实现复制，这里的复制本质上是对原来对象的引用。 String = “abcd”String1 = StringString2 = String.strip(‘a’)print String, String1, String2但是对于列表和字典，他们是可变对象，调用对象自身的任意方法，会改变该对象自身的内容。所以用=只能实现引用。 用自身list[:]或dict.copy()方法实现浅复制，但是注意的是，虽然这两种办法能实现对象的复制，但是一旦对象包含的元素是可变的嵌套结构，如列表中嵌套列表，就会导致对这些元素的操作是引用而不是复制。也就是说，当我们改变原来对象某一元素里的数据时，其实经过这两种办法复制过来的对象也是随之改变的。 解决这种办法，需要实现真正的深复制，也就是说对象及其其中的元素都是彻彻底底的开辟新的内存空间进行复制。可以通过copy.deepcopy(list)或copy.deepcopy(dict)方法实现。 下面贴一段代码，加深对list和dict深复制和浅复制的理解： #coding: utf-8import copy 列表list复制print ““100List = [0, [1, 2], 3]List1 = List # 引用List2 = List[:] # 浅复制，对象复制；但其中元素是引用List3 = copy.copy(List) # 浅复制，对象复制；但其中元素是引用List4 = copy.deepcopy(List) # 深复制，对象及其中元素都是复制print ““50print List, List1print List2, List3print List4print ‘‘50List[0] = 100print List, List1print List2, List3print List4print ‘‘50List[1][1] = 100print List, List1print List2, List3print List4 字典dict复制print ““100Dict = {‘a’:0, ‘b’:[1, 2], ‘c’:3, ‘d’:4}Dict1 = Dict # 引用Dict2 = Dict.copy() # 浅复制，对象复制；但其中元素是引用Dict3 = copy.copy(Dict) # 浅复制，对象复制；但其中元素是引用Dict4 = copy.deepcopy(Dict) # 深复制，对象及其中元素都是复制print ““50print Dict, Dict1print Dict2, Dict3print Dict4print ““50Dict[‘a’] = 100print Dict, Dict1print Dict2, Dict3print Dict4print ““50 列表对象的copy()方法返回列表的浅复制。所谓浅复制，是指生产一个新的列表，并且把原列表中所有元素的引用都复制到新列表中。如果原列表中只包含整数、实数、复数等基本类型或元组、字符串这样的不可变类型，一般是没有问题的。但是，如果原列表中包含列表之类的可变数据类型，由于浅复制时只是把子列表的引用复制到新列表中，这样修改任何一个都会影响另外一个。例如： x = [1, 2, [3, 4]] #原列表中包含子列表y = x.copy() #浅复制x[1, 2, [3, 4]]y #两个列表中的内容看起来完全一样[1, 2, [3, 4]]y[2].append(5) #为新列表中的子列表追加元素y[1, 2, [3, 4, 5]]x #原列表中的子列表也被修改了[1, 2, [3, 4, 5]]x[0] = 6 #整数、实数等不可变类型不受此影响x[6, 2, [3, 4, 5]]y[1, 2, [3, 4, 5]]y.append(6) #在新列表尾部追加元素y[1, 2, [3, 4, 5], 6]x #原列表不受影响[6, 2, [3, 4, 5]]列表对象的copy()方法和切片操作与标准库copy中的copy()函数一样都是返回浅复制，如果想避免上面代码演示的问题，可以使用标准库copy中的deepcopy()函数实现深复制。所谓深复制，是指对原列表中的元素进行递归，把所有的值都复制到新列表中，对嵌套的子列表不仅仅是复制引用。这样一来，新列表和原列表是互相独立，修改任何一个都不会影响另外一个。import copyx = [1, 2, [3, 4]]y = copy.deepcopy(x) #深复制y[1, 2, [3, 4]]x[2].append(5) #为原列表中的子列表追加元素x[1, 2, [3, 4, 5]]y #新列表中的子列表不受影响[1, 2, [3, 4]]y.append(6) #在新列表尾部追加元素y[1, 2, [3, 4], 6]x #原列表不受影响[1, 2, [3, 4, 5]]不管是浅复制还是深复制，与列表对象的直接复制都是不一样的情况，这一点是必须注意的。下面的代码把同一个列表赋值给两个不同的变量，这两个变量是互相独立的，修改任何一个都不会影响另外一个。x = [1, 2, [3, 4]]y = [1, 2, [3, 4]] #把同一个列表对象赋值给两个变量x.append(5)x[2].append(6)x[1, 2, [3, 4, 6], 5]y[1, 2, [3, 4]]下面的代码演示的是另外一种情况，把一个列表变量赋值给另外一个变量，这样的话两个变量指向同一个列表对象，对其中一个做的任何修改都会立刻在另外一个变量得到体现。x = [1, 2, [3, 4]]y = x #两个变量指向同一个列表x[2].append(5)x.append(6)x[0] = 7x[7, 2, [3, 4, 5], 6]y #对x做的任何修改，y都会得到影响[7, 2, [3, 4, 5], 6]]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>pandas</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[量化学习笔记]]></title>
+    <url>%2F2017%2F12%2F01%2FQuant_notes.html</url>
+    <content type="text"><![CDATA[量化只是手段，投资想法才是灵魂 相关书籍 Quantitative Equity Portfolio Management（QEPM）， Ludwig Chincarini Active Portfolio Management（APM）， Grinold &amp; Kahn Quantitative Equity Portfolio Management（QEPM）， Qian &amp; Hua &amp; Sorensen]]></content>
+      <categories>
+        <category>Quant</category>
+      </categories>
+      <tags>
+        <tag>Quant</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Digital Ocean + SS无法访问Google Scholar的解决方法]]></title>
     <url>%2F2017%2F11%2F30%2FGoogle_scholar_error.html</url>
     <content type="text"><![CDATA[在使用ss访问google scholar时提示： We’re sorry… but your computer or network may be sending automated queries. To protect our users, we can’t process your request right now. 在网上搜到的解决办法。 我的VPS是Digital Ocean新加坡节点，网上说是因为ipv4网段被封了，通过修改hosts强制VPS使用ipv6访问就行了。 具体操作是： 打开hosts文件 1sudo vim /etc/hosts 找谷歌的可用ipv6，可参考Github ipv6-hosts，复制到/etc/hosts的底部。 123456## Scholar 学术搜索2404:6800:4008:c06::be scholar.google.com2404:6800:4008:c06::be scholar.google.com.hk2404:6800:4008:c06::be scholar.google.com.tw2401:3800:4001:10::101f scholar.google.cn #www.google.cn2404:6800:4008:c06::be scholar.google.com.sg 保存hosts后，重启ss就可以了。 12ssserver -c /etc/shadowsocks.json -d stopssserver -c /etc/shadowsocks.json -d start]]></content>
@@ -310,6 +345,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Python笔记]]></title>
+    <url>%2F2016%2F01%2F15%2FPython_notes.html</url>
+    <content type="text"><![CDATA[注意事项 Python中区分大小写！ Python用空格控制代码结构，不像C++等用括号。 “=”对象引用与其他语言有不同！ 函数Classprivate在变量前加__，外部不能直接访问。类似C++中的private/protected 有些时候，看到以一个下划线开头的实例变量名，比如_name，这样的实例变量外部是可以访问的，但是，按照约定俗成的规定，当你看到这样的变量时，意思就是，“虽然我可以被访问，但是，请把我视为私有变量，不要随意访问”。 获取对象信息 isinstance() dir()查看对象的所有属性和方法 getattr()，setattr()，hasattr()可以用来操作对象的状态。 动态绑定支持在程序中定义methods，绑定指定实例或者class，相比其他语言只能在class中定义更加灵活 定制类init(self,…)创建class实例时自动调用的初始化定义。 slots在class定义中定义的变量，用来限制实例中能添加的属性。 在继承的子类实例中不受影响，需要另外定义。 str12345678&gt;&gt;&gt; class Student(object): def __init__(self, name): self.name = name def __str__(self): return 'Student object (name: %s)' % self.name&gt;&gt;&gt; print(Student('Michael'))Student object (name: Michael) repr()调试中使用的，功能与str类似。 123456class Student(object): def __init__(self, name): self.name = name def __str__(self): return 'Student object (name=%s)' % self.name __repr__ = __str__ iter()如果一个类想被用于循环，就需要用到iter，不停调用next()，直到返回StopIteration()。 123456789101112class Fib(object): def __init__(self): self.a, self.b = 0, 1 # 初始化两个计数器a，b def __iter__(self): return self # 实例本身就是迭代对象，故返回自己 def __next__(self): self.a, self.b = self.b, self.a + self.b # 计算下一个值 if self.a &gt; 100000: # 退出循环的条件 raise StopIteration(); return self.a # 返回下一个值 其他 getitem() getattr() call() @property通过@property把方法变成属性调用，通过setter和getter定义限制。如果只定义getter，不定义setter，则是一个只读属性。]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[汇率的影响]]></title>
     <url>%2F2016%2F01%2F15%2FRMB_exchange_rate.html</url>
     <content type="text"><![CDATA[2014年起，中国人民币汇率从过去持续升值转变成贬值压力积聚，2015年8月11日汇改后人民币兑美元汇率大幅下跌，2016年第一周再次大跌，对全球金融市场都有很大冲击。 不仅是中国，很多发达国家和发展中国家的货币兑美元都出现了大幅度的贬值。欧元、日元、英镑兑美元分别贬值21%，15%和8.5%，而俄罗斯卢布、巴西雷亚尔、印度贬值幅度达到53%，39%和7%。 贬值原因货币供求对于发达国家而言，如欧盟、日本、英国，多实行浮动汇率制，央行的货币政策主要关注通胀和就业。 2008年金融危机之后，各国都将基准利率降至0左右，并陆续实施了QE的宽松政策，向市场投放了大量基础货币。其中美国经济从14年起率先复苏，而其他几国依然处于放水阶段，所以货币供求的不平衡导致了它们兑美元的贬值。 央行干预央行干预本身也是对货币供求关系的变化。为了保证经济稳定，避免爆发国际收支危机，以及可能实行的固定汇率制度，央行都会用外汇储备干预汇率走势。 经常项目、资本与金融项目、外汇储备往往是相互作用的。以俄罗斯来说，由于近几年能源类大宗商品价格大幅走低，俄罗斯的经常项目转差，外汇储备减少，投资者对俄罗斯的国际支付、偿还外债的信心下降，导致恐慌性逃逸，资本和金融项目也转差。而俄罗斯央行的干预汇率又导致外汇储备进一步减少。 贬值效果改善贸易状况贬值有助于改善出口，抑制进口，缓解贸易逆差。如果是全球性的经济不景气，各国的货币都在贬值的话，那贬值对国家的出口改善作用有限，出口增速和份额占比等数据不会出现明显变化。但是，在全球各国都贬值的前提下，不贬值的国家就会处于相对弱势的地位。 缓解资本流出，改善资本项目投资者对汇率的预期是影响资本流动的重要因素。经济转差、贸易赤字、债务危机、货币超发都会导致贬值预期的产生。而贬值本身可以看做是打压贬值预期的好办法。在贬值到位后，国际资本因汇率而产生的损失已经发生，出逃的动机会减弱。 2014年俄罗斯 贬值影响高通胀货币短期内大幅贬值，意味着进口商品价格明显上涨，导致严重的输入性通胀。 2014年底，巴西俄罗斯 被迫紧缩严重的通货膨胀会导致央行货币政策被动紧缩、加息。而紧缩的环境不利于刺激国内经济]]></content>
@@ -319,17 +365,6 @@
       <tags>
         <tag>宏观</tag>
         <tag>汇率</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Python笔记]]></title>
-    <url>%2F2016%2F01%2F15%2FPython_notes.html</url>
-    <content type="text"><![CDATA[注意事项 Python中区分大小写！ Python用空格控制代码结构，不像C++等用括号。 “=”对象引用与其他语言有不同！ 函数Classprivate在变量前加__，外部不能直接访问。类似C++中的private/protected 有些时候，看到以一个下划线开头的实例变量名，比如_name，这样的实例变量外部是可以访问的，但是，按照约定俗成的规定，当你看到这样的变量时，意思就是，“虽然我可以被访问，但是，请把我视为私有变量，不要随意访问”。 获取对象信息 isinstance() dir()查看对象的所有属性和方法 getattr()，setattr()，hasattr()可以用来操作对象的状态。 动态绑定支持在程序中定义methods，绑定指定实例或者class，相比其他语言只能在class中定义更加灵活 定制类init(self,…)创建class实例时自动调用的初始化定义。 slots在class定义中定义的变量，用来限制实例中能添加的属性。 在继承的子类实例中不受影响，需要另外定义。 str12345678&gt;&gt;&gt; class Student(object): def __init__(self, name): self.name = name def __str__(self): return 'Student object (name: %s)' % self.name&gt;&gt;&gt; print(Student('Michael'))Student object (name: Michael) repr()调试中使用的，功能与str类似。 123456class Student(object): def __init__(self, name): self.name = name def __str__(self): return 'Student object (name=%s)' % self.name __repr__ = __str__ iter()如果一个类想被用于循环，就需要用到iter，不停调用next()，直到返回StopIteration()。 123456789101112class Fib(object): def __init__(self): self.a, self.b = 0, 1 # 初始化两个计数器a，b def __iter__(self): return self # 实例本身就是迭代对象，故返回自己 def __next__(self): self.a, self.b = self.b, self.a + self.b # 计算下一个值 if self.a &gt; 100000: # 退出循环的条件 raise StopIteration(); return self.a # 返回下一个值 其他 getitem() getattr() call() @property通过@property把方法变成属性调用，通过setter和getter定义限制。如果只定义getter，不定义setter，则是一个只读属性。]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -352,8 +387,8 @@
         <category>Python</category>
       </categories>
       <tags>
-        <tag>Python</tag>
         <tag>MySQL</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -487,8 +522,8 @@
         <tag>债券</tag>
         <tag>国债期货</tag>
         <tag>套利</tag>
-        <tag>国债ETF</tag>
         <tag>策略</tag>
+        <tag>国债ETF</tag>
       </tags>
   </entry>
   <entry>
