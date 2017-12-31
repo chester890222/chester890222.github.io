@@ -117,16 +117,16 @@
 
 
 
-<meta name="description" content="之前一直以为pandas任何的切片和筛选都是引用，也就是说，会改变最原始的数据。但是前几天发现并不是这样的。        下面对最常见的几种pandas 数据截取的方式做一个整理。[python] view plain copyimport pandas as pddef df_gen():    l1 = [1,2,3]    l2 = [4,5,6]    l3 = [7,6,5]">
+<meta name="description" content="之前一直以为pandas任何的切片和筛选都是引用，也就是说，会改变最原始的数据。但是前几天发现并不是这样的。下面对最常见的几种pandas 数据截取的方式做一个整理。[python] view plain copyimport pandas as pddef df_gen():    l1 = [1,2,3]    l2 = [4,5,6]    l3 = [7,6,5]    df_t = p">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python笔记：Pandas的引用和复制">
 <meta property="og:url" content="http://www.chenchen.co.uk/2017/12/01/Pandas_reference_copy.html">
 <meta property="og:site_name" content="Quant Life">
-<meta property="og:description" content="之前一直以为pandas任何的切片和筛选都是引用，也就是说，会改变最原始的数据。但是前几天发现并不是这样的。        下面对最常见的几种pandas 数据截取的方式做一个整理。[python] view plain copyimport pandas as pddef df_gen():    l1 = [1,2,3]    l2 = [4,5,6]    l3 = [7,6,5]">
-<meta property="og:updated_time" content="2017-12-11T15:48:39.257Z">
+<meta property="og:description" content="之前一直以为pandas任何的切片和筛选都是引用，也就是说，会改变最原始的数据。但是前几天发现并不是这样的。下面对最常见的几种pandas 数据截取的方式做一个整理。[python] view plain copyimport pandas as pddef df_gen():    l1 = [1,2,3]    l2 = [4,5,6]    l3 = [7,6,5]    df_t = p">
+<meta property="og:updated_time" content="2017-12-31T14:42:32.396Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python笔记：Pandas的引用和复制">
-<meta name="twitter:description" content="之前一直以为pandas任何的切片和筛选都是引用，也就是说，会改变最原始的数据。但是前几天发现并不是这样的。        下面对最常见的几种pandas 数据截取的方式做一个整理。[python] view plain copyimport pandas as pddef df_gen():    l1 = [1,2,3]    l2 = [4,5,6]    l3 = [7,6,5]">
+<meta name="twitter:description" content="之前一直以为pandas任何的切片和筛选都是引用，也就是说，会改变最原始的数据。但是前几天发现并不是这样的。下面对最常见的几种pandas 数据截取的方式做一个整理。[python] view plain copyimport pandas as pddef df_gen():    l1 = [1,2,3]    l2 = [4,5,6]    l3 = [7,6,5]    df_t = p">
 
 
 
@@ -457,7 +457,8 @@
       
 
       
-        <p> 之前一直以为pandas任何的切片和筛选都是引用，也就是说，会改变最原始的数据。但是前几天发现并不是这样的。<br>        下面对最常见的几种pandas 数据截取的方式做一个整理。<br>[python] view plain copy<br>import pandas as pd<br>def df_gen():<br>    l1 = [1,2,3]<br>    l2 = [4,5,6]<br>    l3 = [7,6,5]<br>    df_t = pd.DataFrame()<br>    df_t[‘a’] = l1<br>    df_t[‘b’] = l2<br>    df_t[‘c’] = l3<br>    return df_t<br>print ‘df:’, df_gen()  </p>
+        <a id="more"></a>
+<p>之前一直以为pandas任何的切片和筛选都是引用，也就是说，会改变最原始的数据。但是前几天发现并不是这样的。<br>下面对最常见的几种pandas 数据截取的方式做一个整理。<br>[python] view plain copy<br>import pandas as pd<br>def df_gen():<br>    l1 = [1,2,3]<br>    l2 = [4,5,6]<br>    l3 = [7,6,5]<br>    df_t = pd.DataFrame()<br>    df_t[‘a’] = l1<br>    df_t[‘b’] = l2<br>    df_t[‘c’] = l3<br>    return df_t<br>print ‘df:’, df_gen()  </p>
 <p>print ‘refernece:’  </p>
 <p>df = df_gen()<br>d1 = df.a<br>d1[0] = 999<br>print ‘1’, df<br>df = df_gen()<br>d1 = df.ix[0]<br>d1[0] = 999<br>print ‘2’, df<br>df = df_gen()<br>d1 = df.loc[1,:]<br>d1[0] = 999<br>print ‘3’, df<br>df = df_gen()<br>d1 = df[‘a’]<br>d1[0] = 999<br>print ‘4’, df  </p>
 <p>print ‘copy:’  </p>
@@ -530,8 +531,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/01/Quant_notes.html" rel="next" title="量化学习笔记">
-                <i class="fa fa-chevron-left"></i> 量化学习笔记
+              <a href="/2017/11/30/Google_scholar_error.html" rel="next" title="Digital Ocean + SS无法访问Google Scholar的解决方法">
+                <i class="fa fa-chevron-left"></i> Digital Ocean + SS无法访问Google Scholar的解决方法
               </a>
             
           </div>
@@ -540,8 +541,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/12/27/Python_os.html" rel="prev" title="Python笔记：操作系统目录和文件">
-                Python笔记：操作系统目录和文件 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/12/01/Quant_notes.html" rel="prev" title="量化学习笔记">
+                量化学习笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -623,7 +624,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">47</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
