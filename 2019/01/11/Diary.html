@@ -66,13 +66,19 @@
   
 
   
+    
+      
+    
+
+    
+  
 
   
 
   
     
     
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Play:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
@@ -100,7 +106,7 @@
 
 
 
-  <meta name="keywords" content="MySQL," />
+  <meta name="keywords" content="Market," />
 
 
 
@@ -111,22 +117,16 @@
 
 
 
-<meta name="description" content="MYSQL索引用来快速地寻找那些具有特定值的记录。如果没有索引，执行查询时MySQL必须从第一个记录开始扫描整个表的所有记录，直至找到符合要求的记录。表里面的记录数量越多，这个操作的代价就越高。如果作为搜索条件的列上已经创建了索引，MySQL无需扫描任何记录即可迅速得到目标记录所在的位置。如果表有1000个记录，通过索引查找记录至少要比顺序扫描记录快100倍。
- 
-概念一本词典，数据就是书的正文">
+<meta name="description" content="放水放水放水，坚决不搞大水漫灌！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL笔记：Primary Key, Unique, Index等索引的区别">
-<meta property="og:url" content="http://www.chenchen.co.uk/2016/10/21/MySQL_key&index.html">
-<meta property="og:site_name" content="CHEN's Quant Life">
-<meta property="og:description" content="MYSQL索引用来快速地寻找那些具有特定值的记录。如果没有索引，执行查询时MySQL必须从第一个记录开始扫描整个表的所有记录，直至找到符合要求的记录。表里面的记录数量越多，这个操作的代价就越高。如果作为搜索条件的列上已经创建了索引，MySQL无需扫描任何记录即可迅速得到目标记录所在的位置。如果表有1000个记录，通过索引查找记录至少要比顺序扫描记录快100倍。
- 
-概念一本词典，数据就是书的正文">
-<meta property="og:updated_time" content="2017-03-10T05:55:30.000Z">
+<meta property="og:title" content="2019-01-11市场笔记">
+<meta property="og:url" content="http://www.chenchen.co.uk/2019/01/11/Diary.html">
+<meta property="og:site_name" content="Quant Life">
+<meta property="og:description" content="放水放水放水，坚决不搞大水漫灌！">
+<meta property="og:updated_time" content="2019-01-15T09:22:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL笔记：Primary Key, Unique, Index等索引的区别">
-<meta name="twitter:description" content="MYSQL索引用来快速地寻找那些具有特定值的记录。如果没有索引，执行查询时MySQL必须从第一个记录开始扫描整个表的所有记录，直至找到符合要求的记录。表里面的记录数量越多，这个操作的代价就越高。如果作为搜索条件的列上已经创建了索引，MySQL无需扫描任何记录即可迅速得到目标记录所在的位置。如果表有1000个记录，通过索引查找记录至少要比顺序扫描记录快100倍。
- 
-概念一本词典，数据就是书的正文">
+<meta name="twitter:title" content="2019-01-11市场笔记">
+<meta name="twitter:description" content="放水放水放水，坚决不搞大水漫灌！">
 
 
 
@@ -156,13 +156,13 @@
 
 
 
-  <link rel="canonical" href="http://www.chenchen.co.uk/2016/10/21/MySQL_key&"/>
+  <link rel="canonical" href="http://www.chenchen.co.uk/2019/01/11/Diary.html"/>
 
 
 
 
 
-  <title>MySQL笔记：Primary Key, Unique, Index等索引的区别 | CHEN's Quant Life</title>
+  <title>2019-01-11市场笔记 | Quant Life</title>
   
 
 
@@ -211,12 +211,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">CHEN's Quant Life</span>
+        <span class="site-title">Quant Life</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <p class="site-subtitle">Chen's Blog</p>
       
   </div>
 
@@ -304,26 +304,22 @@
   
     <div class="site-search">
       
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
   </div>
-
+  <div id="local-search-result"></div>
+</div>
 
 
 
@@ -356,7 +352,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.chenchen.co.uk/2016/10/21/MySQL_key&index.html">
+    <link itemprop="mainEntityOfPage" href="http://www.chenchen.co.uk/2019/01/11/Diary.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="CHEN CHEN">
@@ -365,7 +361,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CHEN's Quant Life">
+      <meta itemprop="name" content="Quant Life">
     </span>
 
     
@@ -373,7 +369,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">MySQL笔记：Primary Key, Unique, Index等索引的区别</h1>
+          <h1 class="post-title" itemprop="name headline">2019-01-11市场笔记</h1>
         
 
         <div class="post-meta">
@@ -385,8 +381,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-21T00:00:00+08:00">
-                2016-10-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-11T00:00:00+08:00">
+                2019-01-11
               </time>
             
 
@@ -408,8 +404,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据库/" itemprop="url" rel="index">
-                    <span itemprop="name">数据库</span>
+                  <a href="/categories/Diary/" itemprop="url" rel="index">
+                    <span itemprop="name">Diary</span>
                   </a>
                 </span>
 
@@ -425,7 +421,7 @@
 
           
           
-             <span id="/2016/10/21/MySQL_key&index.html" class="leancloud_visitors" data-flag-title="MySQL笔记：Primary Key, Unique, Index等索引的区别">
+             <span id="/2019/01/11/Diary.html" class="leancloud_visitors" data-flag-title="2019-01-11市场笔记">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -461,44 +457,25 @@
       
 
       
-        <a id="more"></a>
-<p>MYSQL索引用来快速地寻找那些具有特定值的记录。如果没有索引，执行查询时MySQL必须从第一个记录开始扫描整个表的所有记录，直至找到符合要求的记录。表里面的记录数量越多，这个操作的代价就越高。如果作为搜索条件的列上已经创建了索引，MySQL无需扫描任何记录即可迅速得到目标记录所在的位置。如果表有1000个记录，通过索引查找记录至少要比顺序扫描记录快100倍。</p>
- <!-- more -->
-<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>一本词典，数据就是书的正文内容，索引，则是书的目录。<br>大多数情况下索引能大幅度提高查询效率，但：</p>
-<ul>
-<li>数据的变更（增删改）都需要维护索引，因此更多的索引意味着更多的维护成本</li>
-<li>更多的索引意味着也需要更多的空间 （一本100页的书，却有50页目录？）</li>
-<li>过小的表，建索引可能会更慢哦（读个2页的宣传手册，你还先去找目录？）</li>
-</ul>
-<p>PRIMARY, INDEX, UNIQUE 这3种是一类</p>
-<ul>
-<li>PRIMARY 主键。 就是 唯一 且 不能为空。</li>
-<li>INDEX 索引，普通的</li>
-<li>UNIQUE 唯一索引。 不允许有重复。</li>
-<li>FULLTEXT 是全文索引，用于在一篇文章中，检索文本信息的。</li>
-</ul>
+        <p>放水放水放水，坚决不搞大水漫灌！</p>
+<a id="more"></a>
+<h3 id="全面降准"><a href="#全面降准" class="headerlink" title="全面降准"></a>全面降准</h3><p>1月4日中午，新闻公告李克强考察三大银行普惠金融部，并在银保监会主持召开座谈会：进一步采取减税降费措施，运用好全面降准、定向降准工具。</p>
+<p>收盘后，央行公告全面降准1%。其中1月15日，25日分别下调0.5%。同时一季度到期的MLF不再续作。<br>总计释放资金1.5万亿，净释放8000亿左右。</p>
+<h3 id="刺激政策"><a href="#刺激政策" class="headerlink" title="刺激政策"></a>刺激政策</h3><p> 发改委副主任宁吉喆称，今年将出台鼓励汽车、家电消费新政。</p>
 <blockquote>
-<p>举个例子来说，比如你在为某商场做一个会员卡的系统。这个系统有一个会员表,有下列字段：<br>会员编号 INT<br>会员姓名 VARCHAR(10)<br>会员身份证号码 VARCHAR(18)<br>会员电话 VARCHAR(10)<br>会员住址 VARCHAR(50)<br>会员备注信息 TEXT<br>那么这个 会员编号，作为主键，使用PRIMARY KEY;<br>会员姓名，如果要建索引的话，那么就是普通的INDEX;<br>会员身份证号码，如果要建索引的话，那么可以选择UNIQUE（唯一的，不允许重复）<br>会员备注信息 ，如果需要建索引的话，可以选择FULLTEXT，全文搜索。不过FULLTEXT用于搜索很长一篇文章的时候，效果最好。用在比较短的文本，如果就一两行字的，普通的INDEX也可以。</p>
+<p>汽车产业链长，出政策利好可以影响的产业上下游范围广。<br>现在的问题是2018年国内乘用车市场下滑明显，什么样的刺激政策可以促进消费者买新车？</p>
+<ul>
+<li>车子便宜，更多无车人购买</li>
+<li>汽车优化，有车族改善型需求</li>
+<li>工资收入提高，有钱买车了</li>
+</ul>
+<p>转债市场的汽车相关标的很多，可以根据刺激政策分上下游不同影响。</p>
 </blockquote>
-<h2 id="创建索引使用说明"><a href="#创建索引使用说明" class="headerlink" title="创建索引使用说明"></a>创建索引使用说明</h2><h3 id="普通索引"><a href="#普通索引" class="headerlink" title="普通索引"></a>普通索引</h3><p>这是最基本的索引类型，而且它没有唯一性之类的限制。</p>
-<ol>
-<li>创建索引</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE INDEX &lt;索引的名字&gt; ON tablename (列的列表);</span><br></pre></td></tr></table></figure>
-<ol>
-<li>修改表索引</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE tablename ADD INDEX [索引的名字] (列的列表);</span><br></pre></td></tr></table></figure>
-<ol>
-<li>创建表的时候指定索引</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE tablename ( […], INDEX [索引的名字] (列的列表) );</span><br></pre></td></tr></table></figure>
-<h3 id="唯一性索引"><a href="#唯一性索引" class="headerlink" title="唯一性索引"></a>唯一性索引</h3><p>这种索引和前面的“普通索引”基本相同，但有一个区别：索引列的所有值都只能出现一次，即必须唯一。但允许有空值。</p>
-<h3 id="MYSQL主键："><a href="#MYSQL主键：" class="headerlink" title="MYSQL主键："></a>MYSQL主键：</h3><p>MYSQL主键是一种唯一性索引，但它必须指定为“PRIMARY KEY”。每个表只能有一个主键。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE tablename ( […], PRIMARY KEY (列的列表) );</span><br></pre></td></tr></table></figure>
-<p>但是，我们也可以通过修改表的方式加入主键：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE tablename ADD PRIMARY KEY (列的列表);</span><br></pre></td></tr></table></figure>
-<h3 id="全文索引"><a href="#全文索引" class="headerlink" title="全文索引"></a>全文索引</h3><p>MySQL从3.23.23版开始支持全文索引和全文检索。在MySQL中，全文索引的索引类型为FULLTEXT。全文索引可以在VARCHAR或者TEXT类型的列上创建。它可以通过CREATE TABLE命令创建，也可以通过ALTER TABLE或CREATE INDEX命令创建。对于大规模的数据集，通过ALTER TABLE（或者CREATE INDEX）命令创建全文索引要比把记录插入带有全文索引的空表更快。</p>
+<h3 id="央行买股票"><a href="#央行买股票" class="headerlink" title="央行买股票"></a>央行买股票</h3><p>中证网刊评，央行持有本国股票资产大有可为。（由东兴证券首席经济学家张岸元撰写）</p>
+<blockquote>
+<p>因为这个消息股市大涨半天，有点扯淡。</p>
+</blockquote>
+<h3 id="久其软件回购计划"><a href="#久其软件回购计划" class="headerlink" title="久其软件回购计划"></a>久其软件回购计划</h3><p>久其转债拟回购0.6-1.2亿元公司股票。</p>
 
       
     </div>
@@ -516,7 +493,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/MySQL/" rel="tag"># MySQL</a>
+            <a href="/tags/Market/" rel="tag"># Market</a>
           
         </div>
       
@@ -544,8 +521,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/07/Excel_shortcuts.html" rel="next" title="Excel的快捷操作笔记">
-                <i class="fa fa-chevron-left"></i> Excel的快捷操作笔记
+              <a href="/2019/01/04/SZ123001_note.html" rel="next" title="蓝标转债，是坑吗">
+                <i class="fa fa-chevron-left"></i> 蓝标转债，是坑吗
               </a>
             
           </div>
@@ -554,8 +531,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/10/28/PBOC_balance_sheet.html" rel="prev" title="央行资产负债表">
-                央行资产负债表 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/01/25/Diary.html" rel="prev" title="2019-01-25市场笔记">
+                2019-01-25市场笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -637,7 +614,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">76</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -648,7 +625,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -659,7 +636,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -714,7 +691,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建索引使用说明"><span class="nav-text">创建索引使用说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#普通索引"><span class="nav-text">普通索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#唯一性索引"><span class="nav-text">唯一性索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MYSQL主键："><span class="nav-text">MYSQL主键：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全文索引"><span class="nav-text">全文索引</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#全面降准"><span class="nav-text">全面降准</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#刺激政策"><span class="nav-text">刺激政策</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#央行买股票"><span class="nav-text">央行买股票</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#久其软件回购计划"><span class="nav-text">久其软件回购计划</span></a></li></ol></div>
             
 
           </div>
@@ -741,7 +718,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2017</span>
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -922,7 +899,7 @@
     var isfetched = false;
     var isXml = true;
     // Search DB path;
-    var search_path = "";
+    var search_path = "search.xml";
     if (search_path.length === 0) {
       search_path = "search.xml";
     } else if (/json$/i.test(search_path)) {
@@ -1124,7 +1101,7 @@
 
                   // select top N slices in content
 
-                  var upperBound = parseInt('-1');
+                  var upperBound = parseInt('1');
                   if (upperBound >= 0) {
                     slicesOfContent = slicesOfContent.slice(0, upperBound);
                   }
@@ -1235,19 +1212,6 @@
   </script>
 
 
-
-
-  
-  
-  
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/js/src/algolia-search.js?v=5.1.3"></script>
 
 
 
