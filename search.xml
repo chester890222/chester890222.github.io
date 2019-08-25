@@ -855,21 +855,10 @@
       </categories>
       <tags>
         <tag>债券</tag>
-        <tag>国债ETF</tag>
         <tag>国债期货</tag>
         <tag>套利</tag>
         <tag>策略</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[hello world!]]></title>
-    <url>%2F2015%2F11%2F17%2FHello_World.html</url>
-    <content type="text"><![CDATA[My blog is online now!!!]]></content>
-      <categories>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>Blog</tag>
+        <tag>国债ETF</tag>
       </tags>
   </entry>
   <entry>
@@ -883,6 +872,17 @@
         <tag>债券</tag>
         <tag>国债期货</tag>
         <tag>套利</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hello world!]]></title>
+    <url>%2F2015%2F11%2F17%2FHello_World.html</url>
+    <content type="text"><![CDATA[My blog is online now!!!]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>Blog</tag>
       </tags>
   </entry>
 </search>

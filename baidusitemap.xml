@@ -6,7 +6,7 @@
     
   <url>
     <loc>http://www.chenchen.co.uk/2019/04/26/Diary.html</loc>
-    <lastmod>2019-04-22T15:09:27.418Z</lastmod>
+    <lastmod>2019-04-22T15:09:27.000Z</lastmod>
     <data>
         <display>
         <title>2019-04-26市场笔记</title>
@@ -26,7 +26,7 @@
     
   <url>
     <loc>http://www.chenchen.co.uk/2019/03/29/Diary.html</loc>
-    <lastmod>2019-03-29T15:15:04.347Z</lastmod>
+    <lastmod>2019-03-29T15:15:04.000Z</lastmod>
     <data>
         <display>
         <title>2019-03-29市场笔记</title>
@@ -66,7 +66,7 @@
     
   <url>
     <loc>http://www.chenchen.co.uk/2019/03/08/Diary.html</loc>
-    <lastmod>2019-03-18T15:12:12.260Z</lastmod>
+    <lastmod>2019-03-18T15:12:12.000Z</lastmod>
     <data>
         <display>
         <title>2019-03-08市场笔记</title>
@@ -398,7 +398,7 @@
     
   <url>
     <loc>http://www.chenchen.co.uk/2018/10/15/Diary.html</loc>
-    <lastmod>2018-10-15T15:37:19.711Z</lastmod>
+    <lastmod>2018-10-15T15:37:19.000Z</lastmod>
     <data>
         <display>
         <title>2018-10-15市场笔记</title>
@@ -640,7 +640,7 @@
     
   <url>
     <loc>http://www.chenchen.co.uk/2017/12/31/2017-12-31-2018-plan.html</loc>
-    <lastmod>2017-12-31T15:21:18.166Z</lastmod>
+    <lastmod>2017-12-31T15:21:18.000Z</lastmod>
     <data>
         <display>
         <title>2018年计划</title>
@@ -662,7 +662,7 @@
     
   <url>
     <loc>http://www.chenchen.co.uk/2017/12/27/Python_os.html</loc>
-    <lastmod>2017-12-31T14:41:06.879Z</lastmod>
+    <lastmod>2017-12-31T14:41:06.000Z</lastmod>
     <data>
         <display>
         <title>Python笔记：操作系统目录和文件</title>
@@ -684,7 +684,7 @@
     
   <url>
     <loc>http://www.chenchen.co.uk/2017/01/01/2017_plan.html</loc>
-    <lastmod>2017-12-31T14:30:45.790Z</lastmod>
+    <lastmod>2017-12-31T14:30:45.000Z</lastmod>
     <data>
         <display>
         <title>2017年计划</title>
@@ -726,7 +726,7 @@
     
   <url>
     <loc>http://www.chenchen.co.uk/2017/11/30/Google_scholar_error.html</loc>
-    <lastmod>2017-11-30T15:12:45.350Z</lastmod>
+    <lastmod>2017-11-30T15:12:45.000Z</lastmod>
     <data>
         <display>
         <title>Digital Ocean + SS无法访问Google Scholar的解决方法</title>
@@ -1389,13 +1389,13 @@
         
         <tag>债券</tag>
          
-        <tag>国债ETF</tag>
-         
         <tag>国债期货</tag>
          
         <tag>套利</tag>
          
         <tag>策略</tag>
+         
+        <tag>国债ETF</tag>
          
          
            
