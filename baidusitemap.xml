@@ -3,6 +3,30 @@
 
 
     
+  <url>
+    <loc>http://www.chenchen.co.uk/2015/11/26/Shadowsocks_with_DigitalOcean.html</loc>
+    <lastmod>2019-09-17T17:50:32.142Z</lastmod>
+    <data>
+        <display>
+        <title>使用DigitalOcean和shadowsocks来科学上网</title>
+        <pubTime>2015-11-25T16:00:00.000Z</pubTime>
+        
+        <tag>shadowsocks</tag>
+         
+        <tag>DigitalOcean</tag>
+         
+        <tag>VPS</tag>
+         
+         
+           
+             
+              <breadCrumb title="计算机相关" url="http://www.chenchen.co.uk/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://www.chenchen.co.uk/2019/04/26/Diary.html</loc>
@@ -164,30 +188,6 @@
            
              
               <breadCrumb title="Diary" url="http://www.chenchen.co.uk/categories/Diary/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.chenchen.co.uk/2015/11/26/Shadowsocks_with_DigitalOcean.html</loc>
-    <lastmod>2019-01-07T05:08:28.000Z</lastmod>
-    <data>
-        <display>
-        <title>使用DigitalOcean和shadowsocks来科学上网</title>
-        <pubTime>2015-11-25T16:00:00.000Z</pubTime>
-        
-        <tag>shadowsocks</tag>
-         
-        <tag>DigitalOcean</tag>
-         
-        <tag>VPS</tag>
-         
-         
-           
-             
-              <breadCrumb title="计算机相关" url="http://www.chenchen.co.uk/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
           
         </display>
     </data>

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.chenchen.co.uk/2015/11/26/Shadowsocks_with_DigitalOcean.html</loc>
+    
+    <lastmod>2019-09-17T17:50:32.142Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.chenchen.co.uk/about/index.html</loc>
     
     <lastmod>2019-05-22T16:33:18.000Z</lastmod>
@@ -61,13 +68,6 @@
     <loc>http://www.chenchen.co.uk/2019/01/11/Diary.html</loc>
     
     <lastmod>2019-01-15T09:22:53.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.chenchen.co.uk/2015/11/26/Shadowsocks_with_DigitalOcean.html</loc>
-    
-    <lastmod>2019-01-07T05:08:28.000Z</lastmod>
     
   </url>
   
