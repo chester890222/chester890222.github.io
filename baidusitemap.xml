@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://www.chenchen.co.uk/2016/08/30/Ubuntu_notes.html</loc>
+    <lastmod>2019-10-07T11:09:31.046Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu使用笔记</title>
+        <pubTime>2016-08-29T16:00:00.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="计算机相关" url="http://www.chenchen.co.uk/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.chenchen.co.uk/2015/11/26/Shadowsocks_with_DigitalOcean.html</loc>
     <lastmod>2019-09-17T17:50:32.142Z</lastmod>
     <data>
@@ -1044,26 +1064,6 @@
            
              
               <breadCrumb title="金融笔记" url="http://www.chenchen.co.uk/categories/%E9%87%91%E8%9E%8D%E7%AC%94%E8%AE%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.chenchen.co.uk/2016/08/30/Ubuntu_notes.html</loc>
-    <lastmod>2016-11-24T08:43:05.000Z</lastmod>
-    <data>
-        <display>
-        <title>Ubuntu使用笔记</title>
-        <pubTime>2016-08-29T16:00:00.000Z</pubTime>
-        
-        <tag>Ubuntu</tag>
-         
-         
-           
-             
-              <breadCrumb title="计算机相关" url="http://www.chenchen.co.uk/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9B%B8%E5%85%B3/"/>
           
         </display>
     </data>
