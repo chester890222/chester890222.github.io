@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[2019总结——加快节奏]]></title>
+    <url>%2F2019%2F12%2F30%2F2020_plan.html</url>
+    <content type="text"><![CDATA[时间真的是飞逝，2019年居然已经结束了。我都干了什么了？ 2019回看2018年总结，感觉对2019年的预言都实现了。 换工作人生第一次跳槽，是无奈，是运气，是机会。换了地方，才发现原来的工作是有多轻松。真是非常感谢前老板们，给了我5年不求业绩，自我发掘的时间。大概也只有在大国企才有这种好事吧。 现在的工作，每天都感觉在赛狗。几乎没有时间可以停下来，想一想该往哪里跑。写年终考核的时候才发现，原来半年里我做了这么多项目。 小赚一笔正如去年总结，当时的转债黄金坑，在19年被迅速的填上了，节奏太快了。这一年，开了期货户，转债、海外、期货，都做赚了些小钱。全年整体收益大概24%吧。最高的时候应该差不多50%了，还是心态不好，经验不足啊。 20202020，感觉要做的事情还有很多。 工作上，还是继续加油跑吧。充实工作的每一天也是很快乐的。投资上，注意心态，放慢频率，可以做的更好。生活上，珍惜每天睡前与儿子们的尬聊时光。 希望2020年总结的时候，也会是满满当当的一年。]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>Blog</tag>
+        <tag>个人</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[进化算法下组合优化的限制条件设置]]></title>
+    <url>%2F2019%2F10%2F13%2FPortfolio_Optimisation_with_EA.html</url>
+    <content type="text"><![CDATA[在用进化算法求解多目标组合优化时，一旦出现3个或以上目标，并存在一定限制条件的情况下，标准的进化算法（NSGA2、NSGA3、SPEA2）的收敛效果都不好，感觉是收敛到某个非最优解后没法再跳到其他可行域。看到Deb就NSGA2的算法在组合优化的应用，应该可以解决目前的问题。 Deb原文 测试完再更新]]></content>
+      <categories>
+        <category>Quant</category>
+      </categories>
+      <tags>
+        <tag>Portfolio Optimisation</tag>
+        <tag>MOOP</tag>
+        <tag>NSGA</tag>
+        <tag>Evolutionary Algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[2019-04-26市场笔记]]></title>
     <url>%2F2019%2F04%2F26%2FDiary.html</url>
     <content type="text"><![CDATA[4月初申请离职以来，度过了无心工作的一个月。也是我向往的生活：用自己的钱验证自己的研究。俗称：炒股票的韭菜 赎回个股数量不断累积景旺04-23赎回登记日；常熟转债也触发赎回； 巨化EB发行失败主要有几方面原因： 票面利率最低0.1%，约等于没息，太自信了吧？ 浙商没有包销，只能说债承的各方面实力还是不够啊（不去看来是选对了哈） 申购资格限制，非3A散户不能参与]]></content>
@@ -680,17 +706,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Python笔记]]></title>
-    <url>%2F2016%2F01%2F15%2FPython_notes.html</url>
-    <content type="text"><![CDATA[注意事项 Python中区分大小写！ Python用空格控制代码结构，不像C++等用括号。 “=”对象引用与其他语言有不同！ 函数Classprivate在变量前加__，外部不能直接访问。类似C++中的private/protected 有些时候，看到以一个下划线开头的实例变量名，比如_name，这样的实例变量外部是可以访问的，但是，按照约定俗成的规定，当你看到这样的变量时，意思就是，“虽然我可以被访问，但是，请把我视为私有变量，不要随意访问”。 获取对象信息 isinstance() dir()查看对象的所有属性和方法 getattr()，setattr()，hasattr()可以用来操作对象的状态。 动态绑定支持在程序中定义methods，绑定指定实例或者class，相比其他语言只能在class中定义更加灵活 定制类init(self,…)创建class实例时自动调用的初始化定义。 slots在class定义中定义的变量，用来限制实例中能添加的属性。 在继承的子类实例中不受影响，需要另外定义。 str12345678&gt;&gt;&gt; class Student(object): def __init__(self, name): self.name = name def __str__(self): return 'Student object (name: %s)' % self.name&gt;&gt;&gt; print(Student('Michael'))Student object (name: Michael) repr()调试中使用的，功能与str类似。 123456class Student(object): def __init__(self, name): self.name = name def __str__(self): return 'Student object (name=%s)' % self.name __repr__ = __str__ iter()如果一个类想被用于循环，就需要用到iter，不停调用next()，直到返回StopIteration()。 123456789101112class Fib(object): def __init__(self): self.a, self.b = 0, 1 # 初始化两个计数器a，b def __iter__(self): return self # 实例本身就是迭代对象，故返回自己 def __next__(self): self.a, self.b = self.b, self.a + self.b # 计算下一个值 if self.a &gt; 100000: # 退出循环的条件 raise StopIteration(); return self.a # 返回下一个值 其他 getitem() getattr() call() @property通过@property把方法变成属性调用，通过setter和getter定义限制。如果只定义getter，不定义setter，则是一个只读属性。]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[汇率的影响]]></title>
     <url>%2F2016%2F01%2F15%2FRMB_exchange_rate.html</url>
     <content type="text"><![CDATA[2014年起，中国人民币汇率从过去持续升值转变成贬值压力积聚，2015年8月11日汇改后人民币兑美元汇率大幅下跌，2016年第一周再次大跌，对全球金融市场都有很大冲击。 不仅是中国，很多发达国家和发展中国家的货币兑美元都出现了大幅度的贬值。欧元、日元、英镑兑美元分别贬值21%，15%和8.5%，而俄罗斯卢布、巴西雷亚尔、印度贬值幅度达到53%，39%和7%。 贬值原因货币供求对于发达国家而言，如欧盟、日本、英国，多实行浮动汇率制，央行的货币政策主要关注通胀和就业。 2008年金融危机之后，各国都将基准利率降至0左右，并陆续实施了QE的宽松政策，向市场投放了大量基础货币。其中美国经济从14年起率先复苏，而其他几国依然处于放水阶段，所以货币供求的不平衡导致了它们兑美元的贬值。 央行干预央行干预本身也是对货币供求关系的变化。为了保证经济稳定，避免爆发国际收支危机，以及可能实行的固定汇率制度，央行都会用外汇储备干预汇率走势。 经常项目、资本与金融项目、外汇储备往往是相互作用的。以俄罗斯来说，由于近几年能源类大宗商品价格大幅走低，俄罗斯的经常项目转差，外汇储备减少，投资者对俄罗斯的国际支付、偿还外债的信心下降，导致恐慌性逃逸，资本和金融项目也转差。而俄罗斯央行的干预汇率又导致外汇储备进一步减少。 贬值效果改善贸易状况贬值有助于改善出口，抑制进口，缓解贸易逆差。如果是全球性的经济不景气，各国的货币都在贬值的话，那贬值对国家的出口改善作用有限，出口增速和份额占比等数据不会出现明显变化。但是，在全球各国都贬值的前提下，不贬值的国家就会处于相对弱势的地位。 缓解资本流出，改善资本项目投资者对汇率的预期是影响资本流动的重要因素。经济转差、贸易赤字、债务危机、货币超发都会导致贬值预期的产生。而贬值本身可以看做是打压贬值预期的好办法。在贬值到位后，国际资本因汇率而产生的损失已经发生，出逃的动机会减弱。 2014年俄罗斯 贬值影响高通胀货币短期内大幅贬值，意味着进口商品价格明显上涨，导致严重的输入性通胀。 2014年底，巴西俄罗斯 被迫紧缩严重的通货膨胀会导致央行货币政策被动紧缩、加息。而紧缩的环境不利于刺激国内经济]]></content>
@@ -700,6 +715,17 @@
       <tags>
         <tag>宏观</tag>
         <tag>汇率</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Python笔记]]></title>
+    <url>%2F2016%2F01%2F15%2FPython_notes.html</url>
+    <content type="text"><![CDATA[注意事项 Python中区分大小写！ Python用空格控制代码结构，不像C++等用括号。 “=”对象引用与其他语言有不同！ 函数Classprivate在变量前加__，外部不能直接访问。类似C++中的private/protected 有些时候，看到以一个下划线开头的实例变量名，比如_name，这样的实例变量外部是可以访问的，但是，按照约定俗成的规定，当你看到这样的变量时，意思就是，“虽然我可以被访问，但是，请把我视为私有变量，不要随意访问”。 获取对象信息 isinstance() dir()查看对象的所有属性和方法 getattr()，setattr()，hasattr()可以用来操作对象的状态。 动态绑定支持在程序中定义methods，绑定指定实例或者class，相比其他语言只能在class中定义更加灵活 定制类init(self,…)创建class实例时自动调用的初始化定义。 slots在class定义中定义的变量，用来限制实例中能添加的属性。 在继承的子类实例中不受影响，需要另外定义。 str12345678&gt;&gt;&gt; class Student(object): def __init__(self, name): self.name = name def __str__(self): return 'Student object (name: %s)' % self.name&gt;&gt;&gt; print(Student('Michael'))Student object (name: Michael) repr()调试中使用的，功能与str类似。 123456class Student(object): def __init__(self, name): self.name = name def __str__(self): return 'Student object (name=%s)' % self.name __repr__ = __str__ iter()如果一个类想被用于循环，就需要用到iter，不停调用next()，直到返回StopIteration()。 123456789101112class Fib(object): def __init__(self): self.a, self.b = 0, 1 # 初始化两个计数器a，b def __iter__(self): return self # 实例本身就是迭代对象，故返回自己 def __next__(self): self.a, self.b = self.b, self.a + self.b # 计算下一个值 if self.a &gt; 100000: # 退出循环的条件 raise StopIteration(); return self.a # 返回下一个值 其他 getitem() getattr() call() @property通过@property把方法变成属性调用，通过setter和getter定义限制。如果只定义getter，不定义setter，则是一个只读属性。]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -857,8 +883,19 @@
         <tag>债券</tag>
         <tag>国债期货</tag>
         <tag>套利</tag>
-        <tag>国债ETF</tag>
         <tag>策略</tag>
+        <tag>国债ETF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hello world!]]></title>
+    <url>%2F2015%2F11%2F17%2FHello_World.html</url>
+    <content type="text"><![CDATA[My blog is online now!!!]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>Blog</tag>
       </tags>
   </entry>
   <entry>
@@ -872,17 +909,6 @@
         <tag>债券</tag>
         <tag>国债期货</tag>
         <tag>套利</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[hello world!]]></title>
-    <url>%2F2015%2F11%2F17%2FHello_World.html</url>
-    <content type="text"><![CDATA[My blog is online now!!!]]></content>
-      <categories>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>Blog</tag>
       </tags>
   </entry>
 </search>

@@ -4,6 +4,54 @@
 
     
   <url>
+    <loc>http://www.chenchen.co.uk/2019/12/30/2020_plan.html</loc>
+    <lastmod>2020-01-17T15:50:08.564Z</lastmod>
+    <data>
+        <display>
+        <title>2019总结——加快节奏</title>
+        <pubTime>2019-12-29T16:00:00.000Z</pubTime>
+        
+        <tag>Blog</tag>
+         
+        <tag>个人</tag>
+         
+         
+           
+             
+              <breadCrumb title="Blog" url="http://www.chenchen.co.uk/categories/Blog/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.chenchen.co.uk/2019/10/13/Portfolio_Optimisation_with_EA.html</loc>
+    <lastmod>2019-10-13T02:42:38.378Z</lastmod>
+    <data>
+        <display>
+        <title>进化算法下组合优化的限制条件设置</title>
+        <pubTime>2019-10-12T16:00:00.000Z</pubTime>
+        
+        <tag>Portfolio Optimisation</tag>
+         
+        <tag>MOOP</tag>
+         
+        <tag>NSGA</tag>
+         
+        <tag>Evolutionary Algorithm</tag>
+         
+         
+           
+             
+              <breadCrumb title="Quant" url="http://www.chenchen.co.uk/categories/Quant/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.chenchen.co.uk/2016/08/30/Ubuntu_notes.html</loc>
     <lastmod>2019-10-07T11:09:31.046Z</lastmod>
     <data>
@@ -1393,9 +1441,9 @@
          
         <tag>套利</tag>
          
-        <tag>国债ETF</tag>
-         
         <tag>策略</tag>
+         
+        <tag>国债ETF</tag>
          
          
            
