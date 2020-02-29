@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>http://www.chenchen.co.uk/2020/02/29/MOEA_review.html</loc>
+    <lastmod>2020-02-29T08:02:43.451Z</lastmod>
+    <data>
+        <display>
+        <title>遗传算法与多目标组合优化论文</title>
+        <pubTime>2020-02-28T16:00:00.000Z</pubTime>
+        
+        <tag>Portfolio Optimisation</tag>
+         
+        <tag>MOOP</tag>
+         
+        <tag>Evolutionary Algorithm</tag>
+         
+         
+           
+             
+              <breadCrumb title="Quant" url="http://www.chenchen.co.uk/categories/Quant/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.chenchen.co.uk/2019/12/30/2020_plan.html</loc>
     <lastmod>2020-01-17T15:50:08.564Z</lastmod>
     <data>
@@ -1058,9 +1082,9 @@
         <title>Python笔记：MySQL的调用</title>
         <pubTime>2015-12-29T16:00:00.000Z</pubTime>
         
-        <tag>MySQL</tag>
-         
         <tag>Python</tag>
+         
+        <tag>MySQL</tag>
          
          
            
