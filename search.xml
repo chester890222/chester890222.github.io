@@ -35,8 +35,8 @@
       <tags>
         <tag>Portfolio Optimisation</tag>
         <tag>MOOP</tag>
-        <tag>NSGA</tag>
         <tag>Evolutionary Algorithm</tag>
+        <tag>NSGA</tag>
       </tags>
   </entry>
   <entry>
@@ -387,17 +387,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[量化学习笔记]]></title>
-    <url>%2F2017%2F12%2F01%2FQuant_notes.html</url>
-    <content type="text"><![CDATA[量化只是手段，投资想法才是灵魂 相关书籍 Quantitative Equity Portfolio Management（QEPM）， Ludwig Chincarini Active Portfolio Management（APM）， Grinold &amp; Kahn Quantitative Equity Portfolio Management（QEPM）， Qian &amp; Hua &amp; Sorensen]]></content>
-      <categories>
-        <category>Quant</category>
-      </categories>
-      <tags>
-        <tag>Quant</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Python笔记：Pandas的引用和复制]]></title>
     <url>%2F2017%2F12%2F01%2FPandas_reference_copy.html</url>
     <content type="text"><![CDATA[在python里有4种数据复制的方法比较容易搞混：’=’、切片、’copy()’、’deepcopy()’以下记录了自己写代码时碰到的坑。 列表‘=’ 赋址12345678910111213a = [1,2,3,[4,5]]b = aprint('Address of a: %s' % id(a))print('Address of b: %s' % id(b))a[0] = 111print(a)print(b)b[1] = 222print(a)print(b) 输出的结果为： 123456Address of a: 84485512Address of b: 84485512[111, 2, 3, [4, 5]][111, 2, 3, [4, 5]][111, 222, 3, [4, 5]][111, 222, 3, [4, 5]] 网上笔记在C/C++中，复制分为深复制和浅复制。它们的区别就在于复制对象的差别，浅复制只是实现对指针的拷贝，最后两个指针指向内存空间的同一个地址；深复制则不仅仅实现对指针的拷贝，还实现了对指针所指内容的拷贝，就是说，最后两个指针指向了内容空间的不同地址。由此看来，浅复制是不太可靠的，因为在实施浅复制后，如果一个指针改变了指向内容，那么其他指针指向的内容也会随之改变，他们本来就指向的同一个内容。 同样的，Python中也存在深复制与浅复制。 对于字符串，由于字符串是不可变对象，调用对象自身的任意方法，也不会改变该对象自身的内容。所以用=可以实现复制，这里的复制本质上是对原来对象的引用。 String = “abcd”String1 = StringString2 = String.strip(‘a’)print String, String1, String2但是对于列表和字典，他们是可变对象，调用对象自身的任意方法，会改变该对象自身的内容。所以用=只能实现引用。 用自身list[:]或dict.copy()方法实现浅复制，但是注意的是，虽然这两种办法能实现对象的复制，但是一旦对象包含的元素是可变的嵌套结构，如列表中嵌套列表，就会导致对这些元素的操作是引用而不是复制。也就是说，当我们改变原来对象某一元素里的数据时，其实经过这两种办法复制过来的对象也是随之改变的。 解决这种办法，需要实现真正的深复制，也就是说对象及其其中的元素都是彻彻底底的开辟新的内存空间进行复制。可以通过copy.deepcopy(list)或copy.deepcopy(dict)方法实现。 下面贴一段代码，加深对list和dict深复制和浅复制的理解： 12345678910111213141516171819202122232425262728293031323334353637383940#coding: utf-8import copy## 列表list复制print "*"*100List = [0, [1, 2], 3]List1 = List # 引用List2 = List[:] # 浅复制，对象复制；但其中元素是引用List3 = copy.copy(List) # 浅复制，对象复制；但其中元素是引用List4 = copy.deepcopy(List) # 深复制，对象及其中元素都是复制print "*"*50print List, List1print List2, List3print List4print '*'*50List[0] = 100print List, List1print List2, List3print List4print '*'*50List[1][1] = 100print List, List1print List2, List3print List4## 字典dict复制print "*"*100Dict = &#123;'a':0, 'b':[1, 2], 'c':3, 'd':4&#125;Dict1 = Dict # 引用Dict2 = Dict.copy() # 浅复制，对象复制；但其中元素是引用Dict3 = copy.copy(Dict) # 浅复制，对象复制；但其中元素是引用Dict4 = copy.deepcopy(Dict) # 深复制，对象及其中元素都是复制print "*"*50print Dict, Dict1print Dict2, Dict3print Dict4print "*"*50Dict['a'] = 100print Dict, Dict1print Dict2, Dict3print Dict4print "*"*50 列表对象的copy()方法返回列表的浅复制。所谓浅复制，是指生产一个新的列表，并且把原列表中所有元素的引用都复制到新列表中。如果原列表中只包含整数、实数、复数等基本类型或元组、字符串这样的不可变类型，一般是没有问题的。但是，如果原列表中包含列表之类的可变数据类型，由于浅复制时只是把子列表的引用复制到新列表中，这样修改任何一个都会影响另外一个。例如： 12345678910111213141516171819202122x = [1, 2, [3, 4]] #原列表中包含子列表y = x.copy() #浅复制x#[1, 2, [3, 4]]&gt;&gt;&gt; y #两个列表中的内容看起来完全一样[1, 2, [3, 4]]&gt;&gt;&gt; y[2].append(5) #为新列表中的子列表追加元素&gt;&gt;&gt; y[1, 2, [3, 4, 5]]&gt;&gt;&gt; x #原列表中的子列表也被修改了[1, 2, [3, 4, 5]]&gt;&gt;&gt; x[0] = 6 #整数、实数等不可变类型不受此影响&gt;&gt;&gt; x[6, 2, [3, 4, 5]]&gt;&gt;&gt; y[1, 2, [3, 4, 5]]&gt;&gt;&gt; y.append(6) #在新列表尾部追加元素&gt;&gt;&gt; y[1, 2, [3, 4, 5], 6]&gt;&gt;&gt; x #原列表不受影响[6, 2, [3, 4, 5]] 列表对象的copy()方法和切片操作与标准库copy中的copy()函数一样都是返回浅复制，如果想避免上面代码演示的问题，可以使用标准库copy中的deepcopy()函数实现深复制。所谓深复制，是指对原列表中的元素进行递归，把所有的值都复制到新列表中，对嵌套的子列表不仅仅是复制引用。这样一来，新列表和原列表是互相独立，修改任何一个都不会影响另外一个。 123456789101112131415&gt;&gt;&gt; import copy&gt;&gt;&gt; x = [1, 2, [3, 4]]&gt;&gt;&gt; y = copy.deepcopy(x) #深复制&gt;&gt;&gt; y[1, 2, [3, 4]]&gt;&gt;&gt; x[2].append(5) #为原列表中的子列表追加元素&gt;&gt;&gt; x[1, 2, [3, 4, 5]]&gt;&gt;&gt; y #新列表中的子列表不受影响[1, 2, [3, 4]]&gt;&gt;&gt; y.append(6) #在新列表尾部追加元素&gt;&gt;&gt; y[1, 2, [3, 4], 6]&gt;&gt;&gt; x #原列表不受影响[1, 2, [3, 4, 5]] 不管是浅复制还是深复制，与列表对象的直接复制都是不一样的情况，这一点是必须注意的。下面的代码把同一个列表赋值给两个不同的变量，这两个变量是互相独立的，修改任何一个都不会影响另外一个。 12345678&gt;&gt;&gt; x = [1, 2, [3, 4]]&gt;&gt;&gt; y = [1, 2, [3, 4]] #把同一个列表对象赋值给两个变量&gt;&gt;&gt; x.append(5)&gt;&gt;&gt; x[2].append(6)&gt;&gt;&gt; x[1, 2, [3, 4, 6], 5]&gt;&gt;&gt; y[1, 2, [3, 4]] 下面的代码演示的是另外一种情况，把一个列表变量赋值给另外一个变量，这样的话两个变量指向同一个列表对象，对其中一个做的任何修改都会立刻在另外一个变量得到体现。 123456789&gt;&gt;&gt; x = [1, 2, [3, 4]]&gt;&gt;&gt; y = x #两个变量指向同一个列表&gt;&gt;&gt; x[2].append(5)&gt;&gt;&gt; x.append(6)&gt;&gt;&gt; x[0] = 7&gt;&gt;&gt; x[7, 2, [3, 4, 5], 6]&gt;&gt;&gt; y #对x做的任何修改，y都会得到影响[7, 2, [3, 4, 5], 6] 123df = pd.DataFrame([[1, 2], [3, 4]], columns=['max', 'min'])t = df.iloc[:, 0]t[0] = 4444]]></content>
@@ -407,6 +396,17 @@
       <tags>
         <tag>Python</tag>
         <tag>pandas</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[量化学习笔记]]></title>
+    <url>%2F2017%2F12%2F01%2FQuant_notes.html</url>
+    <content type="text"><![CDATA[量化只是手段，投资想法才是灵魂 相关书籍 Quantitative Equity Portfolio Management（QEPM）， Ludwig Chincarini Active Portfolio Management（APM）， Grinold &amp; Kahn Quantitative Equity Portfolio Management（QEPM）， Qian &amp; Hua &amp; Sorensen]]></content>
+      <categories>
+        <category>Quant</category>
+      </categories>
+      <tags>
+        <tag>Quant</tag>
       </tags>
   </entry>
   <entry>
