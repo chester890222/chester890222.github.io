@@ -120,7 +120,7 @@
 <meta name="description" content="这篇文章记录了自己折腾VPS搭建Hexo的过程。之前的博客是由Jekyll搭建并托管在Github上的，而VPS只是用来科学上网。总想着把VPS的作用发挥起来，其中之一就是搭建网站。当初建博客时在Jekyll和Hexo之间犹豫过，因为Github Pages原生支持Jekyll网站生成，所以就选择了它。在决定把博客移到VPS上时，想过用Django等更复杂的语言从头编写，但对于我来说学习成本较高，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="VPS上用Hexo搭建博客">
-<meta property="og:url" content="www.chenchen.co.uk/2016/06/22/Hexo_Blog_on_VPS.html">
+<meta property="og:url" content="chenchen.co.uk/2016/06/22/Hexo_Blog_on_VPS.html">
 <meta property="og:site_name" content="Quant Life">
 <meta property="og:description" content="这篇文章记录了自己折腾VPS搭建Hexo的过程。之前的博客是由Jekyll搭建并托管在Github上的，而VPS只是用来科学上网。总想着把VPS的作用发挥起来，其中之一就是搭建网站。当初建博客时在Jekyll和Hexo之间犹豫过，因为Github Pages原生支持Jekyll网站生成，所以就选择了它。在决定把博客移到VPS上时，想过用Django等更复杂的语言从头编写，但对于我来说学习成本较高，">
 <meta property="og:updated_time" content="2020-03-02T16:52:53.000Z">
@@ -156,7 +156,7 @@
 
 
 
-  <link rel="canonical" href="www.chenchen.co.uk/2016/06/22/Hexo_Blog_on_VPS.html"/>
+  <link rel="canonical" href="chenchen.co.uk/2016/06/22/Hexo_Blog_on_VPS.html"/>
 
 
 
@@ -352,7 +352,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="www.chenchen.co.uk/2016/06/22/Hexo_Blog_on_VPS.html">
+    <link itemprop="mainEntityOfPage" href="chenchen.co.uk/2016/06/22/Hexo_Blog_on_VPS.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="CHEN CHEN">
@@ -459,9 +459,9 @@
       
         <p>这篇文章记录了自己折腾VPS搭建Hexo的过程。之前的博客是由Jekyll搭建并托管在Github上的，而VPS只是用来科学上网。总想着把VPS的作用发挥起来，其中之一就是搭建网站。当初建博客时在Jekyll和Hexo之间犹豫过，因为Github Pages原生支持Jekyll网站生成，所以就选择了它。在决定把博客移到VPS上时，想过用Django等更复杂的语言从头编写，但对于我来说学习成本较高，没有这个必要。目前来看Hexo的效率似乎是比Jekyll更高，如果只是想简单建个写东西的地方，主题设置也更简单些。</p>
 <a id="more"></a>
-<h1 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h1><h2 id="VPS"><a href="#VPS" class="headerlink" title="VPS"></a>VPS</h2><p>我选择的DigitalOcean，每月5美金的VPS，申请过程可以参照我之前的一篇<a href="http://chenchen.co.uk/2015/11/26/Shadowsocks_with_DigitalOcean.html" title="http://chenchen.co.uk/2015/11/26/Shadowsocks_with_DigitalOcean.html" target="_blank" rel="external">博文</a>，网上教程也很多。</p>
+<h1 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h1><h2 id="VPS"><a href="#VPS" class="headerlink" title="VPS"></a>VPS</h2><p>我选择的DigitalOcean，每月5美金的VPS，申请过程可以参照我之前的一篇<a href="http://chenchen.co.uk/2015/11/26/Shadowsocks_with_DigitalOcean.html" title="http://chenchen.co.uk/2015/11/26/Shadowsocks_with_DigitalOcean.html">博文</a>，网上教程也很多。</p>
 <p>如果不想用付费VPS，也可以选择Github Pages或者其他免费的代理服务。但我觉得很多时候还是付费的东西用着安心。</p>
-<h2 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h2><p>这部分不是必须的，但作为VPS上博客的入口，有个像样的、个性化的域名还是很有必要的。不然每次都在浏览器输入IP地址。。。也不是不可以。<br>我是在Godaddy上注册的域名，再通过DNSpod设置绑定到VPS服务器上。可以参考<br><a href="http://chenchen.co.uk/2015/12/01/Jekyll+Github+Markdown.html" title="http://chenchen.co.uk/2015/12/01/Jekyll+Github+Markdown.html" target="_blank" rel="external">这篇</a>中的进阶修改部分。</p>
+<h2 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h2><p>这部分不是必须的，但作为VPS上博客的入口，有个像样的、个性化的域名还是很有必要的。不然每次都在浏览器输入IP地址。。。也不是不可以。<br>我是在Godaddy上注册的域名，再通过DNSpod设置绑定到VPS服务器上。可以参考<br><a href="http://chenchen.co.uk/2015/12/01/Jekyll+Github+Markdown.html" title="http://chenchen.co.uk/2015/12/01/Jekyll+Github+Markdown.html">这篇</a>中的进阶修改部分。</p>
 <h1 id="搭建过程"><a href="#搭建过程" class="headerlink" title="搭建过程"></a>搭建过程</h1><p>搭建过程分为两部分，一部分在本地电脑上配置，另一部分则在服务器端进行，大致需要完成的工作是在本机安装Hexo和Git ，并在 VPS 上安装 Nginx 服务器、配置 Git Hooks 以实现更新。</p>
 <h2 id="本地配置"><a href="#本地配置" class="headerlink" title="本地配置"></a>本地配置</h2><h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>在 Node.js 官网下载最新版，一路默认安装。</p>
 <h3 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h3><p>下载Git for Windows ，一路默认安装。</p>
